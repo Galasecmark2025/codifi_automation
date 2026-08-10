@@ -4,27 +4,141 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 
-URL = "https://www.nseindia.com/all-reports"
-DOWNLOAD_DIR = "downloads"
+from headers import *
 
-VAR_HEADERS = [
-    "record_type",
-    "symbol",
-    "series",
-    "isin",
-    "elm_margin",
-    "additional_margin",
-    "var_margin",
-    "extreme_loss_margin",
-    "special_margin",
-    "total_margin",
-]
+DOWNLOAD_DIR = "downloads"
+FINAL_FILES_DIR = "final_files"
+
+NSE_PAGE_URL = "https://www.nseindia.com/all-reports"
+BSE_API_URL = ("https://api.bseindia.com/BseIndiaAPI/api/GetBhavcopydata/w?flag=0")
+
+BSE_HEADERS = {
+    "Accept": "application/json, text/plain, */*",
+    "Accept-Language": "en-US,en;q=0.9,en-IN;q=0.8",
+    "Origin": "https://www.bseindia.com",
+    "Referer": "https://www.bseindia.com/",
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0"
+    ),
+}
+
 DERIVATIVE_TABS = {
     "equity": "cr_derv_equities",
     "commodity": "cr_derv_commodity",
     "currency": "cr_derv_currency",
     "irf": "cr_derv_irf",
 }
+
+BSE_UDIFF_FILES = [
+    {
+        "file_type": "EQ",
+        "download_path": "https://www.bseindia.com/download/BhavCopy/Equity/",
+    },
+    {
+        "file_type": "COM",
+        "download_path": "https://www.bseindia.com/download/BhavCopy/Commodity/Csv/",
+    },
+    {
+        "file_type": "CUR",
+        "download_path": "https://www.bseindia.com/bsedata/CIML_bhavcopy/",
+    },
+    {
+        "file_type": "EQD",
+        "download_path": "https://www.bseindia.com/download/BhavCopy/Derivative/",
+    },
+]
+
+NSE_REPORTS = [
+    {
+        "url": "https://www.nseindia.com/all-reports",
+        "report_label": "VaR Begin Day File",
+        "file_extension": ".dat",
+        "headers": VAR_HEADERS
+    },
+    {
+        "url": "https://www.nseindia.com/all-reports",
+        "report_label": "CM-UDiFF Common Bhavcopy Final (zip)",
+        "file_extension": ".zip",
+    },
+    {
+        "url": "https://www.nseindia.com/all-reports-derivatives",
+        "tab": DERIVATIVE_TABS["equity"],
+        "report_label": "F&O-Bhavcopy File (DAT)",
+        "file_extension": ".dat",
+        "headers": FNO_HEADERS
+    },
+    {
+        "url": "https://www.nseindia.com/all-reports-derivatives",
+        "tab": DERIVATIVE_TABS["commodity"],
+        "report_label": "COM-Bhavcopy File (DAT)",
+        "file_extension": ".dat",
+        "headers": COMMODITY_HEADERS
+    },
+    {
+        "url": "https://www.nseindia.com/all-reports-derivatives",
+        "tab": DERIVATIVE_TABS["currency"],
+        "report_label": "CD-Bhavcopy File (DAT)",
+        "file_extension": ".dat",
+        "headers": CD_HEADERS
+    },
+]
+
+def download_bse_udiff(file_type, download_path):
+    os.makedirs(DOWNLOAD_DIR, exist_ok=True)
+
+    session = requests.Session()
+    session.headers.update(BSE_HEADERS)
+
+    response = session.get(BSE_API_URL,timeout=60)
+
+    response.raise_for_status()
+
+    data = response.json()
+
+    file_name = None
+
+    for file_data in data.get("dsUdiff", []):
+        if file_data.get("Filetype") == file_type:
+            file_name = file_data.get("filename")
+            break
+
+    if not file_name:
+        raise ValueError(f"No UDiFF file found for file type: {file_type}")
+
+    download_url = f"{download_path}{file_name}"
+
+    print("\n--------------------------------")
+    print("BSE File Type :", file_type)
+    print("File Name     :", file_name)
+    print("URL           :", download_url)
+    print("--------------------------------")
+
+    response = session.get(
+        download_url,
+        headers={
+            "Accept": (
+                "text/html,application/xhtml+xml,application/xml;"
+                "q=0.9,image/avif,image/webp,image/apng,*/*;"
+                "q=0.8,application/signed-exchange;v=b3;q=0.7"
+            ),
+            "Referer": "https://www.bseindia.com/markets/marketinfo/bhavcopy",
+        },
+        timeout=60,
+    )
+
+    response.raise_for_status()
+
+    file_path = os.path.join(DOWNLOAD_DIR,file_name)
+
+    with open(file_path, "wb") as file:
+        file.write(response.content)
+
+    print(f"Downloaded    : {file_name}")
+
+    return file_path
+
 
 def extract_zip(zip_file_path):
     extract_to = os.path.splitext(zip_file_path)[0]
@@ -79,7 +193,7 @@ def convert_var_dat_to_csv(input_file, output_file, headers):
 
     print(f"CSV created successfully: {output_file}")
 
-def download_report(url, report_label, file_extension=None, tab=None):
+def download_nse_bhavcopy(url, report_label, file_extension=None, tab=None, headers=None):
     os.makedirs(DOWNLOAD_DIR, exist_ok=True)
 
     options = Options()
@@ -99,7 +213,7 @@ def download_report(url, report_label, file_extension=None, tab=None):
 
     try:
         driver.get(url)
-        time.sleep(10)
+        time.sleep(3)
         if tab:
             driver.find_element(By.CSS_SELECTOR,f"a[aria-controls='{tab}']").click()
 
@@ -123,7 +237,7 @@ def download_report(url, report_label, file_extension=None, tab=None):
                 "AppleWebKit/537.36 (KHTML, like Gecko) "
                 "Chrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0"
             ),
-            "Referer": URL,
+            "Referer": NSE_PAGE_URL,
         })
 
         response = session.get(download_url, timeout=60)
@@ -137,44 +251,29 @@ def download_report(url, report_label, file_extension=None, tab=None):
         print(f"Downloaded: {file_name}")
         if file_extension == ".dat":
             csv_file = os.path.splitext(file_path)[0] + ".csv"
-            convert_var_dat_to_csv(input_file=file_path, output_file=csv_file, headers=VAR_HEADERS)
+            convert_var_dat_to_csv(input_file=file_path, output_file=csv_file, headers=headers)
         elif file_extension == ".zip":
             extract_zip(file_path)
 
     finally:
         driver.quit()
 
-
 if __name__ == "__main__":
-    download_report(
-        url="https://www.nseindia.com/all-reports",
-        report_label="VaR Begin Day File",
-        file_extension=".dat",
-    )
+    for report in NSE_REPORTS:
+        try:
+            download_nse_bhavcopy(
+                url=report["url"],
+                report_label=report["report_label"],
+                file_extension=report["file_extension"],
+                tab=report.get("tab"),
+                headers=report["headers"]
+            )
 
-    download_report(
-        url="https://www.nseindia.com/all-reports",
-        report_label="CM-UDiFF Common Bhavcopy Final (zip)",
-        file_extension=".zip",
-    )
+        except Exception as error:
+            print(f"Failed to download NSE {report['report_label']}: {error}")
 
-    download_report(
-        url="https://www.nseindia.com/all-reports-derivatives",
-        tab=DERIVATIVE_TABS["equity"],
-        report_label="F&O-Bhavcopy File (DAT)",
-        file_extension=".dat",
-    )
-
-    download_report(
-        url="https://www.nseindia.com/all-reports-derivatives",
-        tab=DERIVATIVE_TABS["commodity"],
-        report_label="COM-Bhavcopy File (DAT)",
-        file_extension=".dat",
-    )
-
-    download_report(
-        url="https://www.nseindia.com/all-reports-derivatives",
-        tab=DERIVATIVE_TABS["currency"],
-        report_label="CD-Bhavcopy File (DAT)",
-        file_extension=".dat",
-    )
+    for file in BSE_UDIFF_FILES:
+        try:
+            download_bse_udiff(file_type=file["file_type"], download_path=file["download_path"])
+        except Exception as error:
+            print(f"Failed to download BSE {file['file_type']} file: {error}")
