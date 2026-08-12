@@ -85,6 +85,48 @@ NSE_REPORTS = [
     },
 ]
 
+import shutil
+
+
+def post_process(file_path):
+
+    extension = os.path.splitext(file_path)[1].lower()
+    file_name = os.path.basename(file_path)
+
+    if extension == ".dat":
+
+        os.makedirs(FINAL_FILES_DIR,exist_ok=True)
+
+        csv_name = (os.path.splitext(file_name)[0]+ ".csv")
+
+        csv_file = os.path.join(FINAL_FILES_DIR,csv_name)
+
+        convert_dat_to_csv(input_file=file_path,output_file=csv_file)
+
+        return csv_file
+
+    elif extension == ".zip":
+
+        return extract_zip(file_path)
+
+    elif extension == ".csv":
+
+        os.makedirs(FINAL_FILES_DIR,exist_ok=True)
+
+        final_file = os.path.join(FINAL_FILES_DIR,file_name)
+
+        shutil.copy2(file_path,final_file)
+
+        print(f"CSV Copied : {final_file}")
+
+        return final_file
+
+    else:
+
+        print(f"No post-processing required for {file_name}")
+
+        return file_path
+
 def download_bse_udiff(file_type, download_path):
     os.makedirs(DOWNLOAD_DIR, exist_ok=True)
 
@@ -139,6 +181,51 @@ def download_bse_udiff(file_type, download_path):
 
     return file_path
 
+def convert_dat_to_csv(input_file, output_file):
+    """
+    Convert any comma-separated DAT file into CSV.
+    """
+
+    rows = []
+    max_columns = 0
+
+    with open(input_file, "r", encoding="utf-8", errors="replace") as dat_file:
+
+        for line in dat_file:
+
+            line = line.strip()
+
+            if not line:continue
+
+            columns = line.split(",")
+
+            rows.append(columns)
+
+            if len(columns) > max_columns:
+                max_columns = len(columns)
+
+    headers = [f"column{i}" for i in range(1, max_columns + 1)]
+
+    with open(output_file, "w", newline="", encoding="utf-8") as csv_file:
+        writer = csv.writer(csv_file)
+
+        writer.writerow(headers)
+
+        for row in rows:
+
+            # Make sure every row has same number of columns
+            row = row + [""] * (max_columns - len(row))
+
+            writer.writerow(row)
+
+    print(f"CSV Created : {output_file}")
+
+    print(f"Columns     : {max_columns}")
+
+    print(f"Rows        : {len(rows)}")
+
+    return output_file
+
 
 def extract_zip(zip_file_path):
     extract_to = os.path.splitext(zip_file_path)[0]
@@ -163,35 +250,12 @@ def post_process(file_path):
     csv_file = os.path.splitext(file_path)[0] + ".csv"
 
     if file_name.startswith("C_VAR1_"):
-        convert_var_dat_to_csv(input_file=file_path, output_file=csv_file, headers=VAR_HEADERS,)
+        convert_dat_to_csv(input_file=file_path, output_file=csv_file)
 
     else:
         print(f"No converter available for {file_name}")
 
 
-def convert_var_dat_to_csv(input_file, output_file, headers):
-    with open(input_file, "r", encoding="utf-8") as dat_file, \
-         open(output_file, "w", newline="", encoding="utf-8") as csv_file:
-
-        writer = csv.writer(csv_file)
-        writer.writerow(headers)
-
-        for line in dat_file:
-            line = line.strip()
-
-            if not line: continue
-
-            columns = line.split(",")
-
-            # Ignore header record (10)
-            if columns[0] == "10": continue
-
-            # Only process security records (20)
-            if columns[0] != "20": continue
-
-            writer.writerow(columns)
-
-    print(f"CSV created successfully: {output_file}")
 
 def download_nse_bhavcopy(url, report_label, file_extension=None, tab=None, headers=None):
     os.makedirs(DOWNLOAD_DIR, exist_ok=True)
@@ -251,7 +315,7 @@ def download_nse_bhavcopy(url, report_label, file_extension=None, tab=None, head
         print(f"Downloaded: {file_name}")
         if file_extension == ".dat":
             csv_file = os.path.splitext(file_path)[0] + ".csv"
-            convert_var_dat_to_csv(input_file=file_path, output_file=csv_file, headers=headers)
+            convert_dat_to_csv(input_file=file_path, output_file=csv_file)
         elif file_extension == ".zip":
             extract_zip(file_path)
 
