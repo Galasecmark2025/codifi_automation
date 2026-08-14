@@ -65,23 +65,20 @@ NSE_REPORTS = [
     {
         "url": "https://www.nseindia.com/all-reports-derivatives",
         "tab": DERIVATIVE_TABS["equity"],
-        "report_label": "F&O-Bhavcopy File (DAT)",
-        "file_extension": ".dat",
-        "headers": FNO_HEADERS
+        "report_label": "F&O-UDiFF Common Bhavcopy Final (zip)",
+        "file_extension": ".zip"
     },
     {
         "url": "https://www.nseindia.com/all-reports-derivatives",
         "tab": DERIVATIVE_TABS["commodity"],
-        "report_label": "COM-Bhavcopy File (DAT)",
-        "file_extension": ".dat",
-        "headers": COMMODITY_HEADERS
+        "report_label": "COM-UDiFF Common Bhavcopy Final (zip)",
+        "file_extension": ".zip"
     },
     {
         "url": "https://www.nseindia.com/all-reports-derivatives",
         "tab": DERIVATIVE_TABS["currency"],
-        "report_label": "CD-Bhavcopy File (DAT)",
-        "file_extension": ".dat",
-        "headers": CD_HEADERS
+        "report_label": "CD-UDiFF Common Bhavcopy Final (zip)",
+        "file_extension": ".zip"
     },
 ]
 
