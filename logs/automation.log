@@ -1,0 +1,211 @@
+2026-08-21 17:23:16 | INFO | main | Report Name : VaR Begin Day File
+2026-08-21 17:23:16 | INFO | main | File Name   : C_VAR1_21082026_1.DAT
+2026-08-21 17:23:16 | INFO | main | URL         : https://nsearchives.nseindia.com/archives/nsccl/var/C_VAR1_21082026_1.DAT
+2026-08-21 17:23:17 | INFO | main | Downloaded: C_VAR1_21082026_1.DAT
+2026-08-21 17:23:17 | INFO | main | CSV Created : final_files\C_VAR1_21082026_1.csv
+2026-08-21 17:23:17 | INFO | main | Columns     : 10
+2026-08-21 17:23:17 | INFO | main | Rows        : 18502
+2026-08-21 17:23:24 | INFO | main | Report Name : CM-UDiFF Common Bhavcopy Final (zip)
+2026-08-21 17:23:24 | INFO | main | File Name   : BhavCopy_NSE_CM_0_0_0_20260821_F_0000.csv.zip
+2026-08-21 17:23:24 | INFO | main | URL         : https://nsearchives.nseindia.com/content/cm/BhavCopy_NSE_CM_0_0_0_20260821_F_0000.csv.zip
+2026-08-21 17:23:25 | INFO | main | Downloaded: BhavCopy_NSE_CM_0_0_0_20260821_F_0000.csv.zip
+2026-08-21 17:23:25 | INFO | main | Extracted to: downloads\BhavCopy_NSE_CM_0_0_0_20260821_F_0000.csv
+2026-08-21 17:23:25 | INFO | main | CSV Copied : final_files\BhavCopy_NSE_CM_0_0_0_20260821_F_0000.csv
+2026-08-21 17:23:35 | INFO | main | Report Name : F&O-UDiFF Common Bhavcopy Final (zip)
+2026-08-21 17:23:35 | INFO | main | File Name   : BhavCopy_NSE_FO_0_0_0_20260820_F_0000.csv.zip
+2026-08-21 17:23:35 | INFO | main | URL         : https://nsearchives.nseindia.com/content/fo/BhavCopy_NSE_FO_0_0_0_20260820_F_0000.csv.zip
+2026-08-21 17:23:36 | INFO | main | Downloaded: BhavCopy_NSE_FO_0_0_0_20260820_F_0000.csv.zip
+2026-08-21 17:23:36 | INFO | main | Extracted to: downloads\BhavCopy_NSE_FO_0_0_0_20260820_F_0000.csv
+2026-08-21 17:23:36 | INFO | main | CSV Copied : final_files\BhavCopy_NSE_FO_0_0_0_20260820_F_0000.csv
+2026-08-21 17:23:47 | INFO | main | Report Name : COM-UDiFF Common Bhavcopy Final (zip)
+2026-08-21 17:23:47 | INFO | main | File Name   : BhavCopy_NSE_CO_0_0_0_20260820_F_0000.csv.zip
+2026-08-21 17:23:47 | INFO | main | URL         : https://nsearchives.nseindia.com/content/com/BhavCopy_NSE_CO_0_0_0_20260820_F_0000.csv.zip
+2026-08-21 17:23:48 | INFO | main | Downloaded: BhavCopy_NSE_CO_0_0_0_20260820_F_0000.csv.zip
+2026-08-21 17:23:48 | INFO | main | Extracted to: downloads\BhavCopy_NSE_CO_0_0_0_20260820_F_0000.csv
+2026-08-21 17:23:48 | INFO | main | CSV Copied : final_files\BhavCopy_NSE_CO_0_0_0_20260820_F_0000.csv
+2026-08-21 17:23:58 | INFO | main | Report Name : CD-UDiFF Common Bhavcopy Final (zip)
+2026-08-21 17:23:58 | INFO | main | File Name   : BhavCopy_NSE_CD_0_0_0_20260820_F_0000.csv.zip
+2026-08-21 17:23:58 | INFO | main | URL         : https://nsearchives.nseindia.com/archives/cd/bhav/BhavCopy_NSE_CD_0_0_0_20260820_F_0000.csv.zip
+2026-08-21 17:23:59 | INFO | main | Downloaded: BhavCopy_NSE_CD_0_0_0_20260820_F_0000.csv.zip
+2026-08-21 17:23:59 | INFO | main | Extracted to: downloads\BhavCopy_NSE_CD_0_0_0_20260820_F_0000.csv
+2026-08-21 17:23:59 | INFO | main | CSV Copied : final_files\BhavCopy_NSE_CD_0_0_0_20260820_F_0000.csv
+2026-08-21 17:24:01 | INFO | main | 
+--------------------------------
+2026-08-21 17:24:01 | INFO | main | --------------------------------
+2026-08-21 17:24:02 | INFO | main | Downloaded    : BhavCopy_BSE_CM_0_0_0_20260821_F_0000.CSV
+2026-08-21 17:24:02 | INFO | main | CSV Copied : final_files\BhavCopy_BSE_CM_0_0_0_20260821_F_0000.CSV
+2026-08-21 17:24:02 | INFO | main | 
+--------------------------------
+2026-08-21 17:24:02 | INFO | main | --------------------------------
+2026-08-21 17:24:03 | INFO | main | Downloaded    : BhavCopy_BSE_CO_0_0_0_20260820_F_0000.CSV
+2026-08-21 17:24:03 | INFO | main | CSV Copied : final_files\BhavCopy_BSE_CO_0_0_0_20260820_F_0000.CSV
+2026-08-21 17:24:03 | INFO | main | 
+--------------------------------
+2026-08-21 17:24:03 | INFO | main | --------------------------------
+2026-08-21 17:24:04 | INFO | main | Downloaded    : BhavCopy_BSE_CD_0_0_0_20260820_F_0000.CSV
+2026-08-21 17:24:04 | INFO | main | CSV Copied : final_files\BhavCopy_BSE_CD_0_0_0_20260820_F_0000.CSV
+2026-08-21 17:24:04 | INFO | main | 
+--------------------------------
+2026-08-21 17:24:04 | INFO | main | --------------------------------
+2026-08-21 17:24:05 | INFO | main | Downloaded    : BhavCopy_BSE_FO_0_0_0_20260821_F_0000.CSV
+2026-08-21 17:24:05 | INFO | main | CSV Copied : final_files\BhavCopy_BSE_FO_0_0_0_20260821_F_0000.CSV
+2026-08-21 17:24:05 | INFO | main | 
+================================
+2026-08-21 17:24:05 | INFO | main | Uploading CSV files to database
+2026-08-21 17:24:05 | INFO | main | ================================
+2026-08-21 17:24:05 | INFO | db_operations | 
+2026-08-21 17:24:05 | INFO | db_operations | ======================================================================
+2026-08-21 17:24:05 | INFO | db_operations | STARTING DATABASE UPLOAD
+2026-08-21 17:24:05 | INFO | db_operations | ======================================================================
+2026-08-21 17:24:05 | INFO | db_operations | Loading tracker: file_tracker.json
+2026-08-21 17:24:05 | INFO | db_operations | Tracker loaded. Entries: 18
+2026-08-21 17:24:05 | INFO | db_operations | Scanning directory: final_files
+2026-08-21 17:24:05 | INFO | db_operations | 
+2026-08-21 17:24:05 | INFO | db_operations | ======================================================================
+2026-08-21 17:24:05 | INFO | db_operations | Processing file: BhavCopy_BSE_CD_0_0_0_20260820_F_0000.CSV
+2026-08-21 17:24:05 | INFO | db_operations | ======================================================================
+2026-08-21 17:24:05 | INFO | db_operations | Checking date in filename: BhavCopy_BSE_CD_0_0_0_20260820_F_0000.CSV
+2026-08-21 17:24:05 | INFO | db_operations | Detected date : 2026-08-20 (YYYYMMDD)
+2026-08-21 17:24:05 | INFO | db_operations | Report key: bhavcopy_bse_cd_0_0_0
+2026-08-21 17:24:05 | INFO | db_operations | Table name: bhavcopy_bse_cd_0_0_0_20260820_f_0000
+2026-08-21 17:24:05 | INFO | db_operations | Calculating file hash: BhavCopy_BSE_CD_0_0_0_20260820_F_0000.CSV
+2026-08-21 17:24:05 | INFO | db_operations | Hash: 98b01bd65b82ae435d567fe7b8c8a85fdbb825c7c5846ae242d3008814d990a2
+2026-08-21 17:24:05 | INFO | db_operations | Previous file: BhavCopy_BSE_CD_0_0_0_20260820_F_0000.CSV
+2026-08-21 17:24:05 | INFO | db_operations | Previous date: 2026-08-20
+2026-08-21 17:24:05 | INFO | db_operations | Current date: 2026-08-20
+2026-08-21 17:24:05 | INFO | db_operations | Same trading date detected.
+2026-08-21 17:24:05 | INFO | db_operations | Same file hash detected.
+2026-08-21 17:24:05 | INFO | db_operations | File already uploaded. Skipping.
+2026-08-21 17:24:05 | INFO | db_operations | 
+2026-08-21 17:24:05 | INFO | db_operations | ======================================================================
+2026-08-21 17:24:05 | INFO | db_operations | Processing file: BhavCopy_BSE_CM_0_0_0_20260821_F_0000.CSV
+2026-08-21 17:24:05 | INFO | db_operations | ======================================================================
+2026-08-21 17:24:05 | INFO | db_operations | Checking date in filename: BhavCopy_BSE_CM_0_0_0_20260821_F_0000.CSV
+2026-08-21 17:24:05 | INFO | db_operations | Detected date : 2026-08-21 (YYYYMMDD)
+2026-08-21 17:24:05 | INFO | db_operations | Report key: bhavcopy_bse_cm_0_0_0
+2026-08-21 17:24:05 | INFO | db_operations | Table name: bhavcopy_bse_cm_0_0_0_20260821_f_0000
+2026-08-21 17:24:05 | INFO | db_operations | Calculating file hash: BhavCopy_BSE_CM_0_0_0_20260821_F_0000.CSV
+2026-08-21 17:24:05 | INFO | db_operations | Hash: 3ef8e5b8a3aadc40a531c226c6a97e2a32a924252501d6bb10c575f2e73fe9c8
+2026-08-21 17:24:05 | INFO | db_operations | Previous file: BhavCopy_BSE_CM_0_0_0_20260821_F_0000.CSV
+2026-08-21 17:24:05 | INFO | db_operations | Previous date: 2026-08-21
+2026-08-21 17:24:05 | INFO | db_operations | Current date: 2026-08-21
+2026-08-21 17:24:05 | INFO | db_operations | Same trading date detected.
+2026-08-21 17:24:05 | INFO | db_operations | Same file hash detected.
+2026-08-21 17:24:05 | INFO | db_operations | File already uploaded. Skipping.
+2026-08-21 17:24:05 | INFO | db_operations | 
+2026-08-21 17:24:05 | INFO | db_operations | ======================================================================
+2026-08-21 17:24:05 | INFO | db_operations | Processing file: BhavCopy_BSE_CO_0_0_0_20260820_F_0000.CSV
+2026-08-21 17:24:05 | INFO | db_operations | ======================================================================
+2026-08-21 17:24:05 | INFO | db_operations | Checking date in filename: BhavCopy_BSE_CO_0_0_0_20260820_F_0000.CSV
+2026-08-21 17:24:05 | INFO | db_operations | Detected date : 2026-08-20 (YYYYMMDD)
+2026-08-21 17:24:05 | INFO | db_operations | Report key: bhavcopy_bse_co_0_0_0
+2026-08-21 17:24:05 | INFO | db_operations | Table name: bhavcopy_bse_co_0_0_0_20260820_f_0000
+2026-08-21 17:24:05 | INFO | db_operations | Calculating file hash: BhavCopy_BSE_CO_0_0_0_20260820_F_0000.CSV
+2026-08-21 17:24:05 | INFO | db_operations | Hash: 98b01bd65b82ae435d567fe7b8c8a85fdbb825c7c5846ae242d3008814d990a2
+2026-08-21 17:24:05 | INFO | db_operations | Previous file: BhavCopy_BSE_CO_0_0_0_20260820_F_0000.CSV
+2026-08-21 17:24:05 | INFO | db_operations | Previous date: 2026-08-20
+2026-08-21 17:24:05 | INFO | db_operations | Current date: 2026-08-20
+2026-08-21 17:24:05 | INFO | db_operations | Same trading date detected.
+2026-08-21 17:24:05 | INFO | db_operations | Same file hash detected.
+2026-08-21 17:24:05 | INFO | db_operations | File already uploaded. Skipping.
+2026-08-21 17:24:05 | INFO | db_operations | 
+2026-08-21 17:24:05 | INFO | db_operations | ======================================================================
+2026-08-21 17:24:05 | INFO | db_operations | Processing file: BhavCopy_BSE_FO_0_0_0_20260821_F_0000.CSV
+2026-08-21 17:24:05 | INFO | db_operations | ======================================================================
+2026-08-21 17:24:05 | INFO | db_operations | Checking date in filename: BhavCopy_BSE_FO_0_0_0_20260821_F_0000.CSV
+2026-08-21 17:24:05 | INFO | db_operations | Detected date : 2026-08-21 (YYYYMMDD)
+2026-08-21 17:24:05 | INFO | db_operations | Report key: bhavcopy_bse_fo_0_0_0
+2026-08-21 17:24:05 | INFO | db_operations | Table name: bhavcopy_bse_fo_0_0_0_20260821_f_0000
+2026-08-21 17:24:05 | INFO | db_operations | Calculating file hash: BhavCopy_BSE_FO_0_0_0_20260821_F_0000.CSV
+2026-08-21 17:24:05 | INFO | db_operations | Hash: ff7dc0cfd0307ba692eb7dd43e2026c4898133e4f3b145f877dbeb6b706fff2d
+2026-08-21 17:24:05 | INFO | db_operations | Previous file: BhavCopy_BSE_FO_0_0_0_20260821_F_0000.CSV
+2026-08-21 17:24:05 | INFO | db_operations | Previous date: 2026-08-21
+2026-08-21 17:24:05 | INFO | db_operations | Current date: 2026-08-21
+2026-08-21 17:24:05 | INFO | db_operations | Same trading date detected.
+2026-08-21 17:24:05 | INFO | db_operations | Same file hash detected.
+2026-08-21 17:24:05 | INFO | db_operations | File already uploaded. Skipping.
+2026-08-21 17:24:05 | INFO | db_operations | 
+2026-08-21 17:24:05 | INFO | db_operations | ======================================================================
+2026-08-21 17:24:05 | INFO | db_operations | Processing file: BhavCopy_NSE_CD_0_0_0_20260820_F_0000.csv
+2026-08-21 17:24:05 | INFO | db_operations | ======================================================================
+2026-08-21 17:24:05 | INFO | db_operations | Checking date in filename: BhavCopy_NSE_CD_0_0_0_20260820_F_0000.csv
+2026-08-21 17:24:05 | INFO | db_operations | Detected date : 2026-08-20 (YYYYMMDD)
+2026-08-21 17:24:05 | INFO | db_operations | Report key: bhavcopy_nse_cd_0_0_0
+2026-08-21 17:24:05 | INFO | db_operations | Table name: bhavcopy_nse_cd_0_0_0_20260820_f_0000
+2026-08-21 17:24:05 | INFO | db_operations | Calculating file hash: BhavCopy_NSE_CD_0_0_0_20260820_F_0000.csv
+2026-08-21 17:24:05 | INFO | db_operations | Hash: 6fd1a5701f30affa2bc61b9826cc14ce32117337b4d4a2137aeedcfd8038e8a3
+2026-08-21 17:24:05 | INFO | db_operations | Previous file: BhavCopy_NSE_CD_0_0_0_20260820_F_0000.csv
+2026-08-21 17:24:05 | INFO | db_operations | Previous date: 2026-08-20
+2026-08-21 17:24:05 | INFO | db_operations | Current date: 2026-08-20
+2026-08-21 17:24:05 | INFO | db_operations | Same trading date detected.
+2026-08-21 17:24:05 | INFO | db_operations | Same file hash detected.
+2026-08-21 17:24:05 | INFO | db_operations | File already uploaded. Skipping.
+2026-08-21 17:24:05 | INFO | db_operations | 
+2026-08-21 17:24:05 | INFO | db_operations | ======================================================================
+2026-08-21 17:24:05 | INFO | db_operations | Processing file: BhavCopy_NSE_CM_0_0_0_20260821_F_0000.csv
+2026-08-21 17:24:05 | INFO | db_operations | ======================================================================
+2026-08-21 17:24:05 | INFO | db_operations | Checking date in filename: BhavCopy_NSE_CM_0_0_0_20260821_F_0000.csv
+2026-08-21 17:24:05 | INFO | db_operations | Detected date : 2026-08-21 (YYYYMMDD)
+2026-08-21 17:24:05 | INFO | db_operations | Report key: bhavcopy_nse_cm_0_0_0
+2026-08-21 17:24:05 | INFO | db_operations | Table name: bhavcopy_nse_cm_0_0_0_20260821_f_0000
+2026-08-21 17:24:05 | INFO | db_operations | Calculating file hash: BhavCopy_NSE_CM_0_0_0_20260821_F_0000.csv
+2026-08-21 17:24:05 | INFO | db_operations | Hash: 7565833f18fbd8bc32be4d46b2a8c0b10693921bed13283de7311dd2393a70f8
+2026-08-21 17:24:05 | INFO | db_operations | Previous file: BhavCopy_NSE_CM_0_0_0_20260821_F_0000.csv
+2026-08-21 17:24:05 | INFO | db_operations | Previous date: 2026-08-21
+2026-08-21 17:24:05 | INFO | db_operations | Current date: 2026-08-21
+2026-08-21 17:24:05 | INFO | db_operations | Same trading date detected.
+2026-08-21 17:24:05 | INFO | db_operations | Same file hash detected.
+2026-08-21 17:24:05 | INFO | db_operations | File already uploaded. Skipping.
+2026-08-21 17:24:05 | INFO | db_operations | 
+2026-08-21 17:24:05 | INFO | db_operations | ======================================================================
+2026-08-21 17:24:05 | INFO | db_operations | Processing file: BhavCopy_NSE_CO_0_0_0_20260820_F_0000.csv
+2026-08-21 17:24:05 | INFO | db_operations | ======================================================================
+2026-08-21 17:24:05 | INFO | db_operations | Checking date in filename: BhavCopy_NSE_CO_0_0_0_20260820_F_0000.csv
+2026-08-21 17:24:05 | INFO | db_operations | Detected date : 2026-08-20 (YYYYMMDD)
+2026-08-21 17:24:05 | INFO | db_operations | Report key: bhavcopy_nse_co_0_0_0
+2026-08-21 17:24:05 | INFO | db_operations | Table name: bhavcopy_nse_co_0_0_0_20260820_f_0000
+2026-08-21 17:24:05 | INFO | db_operations | Calculating file hash: BhavCopy_NSE_CO_0_0_0_20260820_F_0000.csv
+2026-08-21 17:24:05 | INFO | db_operations | Hash: 4e054260b1d3196a2279196be56498b992d6348e960dc7185504165a50bfecda
+2026-08-21 17:24:05 | INFO | db_operations | Previous file: BhavCopy_NSE_CO_0_0_0_20260820_F_0000.csv
+2026-08-21 17:24:05 | INFO | db_operations | Previous date: 2026-08-20
+2026-08-21 17:24:05 | INFO | db_operations | Current date: 2026-08-20
+2026-08-21 17:24:05 | INFO | db_operations | Same trading date detected.
+2026-08-21 17:24:05 | INFO | db_operations | Same file hash detected.
+2026-08-21 17:24:05 | INFO | db_operations | File already uploaded. Skipping.
+2026-08-21 17:24:05 | INFO | db_operations | 
+2026-08-21 17:24:05 | INFO | db_operations | ======================================================================
+2026-08-21 17:24:05 | INFO | db_operations | Processing file: BhavCopy_NSE_FO_0_0_0_20260820_F_0000.csv
+2026-08-21 17:24:05 | INFO | db_operations | ======================================================================
+2026-08-21 17:24:05 | INFO | db_operations | Checking date in filename: BhavCopy_NSE_FO_0_0_0_20260820_F_0000.csv
+2026-08-21 17:24:05 | INFO | db_operations | Detected date : 2026-08-20 (YYYYMMDD)
+2026-08-21 17:24:05 | INFO | db_operations | Report key: bhavcopy_nse_fo_0_0_0
+2026-08-21 17:24:05 | INFO | db_operations | Table name: bhavcopy_nse_fo_0_0_0_20260820_f_0000
+2026-08-21 17:24:05 | INFO | db_operations | Calculating file hash: BhavCopy_NSE_FO_0_0_0_20260820_F_0000.csv
+2026-08-21 17:24:05 | INFO | db_operations | Hash: e014b8d1acc14280cb8798f3a2548dd1976f1bb60c3534fd5cad3be9b2855252
+2026-08-21 17:24:05 | INFO | db_operations | Previous file: BhavCopy_NSE_FO_0_0_0_20260820_F_0000.csv
+2026-08-21 17:24:05 | INFO | db_operations | Previous date: 2026-08-20
+2026-08-21 17:24:05 | INFO | db_operations | Current date: 2026-08-20
+2026-08-21 17:24:05 | INFO | db_operations | Same trading date detected.
+2026-08-21 17:24:05 | INFO | db_operations | Same file hash detected.
+2026-08-21 17:24:05 | INFO | db_operations | File already uploaded. Skipping.
+2026-08-21 17:24:05 | INFO | db_operations | 
+2026-08-21 17:24:05 | INFO | db_operations | ======================================================================
+2026-08-21 17:24:05 | INFO | db_operations | Processing file: C_VAR1_21082026_1.csv
+2026-08-21 17:24:05 | INFO | db_operations | ======================================================================
+2026-08-21 17:24:05 | INFO | db_operations | Checking date in filename: C_VAR1_21082026_1.csv
+2026-08-21 17:24:05 | INFO | db_operations | Detected date : 2026-08-21 (DDMMYYYY)
+2026-08-21 17:24:05 | INFO | db_operations | Report key: c_var1
+2026-08-21 17:24:05 | INFO | db_operations | Table name: c_var1_21082026_1
+2026-08-21 17:24:05 | INFO | db_operations | Calculating file hash: C_VAR1_21082026_1.csv
+2026-08-21 17:24:05 | INFO | db_operations | Hash: 0d3290d3e880c40e1e20029117899311f922fa1b58873ab814a8aba6f0c9ef7e
+2026-08-21 17:24:05 | INFO | db_operations | Previous file: C_VAR1_21082026_1.csv
+2026-08-21 17:24:05 | INFO | db_operations | Previous date: 2026-08-21
+2026-08-21 17:24:05 | INFO | db_operations | Current date: 2026-08-21
+2026-08-21 17:24:05 | INFO | db_operations | Same trading date detected.
+2026-08-21 17:24:05 | INFO | db_operations | Same file hash detected.
+2026-08-21 17:24:05 | INFO | db_operations | File already uploaded. Skipping.
+2026-08-21 17:24:05 | INFO | db_operations | 
+2026-08-21 17:24:05 | INFO | db_operations | ======================================================================
+2026-08-21 17:24:05 | INFO | db_operations | DATABASE CONNECTION CLOSED
+2026-08-21 17:24:05 | INFO | db_operations | DATABASE UPLOAD COMPLETED
+2026-08-21 17:24:05 | INFO | db_operations | ======================================================================
