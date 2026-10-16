@@ -14,6 +14,8 @@ class LogLevel(IntEnum):
 
 class LogDestination(IntEnum):
     PRINT = 0
+    FILE = 1
+    BOTH = 2
 
 
 class Logger:
@@ -26,10 +28,36 @@ class Logger:
     @classmethod
     def configure(cls, config):
         cls._destination = cls._get_destination(config.get_logging_destination())
+
         cls._log_level = cls._get_log_level(config.get_logging_level())
+
         cls._store_to_file = config.get_store_to_file()
-        cls._log_directory = Path(config.get_logging_directory())
-        cls._log_file_name = config.get_logging_file_name()
+
+        directory = config.get_logging_directory().strip()
+        file_name = config.get_logging_file_name().strip()
+
+        cls._log_directory = Path(directory) if directory else None
+        cls._log_file_name = file_name or None
+
+        if cls._store_to_file:
+            if cls._log_directory is None:
+                raise ValueError("Logging directory is required when StoreToFile is enabled")
+
+            if not cls._log_file_name:
+                raise ValueError("Log filename is required when StoreToFile is enabled")
+
+            try:
+                cls._log_directory.mkdir(parents=True, exist_ok=True, )
+
+                # log_file = cls._log_directory / cls._log_file_name
+                log_file = cls._get_log_file_path(datetime.now())
+
+                # Check that the log file can be opened for appending.
+                with log_file.open("a", encoding="utf-8"):
+                    pass
+
+            except OSError as error:
+                raise RuntimeError(f"Unable to initialize file logging: {error}") from error
 
     @classmethod
     def set_store_to_file(cls, store_to_file: bool):
@@ -65,21 +93,22 @@ class Logger:
         if log_level < cls._log_level:
             return
 
-        current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        # current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        current_time = datetime.now()
 
         log_message = (
-            f"[{current_time}] "
+            f"[{current_time.strftime('%Y-%m-%d %H:%M:%S')}] "
             f"[{cls.get_log_level_string(log_level)}] "
             f"{message}"
         )
 
-        if cls._destination == LogDestination.PRINT:
+        if cls._destination in (LogDestination.PRINT, LogDestination.BOTH, ):
             print(log_message)
 
         if cls._store_to_file:
             cls._log_directory.mkdir(parents=True, exist_ok=True)
 
-            log_file = cls._log_directory / cls._log_file_name
+            log_file = cls._get_log_file_path(current_time)
 
             with log_file.open("a", encoding="utf-8") as file:
                 file.write(log_message + "\n")
@@ -99,9 +128,11 @@ class Logger:
     def _get_destination(destination: str) -> LogDestination:
         destinations = {
             "PRINT": LogDestination.PRINT,
+            "FILE": LogDestination.FILE,
+            "BOTH": LogDestination.BOTH,
         }
 
-        return destinations.get(destination.upper(), LogDestination.PRINT)
+        return destinations.get(destination.upper(), LogDestination.PRINT, )
 
     @staticmethod
     def get_log_level_string(log_level: LogLevel) -> str:
@@ -111,3 +142,20 @@ class Logger:
             LogLevel.WARNING: "WARNING",
             LogLevel.ERROR: "ERROR",
         }.get(log_level, "UNKNOWN")
+
+    @classmethod
+    def _get_log_file_path(cls, current_time: datetime) -> Path:
+        """Return the log file path for the current date."""
+        if cls._log_directory is None:
+            raise RuntimeError("Logging directory has not been configured")
+
+        if not cls._log_file_name:
+            raise RuntimeError("Log filename has not been configured")
+
+        configured_file = Path(cls._log_file_name)
+        dated_file_name = (
+            f"{configured_file.stem}_{current_time:%Y-%m-%d}"
+            f"{configured_file.suffix}"
+        )
+
+        return cls._log_directory / dated_file_name

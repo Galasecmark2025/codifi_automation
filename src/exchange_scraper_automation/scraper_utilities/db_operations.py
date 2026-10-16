@@ -485,18 +485,17 @@ def upload_csv_file(connection, csv_file, table_name):
             logger=logger,
         )
 
-        normalize_date_columns(
-            connection=connection,
-            csv_file=csv_file,
-            table_name=table_name,
-            logger=logger,
-        )
-
-        prepare_csv_for_table(
-            connection=connection,
-            csv_file=csv_file,
-            table_name=table_name,
-        )
+        if 'participents' in table_name.lower():
+            logger.info(
+                f"Skipping column-name mapping for participant table: "
+                f"{table_name}. Inserting CSV data directly by column order."
+            )
+        else:
+            prepare_csv_for_table(
+                connection=connection,
+                csv_file=csv_file,
+                table_name=table_name,
+            )
 
         truncate_table(
             connection=connection,

@@ -296,11 +296,7 @@ def get_nse_market_url(config, market):
 
 
 # MAIN NSE DOWNLOAD
-def download_nse_files(
-    task,
-    config,
-    logger=None,
-):
+def download_nse_files(task, config, logger=None, ):
     if logger is None:
         logger = Logger
 
@@ -328,10 +324,38 @@ def download_nse_files(
     filename_prefix = task_details.get("filename_prefix")
     table_name = task_details.get("table_name")
 
-    # APPLICATION CONFIGURATION
+    # DIRECTORY CONFIGURATION
 
-    download_dir = config.get_download_directory()
-    final_files_dir = config.get_final_files_directory()
+    configured_download_dir = task_details.get("local_path")
+
+    if not configured_download_dir:
+        raise ValueError(
+            f"Missing local_path in NSE task configuration "
+            f"| TaskID={task.get('taskid')}"
+        )
+
+    # configured_final_dir = task_details.get("final_files_dir")
+
+    download_dir = os.fspath(configured_download_dir)
+    final_files_dir = download_dir
+
+    # os.makedirs(download_dir, exist_ok=True)
+
+    try:
+        os.makedirs(download_dir, exist_ok=True)
+        os.makedirs(final_files_dir, exist_ok=True)
+        logger.info(f"NSE download and extraction directory: {download_dir}")
+
+    except OSError as error:
+        raise RuntimeError(
+            f"Unable to create NSE download/output directories "
+            f"| TaskID={task.get('taskid')} "
+            f"| DownloadDir={download_dir} "
+            f"| FinalDir={final_files_dir}"
+        ) from error
+
+    logger.info(f"NSE download directory : {download_dir}")
+    logger.info(f"NSE output directory   : {final_files_dir}")
 
     # CONFIG VALIDATION
     if not tab:

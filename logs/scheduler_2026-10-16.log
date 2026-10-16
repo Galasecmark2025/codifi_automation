@@ -1,0 +1,496 @@
+[2026-10-16 17:46:08] [INFO] Data root ready: /home/piyushg/automation/exchange_scraper_automation/data
+[2026-10-16 17:46:08] [INFO] ======================================================================
+[2026-10-16 17:46:08] [INFO] EXCHANGE SCRAPER AUTOMATION STARTING
+[2026-10-16 17:46:08] [INFO] ======================================================================
+[2026-10-16 17:46:08] [INFO] ======================================================================
+[2026-10-16 17:46:08] [INFO] TASK LISTENER STARTED
+[2026-10-16 17:46:08] [INFO] Host: 0.0.0.0
+[2026-10-16 17:46:08] [INFO] Port: 8080
+[2026-10-16 17:46:08] [INFO] Trigger endpoint: POST /trigger
+[2026-10-16 17:46:08] [INFO] Health endpoint: GET /health
+[2026-10-16 17:46:08] [INFO] ======================================================================
+[2026-10-16 17:46:17] [INFO] Listener shutdown requested.
+[2026-10-16 17:46:17] [INFO] Task listener stopped.
+[2026-10-16 17:46:22] [INFO] Data root ready: /home/piyushg/automation/exchange_scraper_automation/data
+[2026-10-16 17:46:22] [INFO] ======================================================================
+[2026-10-16 17:46:22] [INFO] EXCHANGE SCRAPER AUTOMATION STARTING
+[2026-10-16 17:46:22] [INFO] ======================================================================
+[2026-10-16 17:46:23] [INFO] ======================================================================
+[2026-10-16 17:46:23] [INFO] TASK LISTENER STARTED
+[2026-10-16 17:46:23] [INFO] Host: 0.0.0.0
+[2026-10-16 17:46:23] [INFO] Port: 8080
+[2026-10-16 17:46:23] [INFO] Trigger endpoint: POST /trigger
+[2026-10-16 17:46:23] [INFO] Health endpoint: GET /health
+[2026-10-16 17:46:23] [INFO] ======================================================================
+[2026-10-16 17:46:26] [INFO] Trigger received: POST /trigger
+[2026-10-16 17:46:26] [INFO] ======================================================================
+[2026-10-16 17:46:26] [INFO] Task worker thread started.
+[2026-10-16 17:46:26] [INFO] TASK WORKER STARTED
+[2026-10-16 17:46:26] [INFO] ======================================================================
+[2026-10-16 17:46:26] [INFO] Due tasks received from database: 70
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=5 | TaskType=INSERTLOAD_DATA | Alias=BSEEQ Scrip Master
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=11 | TaskType=INSERTLOAD_DATA | Alias=BSEFO Scrip Master
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=13 | TaskType=DOWN | Alias=MCX Scrip Master
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=13 | Protocol=sftp
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=16 | TaskType=DOWN | Alias=NCDEX Scrip Master
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=16 | Protocol=sftp
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=23 | TaskType=INSERTLOAD_DATA | Alias=BSECOM Scrip Master
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=25 | TaskType=DOWN | Alias=NSEEGR Scrip Master
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=25 | Protocol=sftp
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=27 | TaskType=LOAD_BROKER_FILE | Alias=NSEEGR Scrip Master
+[2026-10-16 17:46:26] [WARNING] Unsupported task type | TaskID=27 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=28 | TaskType=DOWN | Alias=BSEEGR Scrip Master
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=28 | Protocol=sftp
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=35 | TaskType=INSERTLOAD_DATA | Alias=BSECUR Scrip Master
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=41 | TaskType=INSERTLOAD_DATA | Alias=BSESLBM Scrip Master
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=43 | TaskType=DOWN | Alias=MSECUR Scrip Master
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=43 | Protocol=sftp
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=46 | TaskType=DOWN | Alias=MSEEQ Scrip Master
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=46 | Protocol=sftp
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=49 | TaskType=DOWN | Alias=MSEFO Scrip Master
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=49 | Protocol=sftp
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=52 | TaskType=DOWN | Alias=NSEOFS Scrip Master
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=52 | Protocol=sftp
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=54 | TaskType=LOAD_BROKER_FILE | Alias=NSEOFS Scrip Master
+[2026-10-16 17:46:26] [WARNING] Unsupported task type | TaskID=54 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=55 | TaskType=DOWN | Alias=BSEOFS Scrip Master
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=55 | Protocol=sftp
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=58 | TaskType=DOWN | Alias=NSEEQ Bhav Copy
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=58 | Protocol=url
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=62 | TaskType=INSERTLOAD_DATA | Alias=BSEEQ Bhav Copy
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=68 | TaskType=INSERTLOAD_DATA | Alias=BSEFO Bhav Copy
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=70 | TaskType=DOWN | Alias=MCX Bhav Copy
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=70 | Protocol=sftp
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=73 | TaskType=DOWN | Alias=NCDEX Bhav Copy
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=73 | Protocol=sftp
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=80 | TaskType=INSERTLOAD_DATA | Alias=BSECOM Bhav Copy
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=82 | TaskType=DOWN | Alias=NSEEGR Bhav Copy
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=82 | Protocol=sftp
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=84 | TaskType=LOAD_BROKER_FILE | Alias=NSEEGR Bhav Copy
+[2026-10-16 17:46:26] [WARNING] Unsupported task type | TaskID=84 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=85 | TaskType=DOWN | Alias=BSEEGR Bhav Copy
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=85 | Protocol=sftp
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=92 | TaskType=INSERTLOAD_DATA | Alias=BSECUR Bhav Copy
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=98 | TaskType=INSERTLOAD_DATA | Alias=BSESLBM Bhav Copy
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=100 | TaskType=DOWN | Alias=MSECUR Bhav Copy
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=100 | Protocol=sftp
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=103 | TaskType=DOWN | Alias=MSEEQ Bhav Copy
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=103 | Protocol=sftp
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=106 | TaskType=DOWN | Alias=MSEFO Bhav Copy
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=106 | Protocol=sftp
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=109 | TaskType=DOWN | Alias=NSEOFS Bhav Copy
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=109 | Protocol=sftp
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=111 | TaskType=LOAD_BROKER_FILE | Alias=NSEOFS Bhav Copy
+[2026-10-16 17:46:26] [WARNING] Unsupported task type | TaskID=111 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=112 | TaskType=DOWN | Alias=BSEOFS Bhav Copy
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=112 | Protocol=sftp
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=118 | TaskType=DOWN | Alias=BSEEQ ELMargin
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=118 | Protocol=sftp
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=123 | TaskType=LOAD_BROKER_FILE | Alias=NSEFO ELMargin
+[2026-10-16 17:46:26] [WARNING] Unsupported task type | TaskID=123 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=124 | TaskType=DOWN | Alias=BSEFO ELMargin
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=124 | Protocol=sftp
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=127 | TaskType=DOWN | Alias=MCX ELMargin
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=127 | Protocol=sftp
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=130 | TaskType=DOWN | Alias=NCDEX ELMargin
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=130 | Protocol=sftp
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=135 | TaskType=LOAD_BROKER_FILE | Alias=NSECOM ELMargin
+[2026-10-16 17:46:26] [WARNING] Unsupported task type | TaskID=135 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=136 | TaskType=DOWN | Alias=BSECOM ELMargin
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=136 | Protocol=sftp
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=141 | TaskType=LOAD_BROKER_FILE | Alias=NSEEGR ELMargin
+[2026-10-16 17:46:26] [WARNING] Unsupported task type | TaskID=141 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=142 | TaskType=DOWN | Alias=BSEEGR ELMargin
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=142 | Protocol=sftp
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=147 | TaskType=LOAD_BROKER_FILE | Alias=NSECUR ELMargin
+[2026-10-16 17:46:26] [WARNING] Unsupported task type | TaskID=147 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=148 | TaskType=DOWN | Alias=BSECUR ELMargin
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=148 | Protocol=sftp
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=153 | TaskType=LOAD_BROKER_FILE | Alias=NSESLBM ELMargin
+[2026-10-16 17:46:26] [WARNING] Unsupported task type | TaskID=153 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=154 | TaskType=DOWN | Alias=BSESLBM ELMargin
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=154 | Protocol=sftp
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=157 | TaskType=DOWN | Alias=MSECUR ELMargin
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=157 | Protocol=sftp
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=160 | TaskType=DOWN | Alias=MSEEQ ELMargin
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=160 | Protocol=sftp
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=163 | TaskType=DOWN | Alias=MSEFO ELMargin
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=163 | Protocol=sftp
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=168 | TaskType=LOAD_BROKER_FILE | Alias=NSEOFS ELMargin
+[2026-10-16 17:46:26] [WARNING] Unsupported task type | TaskID=168 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=169 | TaskType=DOWN | Alias=BSEOFS ELMargin
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=169 | Protocol=sftp
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=174 | TaskType=LOAD_BROKER_FILE | Alias=NSEEQ Participant
+[2026-10-16 17:46:26] [WARNING] Unsupported task type | TaskID=174 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=175 | TaskType=DOWN | Alias=BSEEQ Participant
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=175 | Protocol=sftp
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=180 | TaskType=LOAD_BROKER_FILE | Alias=NSEFO Participant
+[2026-10-16 17:46:26] [WARNING] Unsupported task type | TaskID=180 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=181 | TaskType=DOWN | Alias=BSEFO Participant
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=181 | Protocol=sftp
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=184 | TaskType=DOWN | Alias=MCX Participant
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=184 | Protocol=sftp
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=187 | TaskType=DOWN | Alias=NCDEX Participant
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=187 | Protocol=sftp
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=192 | TaskType=LOAD_BROKER_FILE | Alias=NSECOM Participant
+[2026-10-16 17:46:26] [WARNING] Unsupported task type | TaskID=192 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=193 | TaskType=DOWN | Alias=BSECOM Participant
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=193 | Protocol=sftp
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=196 | TaskType=DOWN | Alias=NSEEGR Participant
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=196 | Protocol=sftp
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=199 | TaskType=DOWN | Alias=BSEEGR Participant
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=199 | Protocol=sftp
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=204 | TaskType=LOAD_BROKER_FILE | Alias=NSECUR Participant
+[2026-10-16 17:46:26] [WARNING] Unsupported task type | TaskID=204 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=205 | TaskType=DOWN | Alias=BSECUR Participant
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=205 | Protocol=sftp
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=210 | TaskType=LOAD_BROKER_FILE | Alias=NSESLBM Participant
+[2026-10-16 17:46:26] [WARNING] Unsupported task type | TaskID=210 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=211 | TaskType=DOWN | Alias=BSESLBM Participant
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=211 | Protocol=sftp
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=214 | TaskType=DOWN | Alias=MSECUR Participant
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=214 | Protocol=sftp
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=217 | TaskType=DOWN | Alias=MSEEQ Participant
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=217 | Protocol=sftp
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=220 | TaskType=DOWN | Alias=MSEFO Participant
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=220 | Protocol=sftp
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=223 | TaskType=DOWN | Alias=NSEOFS Participant
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=223 | Protocol=sftp
+[2026-10-16 17:46:26] [INFO] Dispatching task | TaskID=226 | TaskType=DOWN | Alias=BSEOFS Participant
+[2026-10-16 17:46:26] [INFO] Download protocol selected | TaskID=226 | Protocol=sftp
+[2026-10-16 17:47:40] [INFO] Listener shutdown requested.
+[2026-10-16 17:47:40] [INFO] Task listener stopped.
+[2026-10-16 17:47:45] [INFO] Data root ready: /home/piyushg/automation/exchange_scraper_automation/data
+[2026-10-16 17:47:45] [INFO] ======================================================================
+[2026-10-16 17:47:45] [INFO] EXCHANGE SCRAPER AUTOMATION STARTING
+[2026-10-16 17:47:45] [INFO] ======================================================================
+[2026-10-16 17:47:45] [INFO] ======================================================================
+[2026-10-16 17:47:45] [INFO] TASK LISTENER STARTED
+[2026-10-16 17:47:45] [INFO] Host: 0.0.0.0
+[2026-10-16 17:47:45] [INFO] Port: 8080
+[2026-10-16 17:47:45] [INFO] Trigger endpoint: POST /trigger
+[2026-10-16 17:47:45] [INFO] Health endpoint: GET /health
+[2026-10-16 17:47:45] [INFO] ======================================================================
+[2026-10-16 17:47:54] [INFO] Trigger received: POST /trigger
+[2026-10-16 17:47:54] [INFO] ======================================================================
+[2026-10-16 17:47:54] [INFO] Task worker thread started.
+[2026-10-16 17:47:54] [INFO] TASK WORKER STARTED
+[2026-10-16 17:47:54] [INFO] ======================================================================
+[2026-10-16 17:47:54] [INFO] Due tasks received from database: 70
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=5 | TaskType=INSERTLOAD_DATA | Alias=BSEEQ Scrip Master
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=11 | TaskType=INSERTLOAD_DATA | Alias=BSEFO Scrip Master
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=13 | TaskType=DOWN | Alias=MCX Scrip Master
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=13 | Protocol=sftp
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=16 | TaskType=DOWN | Alias=NCDEX Scrip Master
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=16 | Protocol=sftp
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=23 | TaskType=INSERTLOAD_DATA | Alias=BSECOM Scrip Master
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=25 | TaskType=DOWN | Alias=NSEEGR Scrip Master
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=25 | Protocol=sftp
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=27 | TaskType=LOAD_BROKER_FILE | Alias=NSEEGR Scrip Master
+[2026-10-16 17:47:54] [WARNING] Unsupported task type | TaskID=27 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=28 | TaskType=DOWN | Alias=BSEEGR Scrip Master
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=28 | Protocol=sftp
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=35 | TaskType=INSERTLOAD_DATA | Alias=BSECUR Scrip Master
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=41 | TaskType=INSERTLOAD_DATA | Alias=BSESLBM Scrip Master
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=43 | TaskType=DOWN | Alias=MSECUR Scrip Master
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=43 | Protocol=sftp
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=46 | TaskType=DOWN | Alias=MSEEQ Scrip Master
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=46 | Protocol=sftp
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=49 | TaskType=DOWN | Alias=MSEFO Scrip Master
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=49 | Protocol=sftp
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=52 | TaskType=DOWN | Alias=NSEOFS Scrip Master
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=52 | Protocol=sftp
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=54 | TaskType=LOAD_BROKER_FILE | Alias=NSEOFS Scrip Master
+[2026-10-16 17:47:54] [WARNING] Unsupported task type | TaskID=54 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=55 | TaskType=DOWN | Alias=BSEOFS Scrip Master
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=55 | Protocol=sftp
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=58 | TaskType=DOWN | Alias=NSEEQ Bhav Copy
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=58 | Protocol=url
+[2026-10-16 17:47:54] [INFO] Local directories ready | TaskID=58 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CM | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CM
+[2026-10-16 17:47:54] [INFO] ======================================================================
+[2026-10-16 17:47:54] [INFO] STARTING NSE SCRAPING
+[2026-10-16 17:47:54] [INFO] ======================================================================
+[2026-10-16 17:47:54] [ERROR] Failed to process NSE task TaskID=58: 'Config' object has no attribute 'get_download_directory'
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=62 | TaskType=INSERTLOAD_DATA | Alias=BSEEQ Bhav Copy
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=68 | TaskType=INSERTLOAD_DATA | Alias=BSEFO Bhav Copy
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=70 | TaskType=DOWN | Alias=MCX Bhav Copy
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=70 | Protocol=sftp
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=73 | TaskType=DOWN | Alias=NCDEX Bhav Copy
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=73 | Protocol=sftp
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=80 | TaskType=INSERTLOAD_DATA | Alias=BSECOM Bhav Copy
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=82 | TaskType=DOWN | Alias=NSEEGR Bhav Copy
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=82 | Protocol=sftp
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=84 | TaskType=LOAD_BROKER_FILE | Alias=NSEEGR Bhav Copy
+[2026-10-16 17:47:54] [WARNING] Unsupported task type | TaskID=84 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=85 | TaskType=DOWN | Alias=BSEEGR Bhav Copy
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=85 | Protocol=sftp
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=92 | TaskType=INSERTLOAD_DATA | Alias=BSECUR Bhav Copy
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=98 | TaskType=INSERTLOAD_DATA | Alias=BSESLBM Bhav Copy
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=100 | TaskType=DOWN | Alias=MSECUR Bhav Copy
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=100 | Protocol=sftp
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=103 | TaskType=DOWN | Alias=MSEEQ Bhav Copy
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=103 | Protocol=sftp
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=106 | TaskType=DOWN | Alias=MSEFO Bhav Copy
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=106 | Protocol=sftp
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=109 | TaskType=DOWN | Alias=NSEOFS Bhav Copy
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=109 | Protocol=sftp
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=111 | TaskType=LOAD_BROKER_FILE | Alias=NSEOFS Bhav Copy
+[2026-10-16 17:47:54] [WARNING] Unsupported task type | TaskID=111 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=112 | TaskType=DOWN | Alias=BSEOFS Bhav Copy
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=112 | Protocol=sftp
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=118 | TaskType=DOWN | Alias=BSEEQ ELMargin
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=118 | Protocol=sftp
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=123 | TaskType=LOAD_BROKER_FILE | Alias=NSEFO ELMargin
+[2026-10-16 17:47:54] [WARNING] Unsupported task type | TaskID=123 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=124 | TaskType=DOWN | Alias=BSEFO ELMargin
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=124 | Protocol=sftp
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=127 | TaskType=DOWN | Alias=MCX ELMargin
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=127 | Protocol=sftp
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=130 | TaskType=DOWN | Alias=NCDEX ELMargin
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=130 | Protocol=sftp
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=135 | TaskType=LOAD_BROKER_FILE | Alias=NSECOM ELMargin
+[2026-10-16 17:47:54] [WARNING] Unsupported task type | TaskID=135 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=136 | TaskType=DOWN | Alias=BSECOM ELMargin
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=136 | Protocol=sftp
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=141 | TaskType=LOAD_BROKER_FILE | Alias=NSEEGR ELMargin
+[2026-10-16 17:47:54] [WARNING] Unsupported task type | TaskID=141 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=142 | TaskType=DOWN | Alias=BSEEGR ELMargin
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=142 | Protocol=sftp
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=147 | TaskType=LOAD_BROKER_FILE | Alias=NSECUR ELMargin
+[2026-10-16 17:47:54] [WARNING] Unsupported task type | TaskID=147 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=148 | TaskType=DOWN | Alias=BSECUR ELMargin
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=148 | Protocol=sftp
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=153 | TaskType=LOAD_BROKER_FILE | Alias=NSESLBM ELMargin
+[2026-10-16 17:47:54] [WARNING] Unsupported task type | TaskID=153 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=154 | TaskType=DOWN | Alias=BSESLBM ELMargin
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=154 | Protocol=sftp
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=157 | TaskType=DOWN | Alias=MSECUR ELMargin
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=157 | Protocol=sftp
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=160 | TaskType=DOWN | Alias=MSEEQ ELMargin
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=160 | Protocol=sftp
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=163 | TaskType=DOWN | Alias=MSEFO ELMargin
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=163 | Protocol=sftp
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=168 | TaskType=LOAD_BROKER_FILE | Alias=NSEOFS ELMargin
+[2026-10-16 17:47:54] [WARNING] Unsupported task type | TaskID=168 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=169 | TaskType=DOWN | Alias=BSEOFS ELMargin
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=169 | Protocol=sftp
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=174 | TaskType=LOAD_BROKER_FILE | Alias=NSEEQ Participant
+[2026-10-16 17:47:54] [WARNING] Unsupported task type | TaskID=174 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=175 | TaskType=DOWN | Alias=BSEEQ Participant
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=175 | Protocol=sftp
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=180 | TaskType=LOAD_BROKER_FILE | Alias=NSEFO Participant
+[2026-10-16 17:47:54] [WARNING] Unsupported task type | TaskID=180 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=181 | TaskType=DOWN | Alias=BSEFO Participant
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=181 | Protocol=sftp
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=184 | TaskType=DOWN | Alias=MCX Participant
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=184 | Protocol=sftp
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=187 | TaskType=DOWN | Alias=NCDEX Participant
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=187 | Protocol=sftp
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=192 | TaskType=LOAD_BROKER_FILE | Alias=NSECOM Participant
+[2026-10-16 17:47:54] [WARNING] Unsupported task type | TaskID=192 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=193 | TaskType=DOWN | Alias=BSECOM Participant
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=193 | Protocol=sftp
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=196 | TaskType=DOWN | Alias=NSEEGR Participant
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=196 | Protocol=sftp
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=199 | TaskType=DOWN | Alias=BSEEGR Participant
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=199 | Protocol=sftp
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=204 | TaskType=LOAD_BROKER_FILE | Alias=NSECUR Participant
+[2026-10-16 17:47:54] [WARNING] Unsupported task type | TaskID=204 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=205 | TaskType=DOWN | Alias=BSECUR Participant
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=205 | Protocol=sftp
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=210 | TaskType=LOAD_BROKER_FILE | Alias=NSESLBM Participant
+[2026-10-16 17:47:54] [WARNING] Unsupported task type | TaskID=210 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=211 | TaskType=DOWN | Alias=BSESLBM Participant
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=211 | Protocol=sftp
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=214 | TaskType=DOWN | Alias=MSECUR Participant
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=214 | Protocol=sftp
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=217 | TaskType=DOWN | Alias=MSEEQ Participant
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=217 | Protocol=sftp
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=220 | TaskType=DOWN | Alias=MSEFO Participant
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=220 | Protocol=sftp
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=223 | TaskType=DOWN | Alias=NSEOFS Participant
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=223 | Protocol=sftp
+[2026-10-16 17:47:54] [INFO] Dispatching task | TaskID=226 | TaskType=DOWN | Alias=BSEOFS Participant
+[2026-10-16 17:47:54] [INFO] Download protocol selected | TaskID=226 | Protocol=sftp
+[2026-10-16 17:58:59] [INFO] Listener shutdown requested.
+[2026-10-16 17:58:59] [INFO] Task listener stopped.
+[2026-10-16 17:59:08] [INFO] Data root ready: /home/piyushg/automation/exchange_scraper_automation/data
+[2026-10-16 17:59:08] [INFO] ======================================================================
+[2026-10-16 17:59:08] [INFO] EXCHANGE SCRAPER AUTOMATION STARTING
+[2026-10-16 17:59:08] [INFO] ======================================================================
+[2026-10-16 17:59:08] [INFO] ======================================================================
+[2026-10-16 17:59:08] [INFO] TASK LISTENER STARTED
+[2026-10-16 17:59:08] [INFO] Host: 0.0.0.0
+[2026-10-16 17:59:08] [INFO] Port: 8080
+[2026-10-16 17:59:08] [INFO] Trigger endpoint: POST /trigger
+[2026-10-16 17:59:08] [INFO] Health endpoint: GET /health
+[2026-10-16 17:59:08] [INFO] ======================================================================
+[2026-10-16 17:59:34] [INFO] Trigger received: POST /trigger
+[2026-10-16 17:59:34] [INFO] ======================================================================
+[2026-10-16 17:59:34] [INFO] Task worker thread started.
+[2026-10-16 17:59:34] [INFO] TASK WORKER STARTED
+[2026-10-16 17:59:34] [INFO] ======================================================================
+[2026-10-16 17:59:34] [INFO] Due tasks received from database: 70
+[2026-10-16 17:59:34] [INFO] Dispatching task | TaskID=5 | TaskType=INSERTLOAD_DATA | Alias=BSEEQ Scrip Master
+[2026-10-16 17:59:34] [INFO] Dispatching task | TaskID=11 | TaskType=INSERTLOAD_DATA | Alias=BSEFO Scrip Master
+[2026-10-16 17:59:34] [INFO] Dispatching task | TaskID=13 | TaskType=DOWN | Alias=MCX Scrip Master
+[2026-10-16 17:59:34] [INFO] Download protocol selected | TaskID=13 | Protocol=sftp
+[2026-10-16 17:59:34] [INFO] Dispatching task | TaskID=16 | TaskType=DOWN | Alias=NCDEX Scrip Master
+[2026-10-16 17:59:34] [INFO] Download protocol selected | TaskID=16 | Protocol=sftp
+[2026-10-16 17:59:34] [INFO] Dispatching task | TaskID=23 | TaskType=INSERTLOAD_DATA | Alias=BSECOM Scrip Master
+[2026-10-16 17:59:34] [INFO] Dispatching task | TaskID=25 | TaskType=DOWN | Alias=NSEEGR Scrip Master
+[2026-10-16 17:59:34] [INFO] Download protocol selected | TaskID=25 | Protocol=sftp
+[2026-10-16 17:59:34] [INFO] Dispatching task | TaskID=27 | TaskType=LOAD_BROKER_FILE | Alias=NSEEGR Scrip Master
+[2026-10-16 17:59:34] [WARNING] Unsupported task type | TaskID=27 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:59:34] [INFO] Dispatching task | TaskID=28 | TaskType=DOWN | Alias=BSEEGR Scrip Master
+[2026-10-16 17:59:34] [INFO] Download protocol selected | TaskID=28 | Protocol=sftp
+[2026-10-16 17:59:34] [INFO] Dispatching task | TaskID=35 | TaskType=INSERTLOAD_DATA | Alias=BSECUR Scrip Master
+[2026-10-16 17:59:34] [INFO] Dispatching task | TaskID=41 | TaskType=INSERTLOAD_DATA | Alias=BSESLBM Scrip Master
+[2026-10-16 17:59:34] [INFO] Dispatching task | TaskID=43 | TaskType=DOWN | Alias=MSECUR Scrip Master
+[2026-10-16 17:59:34] [INFO] Download protocol selected | TaskID=43 | Protocol=sftp
+[2026-10-16 17:59:34] [INFO] Dispatching task | TaskID=46 | TaskType=DOWN | Alias=MSEEQ Scrip Master
+[2026-10-16 17:59:34] [INFO] Download protocol selected | TaskID=46 | Protocol=sftp
+[2026-10-16 17:59:34] [INFO] Dispatching task | TaskID=49 | TaskType=DOWN | Alias=MSEFO Scrip Master
+[2026-10-16 17:59:34] [INFO] Download protocol selected | TaskID=49 | Protocol=sftp
+[2026-10-16 17:59:34] [INFO] Dispatching task | TaskID=52 | TaskType=DOWN | Alias=NSEOFS Scrip Master
+[2026-10-16 17:59:34] [INFO] Download protocol selected | TaskID=52 | Protocol=sftp
+[2026-10-16 17:59:34] [INFO] Dispatching task | TaskID=54 | TaskType=LOAD_BROKER_FILE | Alias=NSEOFS Scrip Master
+[2026-10-16 17:59:34] [WARNING] Unsupported task type | TaskID=54 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:59:34] [INFO] Dispatching task | TaskID=55 | TaskType=DOWN | Alias=BSEOFS Scrip Master
+[2026-10-16 17:59:34] [INFO] Download protocol selected | TaskID=55 | Protocol=sftp
+[2026-10-16 17:59:34] [INFO] Dispatching task | TaskID=58 | TaskType=DOWN | Alias=NSEEQ Bhav Copy
+[2026-10-16 17:59:34] [INFO] Download protocol selected | TaskID=58 | Protocol=url
+[2026-10-16 17:59:34] [INFO] Local directories ready | TaskID=58 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CM | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CM
+[2026-10-16 17:59:34] [INFO] ======================================================================
+[2026-10-16 17:59:34] [INFO] STARTING NSE SCRAPING
+[2026-10-16 17:59:34] [INFO] ======================================================================
+[2026-10-16 17:59:34] [INFO] NSE download and extraction directory: /home/piyushg/automation/exchange_scraper_automation/data/NSE/CM
+[2026-10-16 17:59:34] [INFO] NSE download directory : /home/piyushg/automation/exchange_scraper_automation/data/NSE/CM
+[2026-10-16 17:59:34] [INFO] NSE output directory   : /home/piyushg/automation/exchange_scraper_automation/data/NSE/CM
+[2026-10-16 17:59:38] [INFO] Opening NSE market : capital_market
+[2026-10-16 17:59:38] [INFO] Opening NSE page   : https://www.nseindia.com/all-reports
+[2026-10-16 17:59:42] [INFO] Selecting NSE tab : cr_equities
+[2026-10-16 17:59:42] [INFO] NSE tab selected : cr_equities
+[2026-10-16 17:59:42] [INFO] Report found : CM-UDiFF Common Bhavcopy Final (zip)
+[2026-10-16 17:59:42] [INFO] Waiting for download URL : CM-UDiFF Common Bhavcopy Final (zip)
+[2026-10-16 17:59:43] [INFO] Download URL ready : https://nsearchives.nseindia.com/content/cm/BhavCopy_NSE_CM_0_0_0_20261016_F_0000.csv.zip
+[2026-10-16 17:59:43] [INFO] URL safety check passed : BhavCopy_NSE_CM_0_0_0_20261016_F_0000.csv.zip
+[2026-10-16 17:59:43] [INFO] Report Name : CM-UDiFF Common Bhavcopy Final (zip)
+[2026-10-16 17:59:43] [INFO] File Name   : BhavCopy_NSE_CM_0_0_0_20261016_F_0000.csv.zip
+[2026-10-16 17:59:43] [INFO] URL         : https://nsearchives.nseindia.com/content/cm/BhavCopy_NSE_CM_0_0_0_20261016_F_0000.csv.zip
+[2026-10-16 17:59:43] [INFO] Starting download: BhavCopy_NSE_CM_0_0_0_20261016_F_0000.csv.zip
+[2026-10-16 17:59:43] [INFO] Content-Type       : application/zip
+[2026-10-16 17:59:43] [INFO] Content-Length     : 206122
+[2026-10-16 17:59:43] [INFO] Content-Encoding   : None
+[2026-10-16 17:59:43] [INFO] Content-Disposition: None
+[2026-10-16 17:59:43] [INFO] Expected size : 206,122 bytes
+[2026-10-16 17:59:43] [INFO] Download completed : BhavCopy_NSE_CM_0_0_0_20261016_F_0000.csv.zip
+[2026-10-16 17:59:43] [INFO] Downloaded size    : 206,122 bytes
+[2026-10-16 17:59:43] [INFO] ZIP extracted to: /home/piyushg/automation/exchange_scraper_automation/data/NSE/CM | Files extracted: 1
+[2026-10-16 17:59:43] [INFO] CSV Copied : /home/piyushg/automation/exchange_scraper_automation/data/NSE/CM/tbl_TempBhavCopyNSEEQ_20261016.csv
+[2026-10-16 17:59:43] [INFO] CSV columns converted to lowercase: /home/piyushg/automation/exchange_scraper_automation/data/NSE/CM/tbl_TempBhavCopyNSEEQ_20261016.csv
+[2026-10-16 17:59:43] [INFO] NSE task completed: NSEEQ Bhav Copy
+[2026-10-16 17:59:43] [INFO] Task marked COMPLETED: TaskID=58
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=62 | TaskType=INSERTLOAD_DATA | Alias=BSEEQ Bhav Copy
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=68 | TaskType=INSERTLOAD_DATA | Alias=BSEFO Bhav Copy
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=70 | TaskType=DOWN | Alias=MCX Bhav Copy
+[2026-10-16 17:59:43] [INFO] Download protocol selected | TaskID=70 | Protocol=sftp
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=73 | TaskType=DOWN | Alias=NCDEX Bhav Copy
+[2026-10-16 17:59:43] [INFO] Download protocol selected | TaskID=73 | Protocol=sftp
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=80 | TaskType=INSERTLOAD_DATA | Alias=BSECOM Bhav Copy
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=82 | TaskType=DOWN | Alias=NSEEGR Bhav Copy
+[2026-10-16 17:59:43] [INFO] Download protocol selected | TaskID=82 | Protocol=sftp
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=84 | TaskType=LOAD_BROKER_FILE | Alias=NSEEGR Bhav Copy
+[2026-10-16 17:59:43] [WARNING] Unsupported task type | TaskID=84 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=85 | TaskType=DOWN | Alias=BSEEGR Bhav Copy
+[2026-10-16 17:59:43] [INFO] Download protocol selected | TaskID=85 | Protocol=sftp
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=92 | TaskType=INSERTLOAD_DATA | Alias=BSECUR Bhav Copy
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=98 | TaskType=INSERTLOAD_DATA | Alias=BSESLBM Bhav Copy
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=100 | TaskType=DOWN | Alias=MSECUR Bhav Copy
+[2026-10-16 17:59:43] [INFO] Download protocol selected | TaskID=100 | Protocol=sftp
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=103 | TaskType=DOWN | Alias=MSEEQ Bhav Copy
+[2026-10-16 17:59:43] [INFO] Download protocol selected | TaskID=103 | Protocol=sftp
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=106 | TaskType=DOWN | Alias=MSEFO Bhav Copy
+[2026-10-16 17:59:43] [INFO] Download protocol selected | TaskID=106 | Protocol=sftp
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=109 | TaskType=DOWN | Alias=NSEOFS Bhav Copy
+[2026-10-16 17:59:43] [INFO] Download protocol selected | TaskID=109 | Protocol=sftp
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=111 | TaskType=LOAD_BROKER_FILE | Alias=NSEOFS Bhav Copy
+[2026-10-16 17:59:43] [WARNING] Unsupported task type | TaskID=111 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=112 | TaskType=DOWN | Alias=BSEOFS Bhav Copy
+[2026-10-16 17:59:43] [INFO] Download protocol selected | TaskID=112 | Protocol=sftp
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=118 | TaskType=DOWN | Alias=BSEEQ ELMargin
+[2026-10-16 17:59:43] [INFO] Download protocol selected | TaskID=118 | Protocol=sftp
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=123 | TaskType=LOAD_BROKER_FILE | Alias=NSEFO ELMargin
+[2026-10-16 17:59:43] [WARNING] Unsupported task type | TaskID=123 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=124 | TaskType=DOWN | Alias=BSEFO ELMargin
+[2026-10-16 17:59:43] [INFO] Download protocol selected | TaskID=124 | Protocol=sftp
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=127 | TaskType=DOWN | Alias=MCX ELMargin
+[2026-10-16 17:59:43] [INFO] Download protocol selected | TaskID=127 | Protocol=sftp
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=130 | TaskType=DOWN | Alias=NCDEX ELMargin
+[2026-10-16 17:59:43] [INFO] Download protocol selected | TaskID=130 | Protocol=sftp
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=135 | TaskType=LOAD_BROKER_FILE | Alias=NSECOM ELMargin
+[2026-10-16 17:59:43] [WARNING] Unsupported task type | TaskID=135 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=136 | TaskType=DOWN | Alias=BSECOM ELMargin
+[2026-10-16 17:59:43] [INFO] Download protocol selected | TaskID=136 | Protocol=sftp
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=141 | TaskType=LOAD_BROKER_FILE | Alias=NSEEGR ELMargin
+[2026-10-16 17:59:43] [WARNING] Unsupported task type | TaskID=141 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=142 | TaskType=DOWN | Alias=BSEEGR ELMargin
+[2026-10-16 17:59:43] [INFO] Download protocol selected | TaskID=142 | Protocol=sftp
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=147 | TaskType=LOAD_BROKER_FILE | Alias=NSECUR ELMargin
+[2026-10-16 17:59:43] [WARNING] Unsupported task type | TaskID=147 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=148 | TaskType=DOWN | Alias=BSECUR ELMargin
+[2026-10-16 17:59:43] [INFO] Download protocol selected | TaskID=148 | Protocol=sftp
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=153 | TaskType=LOAD_BROKER_FILE | Alias=NSESLBM ELMargin
+[2026-10-16 17:59:43] [WARNING] Unsupported task type | TaskID=153 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=154 | TaskType=DOWN | Alias=BSESLBM ELMargin
+[2026-10-16 17:59:43] [INFO] Download protocol selected | TaskID=154 | Protocol=sftp
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=157 | TaskType=DOWN | Alias=MSECUR ELMargin
+[2026-10-16 17:59:43] [INFO] Download protocol selected | TaskID=157 | Protocol=sftp
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=160 | TaskType=DOWN | Alias=MSEEQ ELMargin
+[2026-10-16 17:59:43] [INFO] Download protocol selected | TaskID=160 | Protocol=sftp
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=163 | TaskType=DOWN | Alias=MSEFO ELMargin
+[2026-10-16 17:59:43] [INFO] Download protocol selected | TaskID=163 | Protocol=sftp
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=168 | TaskType=LOAD_BROKER_FILE | Alias=NSEOFS ELMargin
+[2026-10-16 17:59:43] [WARNING] Unsupported task type | TaskID=168 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=169 | TaskType=DOWN | Alias=BSEOFS ELMargin
+[2026-10-16 17:59:43] [INFO] Download protocol selected | TaskID=169 | Protocol=sftp
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=174 | TaskType=LOAD_BROKER_FILE | Alias=NSEEQ Participant
+[2026-10-16 17:59:43] [WARNING] Unsupported task type | TaskID=174 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=175 | TaskType=DOWN | Alias=BSEEQ Participant
+[2026-10-16 17:59:43] [INFO] Download protocol selected | TaskID=175 | Protocol=sftp
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=180 | TaskType=LOAD_BROKER_FILE | Alias=NSEFO Participant
+[2026-10-16 17:59:43] [WARNING] Unsupported task type | TaskID=180 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=181 | TaskType=DOWN | Alias=BSEFO Participant
+[2026-10-16 17:59:43] [INFO] Download protocol selected | TaskID=181 | Protocol=sftp
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=184 | TaskType=DOWN | Alias=MCX Participant
+[2026-10-16 17:59:43] [INFO] Download protocol selected | TaskID=184 | Protocol=sftp
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=187 | TaskType=DOWN | Alias=NCDEX Participant
+[2026-10-16 17:59:43] [INFO] Download protocol selected | TaskID=187 | Protocol=sftp
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=192 | TaskType=LOAD_BROKER_FILE | Alias=NSECOM Participant
+[2026-10-16 17:59:43] [WARNING] Unsupported task type | TaskID=192 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=193 | TaskType=DOWN | Alias=BSECOM Participant
+[2026-10-16 17:59:43] [INFO] Download protocol selected | TaskID=193 | Protocol=sftp
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=196 | TaskType=DOWN | Alias=NSEEGR Participant
+[2026-10-16 17:59:43] [INFO] Download protocol selected | TaskID=196 | Protocol=sftp
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=199 | TaskType=DOWN | Alias=BSEEGR Participant
+[2026-10-16 17:59:43] [INFO] Download protocol selected | TaskID=199 | Protocol=sftp
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=204 | TaskType=LOAD_BROKER_FILE | Alias=NSECUR Participant
+[2026-10-16 17:59:43] [WARNING] Unsupported task type | TaskID=204 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=205 | TaskType=DOWN | Alias=BSECUR Participant
+[2026-10-16 17:59:43] [INFO] Download protocol selected | TaskID=205 | Protocol=sftp
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=210 | TaskType=LOAD_BROKER_FILE | Alias=NSESLBM Participant
+[2026-10-16 17:59:43] [WARNING] Unsupported task type | TaskID=210 | TaskType=LOAD_BROKER_FILE
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=211 | TaskType=DOWN | Alias=BSESLBM Participant
+[2026-10-16 17:59:43] [INFO] Download protocol selected | TaskID=211 | Protocol=sftp
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=214 | TaskType=DOWN | Alias=MSECUR Participant
+[2026-10-16 17:59:43] [INFO] Download protocol selected | TaskID=214 | Protocol=sftp
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=217 | TaskType=DOWN | Alias=MSEEQ Participant
+[2026-10-16 17:59:43] [INFO] Download protocol selected | TaskID=217 | Protocol=sftp
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=220 | TaskType=DOWN | Alias=MSEFO Participant
+[2026-10-16 17:59:43] [INFO] Download protocol selected | TaskID=220 | Protocol=sftp
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=223 | TaskType=DOWN | Alias=NSEOFS Participant
+[2026-10-16 17:59:43] [INFO] Download protocol selected | TaskID=223 | Protocol=sftp
+[2026-10-16 17:59:43] [INFO] Dispatching task | TaskID=226 | TaskType=DOWN | Alias=BSEOFS Participant
+[2026-10-16 17:59:43] [INFO] Download protocol selected | TaskID=226 | Protocol=sftp
+[2026-10-16 18:00:11] [INFO] Listener shutdown requested.
+[2026-10-16 18:00:11] [INFO] Task listener stopped.

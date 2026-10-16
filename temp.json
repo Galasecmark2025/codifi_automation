@@ -2,24 +2,6 @@
 [
   {
     "protocol": "url",
-    "filename": "tbl_TempBhavCopyNSEEQ_20261009.csv",
-    "filepath": "/home/piyushg/automation/exchange_scraper_automation/final_data",
-    "tablename": "tbl_nseeq_bhavcopy_ud"
-  },
-  {
-    "protocol": "url",
-    "filename": "tbl_TempBhavCopyNSECO_20261009.csv",
-    "filepath": "/home/piyushg/automation/exchange_scraper_automation/final_data",
-    "tablename": "tbl_nsecom_bhavcopy_ud"
-  },
-  {
-    "protocol": "url",
-    "filename": "tbl_TempBhavCopyNSECU_20261009.csv",
-    "filepath": "/home/piyushg/automation/exchange_scraper_automation/final_data",
-    "tablename": "tbl_nsecur_bhavcopy_ud"
-  },
-  {
-    "protocol": "url",
     "file_type": "COM_CONTRACTMASTER",
     "segment": "COM",
     "data_type": "ContractMaster",
@@ -27,7 +9,8 @@
     "url": "https://www.bseindia.com/downloads1/COMMaster.zip",
     "file_extension": ".zip",
     "zip_file": "BSE_BCX_CONTRACT*.csv",
-    "table_name": "tbl_TempScripMasterBSECO"
+    "table_name": "tbl_TempScripMasterBSECO", 
+    "local_path": "/BSE/CO"
   },
   {
     "protocol": "url",
@@ -38,7 +21,8 @@
     "url": "https://www.bseindia.com/downloads1/SLB_Securities.zip",
     "file_extension": ".zip",
     "zip_file": "all",
-    "table_name": "tbl_TempScripMasterBSESLBM"
+    "table_name": "tbl_TempScripMasterBSESLBM", 
+    "local_path": "/BSE/SLB"
   },
   {
     "protocol": "url",
@@ -70,7 +54,8 @@
       "fifty_two_week_low",
       "trade_date",
       "number_of_trades"
-    ]
+    ], 
+    "local_path": "/NSE/SLB"
   },
   {
     "protocol": "url",
@@ -83,7 +68,8 @@
     "file_extension": ".dat",
     "url_contains": "/archives/nsccl/var/",
     "filename_prefix": "C_VAR1_",
-    "table_name": "tbl_TempMarginDetailNSEEQ"
+    "table_name": "tbl_TempMarginDetailNSEEQ", 
+    "local_path": "/NSE/CM"
   },
   {
     "protocol": "url",
@@ -96,7 +82,8 @@
     "file_extension": ".gz",
     "url_contains": "/content/fo/interop/",
     "filename_prefix": "NSE_FO_contract_",
-    "table_name": "tbl_TempScripMasterNSEFO"
+    "table_name": "tbl_TempScripMasterNSEFO", 
+    "local_path": "/NSE/FO"
   },
   {
     "protocol": "url",
@@ -109,7 +96,8 @@
     "file_extension": ".gz",
     "url_contains": "/content/com/",
     "filename_prefix": "NSE_COM_contract_",
-    "table_name": "tbl_TempScripMasterNSECO"
+    "table_name": "tbl_TempScripMasterNSECO", 
+    "local_path": "/NSE/CO"
   },
   {
     "protocol": "url",
@@ -120,7 +108,8 @@
     "url": "https://www.bseindia.com/downloads1/Master.zip",
     "file_extension": ".zip",
     "zip_file": "BSE_BFX_CONTRACT_*.csv",
-    "table_name": "tbl_TempScripMasterBSECU"
+    "table_name": "tbl_TempScripMasterBSECU", 
+    "local_path": "/BSE/CD"
   },
   {
     "protocol": "url",
@@ -131,7 +120,8 @@
     "url": "https://beta.bseindia.com/downloads/Help/file/scrip.zip",
     "file_extension": ".zip",
     "zip_file": "BSE_EQ_SCRIP*.csv",
-    "table_name": "tbl_TempScripMasterBSEEQ"
+    "table_name": "tbl_TempScripMasterBSEEQ", 
+    "local_path": "/BSE/CM"
   },
   {
     "protocol": "url",
@@ -142,7 +132,8 @@
     "url": "https://www.bseindia.com/downloads/Help/file/CO.zip",
     "file_extension": ".zip",
     "zip_file": "BSE_EQD_CONTRACT*.csv",
-    "table_name": "tbl_TempScripMasterBSEFO"
+    "table_name": "tbl_TempScripMasterBSEFO", 
+    "local_path": "/BSE/FO"
   },
   {
     "protocol": "url",
@@ -155,13 +146,8 @@
     "file_extension": ".gz",
     "url_contains": "/content/cd/",
     "filename_prefix": "NSE_CD_spdcontract_",
-    "table_name": "tbl_TempSpreadScripMasterNSECU"
-  },
-  {
-    "protocol": "url",
-    "filename": "tbl_TempBhavCopyNSEFO_20261009.csv",
-    "filepath": "/home/piyushg/automation/exchange_scraper_automation/final_data",
-    "tablename": "tbl_nsefo_bhavcopy_ud"
+    "table_name": "tbl_TempSpreadScripMasterNSECU", 
+    "local_path": "/NSE/CD"
   },
   {
     "protocol": "url",
@@ -174,7 +160,8 @@
     "file_extension": ".csv",
     "url_contains": "/archives/slbs/seclist/",
     "filename_prefix": "SLB_ELG_SEC_",
-    "table_name": "tbl_TempScripMasterNSESLB"
+    "table_name": "tbl_TempScripMasterNSESLB", 
+    "local_path": "/NSE/SLB"
   },
   {
     "protocol": "url",
@@ -187,7 +174,8 @@
     "file_extension": ".zip",
     "url_contains": "/content/cm/",
     "filename_prefix": "BhavCopy_NSE_CM_",
-    "table_name": "tbl_TempBhavCopyNSEEQ"
+    "table_name": "tbl_TempBhavCopyNSEEQ", 
+    "local_path": "/NSE/CM"
   },
   {
     "protocol": "url",
@@ -196,7 +184,8 @@
     "data_type": "Bhavcopy",
     "download_path": "https://www.bseindia.com/download/BhavCopy/Equity/",
     "file_extension": ".csv",
-    "table_name": "tbl_TempBhavCopyBSEEQ"
+    "table_name": "tbl_TempBhavCopyBSEEQ", 
+    "local_path": "/BSE/CM"
   },
   {
     "protocol": "url",
@@ -209,7 +198,8 @@
     "file_extension": ".zip",
     "url_contains": "/content/fo/",
     "filename_prefix": "BhavCopy_NSE_FO_",
-    "table_name": "tbl_TempBhavCopyNSEFO"
+    "table_name": "tbl_TempBhavCopyNSEFO", 
+    "local_path": "/NSE/FO"
   },
   {
     "protocol": "url",
@@ -218,7 +208,8 @@
     "data_type": "Bhavcopy",
     "download_path": "https://www.bseindia.com/download/BhavCopy/Commodity/Csv/",
     "file_extension": ".csv",
-    "table_name": "tbl_TempBhavCopyBSECO"
+    "table_name": "tbl_TempBhavCopyBSECO", 
+    "local_path": "/BSE/CO"
   },
   {
     "protocol": "url",
@@ -228,7 +219,8 @@
     "download_path": "https://www.bseindia.com/download/BhavCopy/Derivative/",
     "file_extension": ".csv",
     "zip_file": "EQD_CO*.csv",
-    "table_name": "tbl_TempBhavCopyBSEFO"
+    "table_name": "tbl_TempBhavCopyBSEFO", 
+    "local_path": "/BSE/FO"
   },
   {
     "protocol": "url",
@@ -241,7 +233,8 @@
     "file_extension": ".zip",
     "url_contains": "/content/com/",
     "filename_prefix": "BhavCopy_NSE_CO_",
-    "table_name": "tbl_TempBhavCopyNSECO"
+    "table_name": "tbl_TempBhavCopyNSECO", 
+    "local_path": "/NSE/CO"
   },
   {
     "protocol": "url",
@@ -254,7 +247,8 @@
     "file_extension": ".zip",
     "url_contains": "/archives/cd/bhav/",
     "filename_prefix": "BhavCopy_NSE_CD_",
-    "table_name": "tbl_TempBhavCopyNSECU"
+    "table_name": "tbl_TempBhavCopyNSECU", 
+    "local_path": "/NSE/CD"
   },
   {
     "protocol": "url",
@@ -263,7 +257,8 @@
     "data_type": "Bhavcopy",
     "download_path": "https://www.bseindia.com/bsedata/CIML_bhavcopy/",
     "file_extension": ".csv",
-    "table_name": "tbl_TempBhavCopyBSECU"
+    "table_name": "tbl_TempBhavCopyBSECU", 
+    "local_path": "/BSE/CD"
   },
   {
     "protocol": "url",
@@ -276,6 +271,7 @@
     "file_prefix": "BSESLB_BhavCopy_",
     "file_extension": ".csv",
     "table_name": "tbl_TempBhavCopyBSESLB",
-    "zip_file": "all"
+    "zip_file": "all", 
+    "local_path": "/BSE/SLB"
   }
 ]
