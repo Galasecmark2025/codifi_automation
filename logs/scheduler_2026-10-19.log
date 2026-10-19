@@ -1,0 +1,1655 @@
+[2026-10-19 11:29:36] [INFO] Data root ready: /home/piyushg/automation/exchange_scraper_automation/data
+[2026-10-19 11:29:36] [INFO] ======================================================================
+[2026-10-19 11:29:36] [INFO] EXCHANGE SCRAPER AUTOMATION STARTING
+[2026-10-19 11:29:36] [INFO] ======================================================================
+[2026-10-19 11:29:36] [INFO] ======================================================================
+[2026-10-19 11:29:36] [INFO] TASK LISTENER STARTED
+[2026-10-19 11:29:36] [INFO] Host: 0.0.0.0
+[2026-10-19 11:29:36] [INFO] Port: 8080
+[2026-10-19 11:29:36] [INFO] Trigger endpoint: POST /trigger
+[2026-10-19 11:29:36] [INFO] Health endpoint: GET /health
+[2026-10-19 11:29:36] [INFO] ======================================================================
+[2026-10-19 11:29:38] [INFO] Trigger received: POST /trigger
+[2026-10-19 11:29:38] [INFO] ======================================================================
+[2026-10-19 11:29:38] [INFO] TASK WORKER STARTED
+[2026-10-19 11:29:38] [INFO] ======================================================================
+[2026-10-19 11:29:38] [INFO] Task worker thread started.
+[2026-10-19 11:29:38] [INFO] Due tasks received from database: 52
+[2026-10-19 11:29:38] [INFO] Dispatching task | TaskID=1 | TaskType=DOWN | Alias=NSEEQ Scrip Master
+[2026-10-19 11:29:38] [INFO] Download protocol selected | TaskID=1 | Protocol=sftp
+[2026-10-19 11:29:38] [INFO] Local directories ready | TaskID=1 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CM | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CM
+[2026-10-19 11:29:38] [INFO] Searching remote files | Protocol=SFTP | Host=20.40.232.163 | Directory=/CM | Pattern=NSE_CM_security_*.csv.gz
+[2026-10-19 11:29:41] [INFO] Selected remote file | Remote=/CM/NSE_CM_security_22092026 (1).csv.gz | Local=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CM/NSE_CM_security_22092026 (1).csv.gz
+[2026-10-19 11:29:47] [INFO] Download completed successfully | Local=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CM/NSE_CM_security_22092026 (1).csv.gz | Size=1529499 bytes
+[2026-10-19 11:29:47] [INFO] Download directory ready | TaskID=1 | Directory=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CM
+[2026-10-19 11:29:47] [INFO] Searching remote files | Protocol=SFTP | Host=20.40.232.163 | Directory=/CM | Pattern=NSE_CM_security_*.csv.gz
+[2026-10-19 11:29:50] [INFO] Selected remote file | Remote=/CM/NSE_CM_security_22092026 (1).csv.gz | Local=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CM/NSE_CM_security_22092026 (1).csv.gz
+[2026-10-19 11:29:56] [INFO] Download completed successfully | Local=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CM/NSE_CM_security_22092026 (1).csv.gz | Size=1529499 bytes
+[2026-10-19 11:29:56] [INFO] Resolved output filename | TaskID=1 | Downloaded=NSE_CM_security_22092026 (1).csv.gz | Output=NSE_CM_security_22092026 (1).csv
+[2026-10-19 11:29:56] [INFO] GZ Extracted : /home/piyushg/automation/exchange_scraper_automation/data/NSE/CM/NSE_CM_security_22092026 (1).csv
+[2026-10-19 11:29:57] [INFO] CSV columns converted to lowercase: /home/piyushg/automation/exchange_scraper_automation/data/NSE/CM/NSE_CM_security_22092026 (1).csv
+[2026-10-19 11:29:57] [INFO] FTP/SFTP download and post-processing completed | TaskID=1 | Downloaded=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CM/NSE_CM_security_22092026 (1).csv.gz | Processed=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CM/NSE_CM_security_22092026 (1).csv
+[2026-10-19 11:29:57] [INFO] Task marked COMPLETED: TaskID=1
+[2026-10-19 11:29:57] [INFO] Dispatching task | TaskID=4 | TaskType=DOWN | Alias=BSEEQ Scrip Master
+[2026-10-19 11:29:57] [INFO] Download protocol selected | TaskID=4 | Protocol=url
+[2026-10-19 11:29:57] [INFO] Local directories ready | TaskID=4 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/CM | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/CM
+[2026-10-19 11:29:57] [ERROR] Failed to process task 4: 'Config' object has no attribute 'get_download_directory'
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 486, in dispatch_task
+    return self.process_url_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 342, in process_url_download
+    return scrape_bse(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/bse/scrape_bse.py", line 515, in scrape_bse
+    download_dir = config.get_download_directory()
+AttributeError: 'Config' object has no attribute 'get_download_directory'
+
+[2026-10-19 11:29:57] [INFO] Dispatching task | TaskID=7 | TaskType=DOWN | Alias=NSEFO Scrip Master
+[2026-10-19 11:29:57] [INFO] Download protocol selected | TaskID=7 | Protocol=url
+[2026-10-19 11:29:57] [INFO] Local directories ready | TaskID=7 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/NSE/FO | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/NSE/FO
+[2026-10-19 11:29:57] [INFO] ======================================================================
+[2026-10-19 11:29:57] [INFO] STARTING NSE SCRAPING
+[2026-10-19 11:29:57] [INFO] ======================================================================
+[2026-10-19 11:29:57] [INFO] NSE download and extraction directory: /home/piyushg/automation/exchange_scraper_automation/data/NSE/FO
+[2026-10-19 11:29:57] [INFO] NSE download directory : /home/piyushg/automation/exchange_scraper_automation/data/NSE/FO
+[2026-10-19 11:29:57] [INFO] NSE output directory   : /home/piyushg/automation/exchange_scraper_automation/data/NSE/FO
+[2026-10-19 11:29:58] [INFO] Opening NSE market : derivatives
+[2026-10-19 11:29:58] [INFO] Opening NSE page   : https://www.nseindia.com/all-reports-derivatives
+[2026-10-19 11:30:01] [INFO] Selecting NSE tab : cr_derv_equities
+[2026-10-19 11:30:02] [INFO] NSE tab selected : cr_derv_equities
+[2026-10-19 11:30:02] [INFO] Report found : F&O-MII – Contract File (.gz) (NSE and BSE Exclusive Contract)
+[2026-10-19 11:30:02] [INFO] Waiting for download URL : F&O-MII – Contract File (.gz) (NSE and BSE Exclusive Contract)
+[2026-10-19 11:30:02] [INFO] Download URL ready : https://nsearchives.nseindia.com/content/fo/interop/NSE_FO_contract_16102026.csv.gz
+[2026-10-19 11:30:02] [INFO] URL safety check passed : NSE_FO_contract_16102026.csv.gz
+[2026-10-19 11:30:02] [INFO] Report Name : F&O-MII – Contract File (.gz) (NSE and BSE Exclusive Contract)
+[2026-10-19 11:30:02] [INFO] File Name   : NSE_FO_contract_16102026.csv.gz
+[2026-10-19 11:30:02] [INFO] URL         : https://nsearchives.nseindia.com/content/fo/interop/NSE_FO_contract_16102026.csv.gz
+[2026-10-19 11:30:02] [INFO] Starting download: NSE_FO_contract_16102026.csv.gz
+[2026-10-19 11:30:02] [INFO] Content-Type       : application/x-gzip
+[2026-10-19 11:30:02] [INFO] Content-Length     : 1833616
+[2026-10-19 11:30:02] [INFO] Content-Encoding   : None
+[2026-10-19 11:30:02] [INFO] Content-Disposition: None
+[2026-10-19 11:30:02] [INFO] Expected size : 1,833,616 bytes
+[2026-10-19 11:30:02] [INFO] Download completed : NSE_FO_contract_16102026.csv.gz
+[2026-10-19 11:30:02] [INFO] Downloaded size    : 1,833,616 bytes
+[2026-10-19 11:30:02] [INFO] GZ Extracted : /home/piyushg/automation/exchange_scraper_automation/data/NSE/FO/tbl_TempScripMasterNSEFO_20261016.csv
+[2026-10-19 11:30:06] [INFO] CSV columns converted to lowercase: /home/piyushg/automation/exchange_scraper_automation/data/NSE/FO/tbl_TempScripMasterNSEFO_20261016.csv
+[2026-10-19 11:30:06] [INFO] NSE task completed: NSEFO Scrip Master
+[2026-10-19 11:30:06] [INFO] Task marked COMPLETED: TaskID=7
+[2026-10-19 11:30:06] [INFO] Dispatching task | TaskID=10 | TaskType=DOWN | Alias=BSEFO Scrip Master
+[2026-10-19 11:30:06] [INFO] Download protocol selected | TaskID=10 | Protocol=url
+[2026-10-19 11:30:06] [INFO] Local directories ready | TaskID=10 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/FO | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/FO
+[2026-10-19 11:30:06] [ERROR] Failed to process task 10: 'Config' object has no attribute 'get_download_directory'
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 486, in dispatch_task
+    return self.process_url_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 342, in process_url_download
+    return scrape_bse(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/bse/scrape_bse.py", line 515, in scrape_bse
+    download_dir = config.get_download_directory()
+AttributeError: 'Config' object has no attribute 'get_download_directory'
+
+[2026-10-19 11:30:06] [INFO] Dispatching task | TaskID=13 | TaskType=DOWN | Alias=MCX Scrip Master
+[2026-10-19 11:30:06] [INFO] Download protocol selected | TaskID=13 | Protocol=sftp
+[2026-10-19 11:30:06] [INFO] Local directories ready | TaskID=13 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/MCX | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/MCX
+[2026-10-19 11:30:06] [ERROR] Failed to process task 13: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:30:06] [INFO] Dispatching task | TaskID=16 | TaskType=DOWN | Alias=NCDEX Scrip Master
+[2026-10-19 11:30:06] [INFO] Download protocol selected | TaskID=16 | Protocol=sftp
+[2026-10-19 11:30:06] [INFO] Local directories ready | TaskID=16 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/NCDEX | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/NCDEX
+[2026-10-19 11:30:06] [ERROR] Failed to process task 16: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:30:06] [INFO] Dispatching task | TaskID=19 | TaskType=DOWN | Alias=NSECOM Scrip Master
+[2026-10-19 11:30:06] [INFO] Download protocol selected | TaskID=19 | Protocol=url
+[2026-10-19 11:30:06] [INFO] Local directories ready | TaskID=19 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CO | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CO
+[2026-10-19 11:30:06] [INFO] ======================================================================
+[2026-10-19 11:30:06] [INFO] STARTING NSE SCRAPING
+[2026-10-19 11:30:06] [INFO] ======================================================================
+[2026-10-19 11:30:06] [INFO] NSE download and extraction directory: /home/piyushg/automation/exchange_scraper_automation/data/NSE/CO
+[2026-10-19 11:30:06] [INFO] NSE download directory : /home/piyushg/automation/exchange_scraper_automation/data/NSE/CO
+[2026-10-19 11:30:06] [INFO] NSE output directory   : /home/piyushg/automation/exchange_scraper_automation/data/NSE/CO
+[2026-10-19 11:30:07] [INFO] Opening NSE market : derivatives
+[2026-10-19 11:30:07] [INFO] Opening NSE page   : https://www.nseindia.com/all-reports-derivatives
+[2026-10-19 11:30:10] [INFO] Selecting NSE tab : cr_derv_commodity
+[2026-10-19 11:30:10] [INFO] NSE tab selected : cr_derv_commodity
+[2026-10-19 11:30:10] [INFO] Report found : COM-MII - Contract Files (.gz)
+[2026-10-19 11:30:10] [INFO] Waiting for download URL : COM-MII - Contract Files (.gz)
+[2026-10-19 11:30:10] [INFO] Download URL ready : https://nsearchives.nseindia.com/content/com/NSE_COM_contract_16102026.csv.gz
+[2026-10-19 11:30:10] [INFO] URL safety check passed : NSE_COM_contract_16102026.csv.gz
+[2026-10-19 11:30:10] [INFO] Report Name : COM-MII - Contract Files (.gz)
+[2026-10-19 11:30:10] [INFO] File Name   : NSE_COM_contract_16102026.csv.gz
+[2026-10-19 11:30:10] [INFO] URL         : https://nsearchives.nseindia.com/content/com/NSE_COM_contract_16102026.csv.gz
+[2026-10-19 11:30:10] [INFO] Starting download: NSE_COM_contract_16102026.csv.gz
+[2026-10-19 11:30:11] [INFO] Content-Type       : application/x-gzip
+[2026-10-19 11:30:11] [INFO] Content-Length     : 546723
+[2026-10-19 11:30:11] [INFO] Content-Encoding   : None
+[2026-10-19 11:30:11] [INFO] Content-Disposition: None
+[2026-10-19 11:30:11] [INFO] Expected size : 546,723 bytes
+[2026-10-19 11:30:11] [INFO] Download completed : NSE_COM_contract_16102026.csv.gz
+[2026-10-19 11:30:11] [INFO] Downloaded size    : 546,723 bytes
+[2026-10-19 11:30:11] [INFO] GZ Extracted : /home/piyushg/automation/exchange_scraper_automation/data/NSE/CO/tbl_TempScripMasterNSECO_20261016.csv
+[2026-10-19 11:30:12] [INFO] CSV columns converted to lowercase: /home/piyushg/automation/exchange_scraper_automation/data/NSE/CO/tbl_TempScripMasterNSECO_20261016.csv
+[2026-10-19 11:30:12] [INFO] NSE task completed: NSECOM Scrip Master
+[2026-10-19 11:30:12] [INFO] Task marked COMPLETED: TaskID=19
+[2026-10-19 11:30:12] [INFO] Dispatching task | TaskID=22 | TaskType=DOWN | Alias=BSECOM Scrip Master
+[2026-10-19 11:30:12] [INFO] Download protocol selected | TaskID=22 | Protocol=url
+[2026-10-19 11:30:12] [INFO] Local directories ready | TaskID=22 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/CO | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/CO
+[2026-10-19 11:30:12] [ERROR] Failed to process task 22: 'Config' object has no attribute 'get_download_directory'
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 486, in dispatch_task
+    return self.process_url_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 342, in process_url_download
+    return scrape_bse(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/bse/scrape_bse.py", line 515, in scrape_bse
+    download_dir = config.get_download_directory()
+AttributeError: 'Config' object has no attribute 'get_download_directory'
+
+[2026-10-19 11:30:12] [INFO] Dispatching task | TaskID=25 | TaskType=DOWN | Alias=NSEEGR Scrip Master
+[2026-10-19 11:30:12] [INFO] Download protocol selected | TaskID=25 | Protocol=sftp
+[2026-10-19 11:30:12] [INFO] Local directories ready | TaskID=25 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/NSEEGR | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/NSEEGR
+[2026-10-19 11:30:12] [ERROR] Failed to process task 25: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:30:12] [INFO] Dispatching task | TaskID=27 | TaskType=LOAD_BROKER_FILE | Alias=NSEEGR Scrip Master
+[2026-10-19 11:30:12] [WARNING] Unsupported task type | TaskID=27 | TaskType=LOAD_BROKER_FILE
+[2026-10-19 11:30:12] [INFO] Dispatching task | TaskID=28 | TaskType=DOWN | Alias=BSEEGR Scrip Master
+[2026-10-19 11:30:12] [INFO] Download protocol selected | TaskID=28 | Protocol=sftp
+[2026-10-19 11:30:12] [INFO] Local directories ready | TaskID=28 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/BSEEGR | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/BSEEGR
+[2026-10-19 11:30:12] [ERROR] Failed to process task 28: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:30:12] [INFO] Dispatching task | TaskID=31 | TaskType=DOWN | Alias=NSECUR Scrip Master
+[2026-10-19 11:30:12] [INFO] Download protocol selected | TaskID=31 | Protocol=url
+[2026-10-19 11:30:12] [INFO] Local directories ready | TaskID=31 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CD | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CD
+[2026-10-19 11:30:12] [INFO] ======================================================================
+[2026-10-19 11:30:12] [INFO] STARTING NSE SCRAPING
+[2026-10-19 11:30:12] [INFO] ======================================================================
+[2026-10-19 11:30:12] [INFO] NSE download and extraction directory: /home/piyushg/automation/exchange_scraper_automation/data/NSE/CD
+[2026-10-19 11:30:12] [INFO] NSE download directory : /home/piyushg/automation/exchange_scraper_automation/data/NSE/CD
+[2026-10-19 11:30:12] [INFO] NSE output directory   : /home/piyushg/automation/exchange_scraper_automation/data/NSE/CD
+[2026-10-19 11:30:13] [INFO] Opening NSE market : derivatives
+[2026-10-19 11:30:13] [INFO] Opening NSE page   : https://www.nseindia.com/all-reports-derivatives
+[2026-10-19 11:30:15] [INFO] Selecting NSE tab : cr_derv_currency
+[2026-10-19 11:30:16] [INFO] NSE tab selected : cr_derv_currency
+[2026-10-19 11:30:16] [INFO] Report found : CD-MII - Spd Contract Files (.gz)
+[2026-10-19 11:30:16] [INFO] Waiting for download URL : CD-MII - Spd Contract Files (.gz)
+[2026-10-19 11:30:16] [INFO] Download URL ready : https://nsearchives.nseindia.com/content/cd/NSE_CD_spdcontract_16102026.csv.gz
+[2026-10-19 11:30:16] [INFO] URL safety check passed : NSE_CD_spdcontract_16102026.csv.gz
+[2026-10-19 11:30:16] [INFO] Report Name : CD-MII - Spd Contract Files (.gz)
+[2026-10-19 11:30:16] [INFO] File Name   : NSE_CD_spdcontract_16102026.csv.gz
+[2026-10-19 11:30:16] [INFO] URL         : https://nsearchives.nseindia.com/content/cd/NSE_CD_spdcontract_16102026.csv.gz
+[2026-10-19 11:30:16] [INFO] Starting download: NSE_CD_spdcontract_16102026.csv.gz
+[2026-10-19 11:30:16] [INFO] Content-Type       : application/x-gzip
+[2026-10-19 11:30:16] [INFO] Content-Length     : 2246
+[2026-10-19 11:30:16] [INFO] Content-Encoding   : None
+[2026-10-19 11:30:16] [INFO] Content-Disposition: None
+[2026-10-19 11:30:16] [INFO] Expected size : 2,246 bytes
+[2026-10-19 11:30:16] [INFO] Download completed : NSE_CD_spdcontract_16102026.csv.gz
+[2026-10-19 11:30:16] [INFO] Downloaded size    : 2,246 bytes
+[2026-10-19 11:30:16] [INFO] GZ Extracted : /home/piyushg/automation/exchange_scraper_automation/data/NSE/CD/tbl_TempSpreadScripMasterNSECU_20261016.csv
+[2026-10-19 11:30:16] [INFO] CSV columns converted to lowercase: /home/piyushg/automation/exchange_scraper_automation/data/NSE/CD/tbl_TempSpreadScripMasterNSECU_20261016.csv
+[2026-10-19 11:30:16] [INFO] NSE task completed: NSECUR Scrip Master
+[2026-10-19 11:30:16] [INFO] Task marked COMPLETED: TaskID=31
+[2026-10-19 11:30:16] [INFO] Dispatching task | TaskID=34 | TaskType=DOWN | Alias=BSECUR Scrip Master
+[2026-10-19 11:30:16] [INFO] Download protocol selected | TaskID=34 | Protocol=url
+[2026-10-19 11:30:16] [INFO] Local directories ready | TaskID=34 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/CD | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/CD
+[2026-10-19 11:30:16] [ERROR] Failed to process task 34: 'Config' object has no attribute 'get_download_directory'
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 486, in dispatch_task
+    return self.process_url_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 342, in process_url_download
+    return scrape_bse(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/bse/scrape_bse.py", line 515, in scrape_bse
+    download_dir = config.get_download_directory()
+AttributeError: 'Config' object has no attribute 'get_download_directory'
+
+[2026-10-19 11:30:16] [INFO] Dispatching task | TaskID=37 | TaskType=DOWN | Alias=NSESLBM Scrip Master
+[2026-10-19 11:30:16] [INFO] Download protocol selected | TaskID=37 | Protocol=sftp
+[2026-10-19 11:30:16] [INFO] Local directories ready | TaskID=37 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB
+[2026-10-19 11:30:16] [INFO] Searching remote files | Protocol=SFTP | Host=20.40.232.163 | Directory=/SLB | Pattern=security_slb.gz
+[2026-10-19 11:30:20] [INFO] Selected remote file | Remote=/SLB/security_slb.gz | Local=/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/security_slb.gz
+[2026-10-19 11:30:25] [INFO] Download completed successfully | Local=/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/security_slb.gz | Size=1238672 bytes
+[2026-10-19 11:30:25] [INFO] Download directory ready | TaskID=37 | Directory=/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB
+[2026-10-19 11:30:25] [INFO] Searching remote files | Protocol=SFTP | Host=20.40.232.163 | Directory=/SLB | Pattern=security_slb.gz
+[2026-10-19 11:30:28] [INFO] Selected remote file | Remote=/SLB/security_slb.gz | Local=/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/security_slb.gz
+[2026-10-19 11:30:33] [INFO] Download completed successfully | Local=/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/security_slb.gz | Size=1238672 bytes
+[2026-10-19 11:30:33] [INFO] Resolved output filename | TaskID=37 | Downloaded=security_slb.gz | Output=security_slb.csv
+[2026-10-19 11:30:34] [INFO] GZ Extracted : /home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/security_slb.txt
+[2026-10-19 11:30:35] [WARNING] Skipped incomplete first row | File=/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/security_slb.txt | First row columns=3 | Expected columns=49 | Row=['NEATSLB', '5.30.00', '1474654405']
+[2026-10-19 11:30:36] [INFO] TXT converted to CSV: /home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/security_slb.csv | Rows: 106808 | Columns: 49
+[2026-10-19 11:30:38] [INFO] CSV columns converted to lowercase: /home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/security_slb.csv
+[2026-10-19 11:30:39] [INFO] GZ download processing completed | TXT=/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/security_slb.txt | CSV=/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/security_slb.csv
+[2026-10-19 11:30:39] [INFO] FTP/SFTP download and post-processing completed | TaskID=37 | Downloaded=/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/security_slb.gz | Processed=/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/security_slb.csv
+[2026-10-19 11:30:39] [INFO] Task marked COMPLETED: TaskID=37
+[2026-10-19 11:30:39] [INFO] Dispatching task | TaskID=40 | TaskType=DOWN | Alias=BSESLBM Scrip Master
+[2026-10-19 11:30:39] [INFO] Download protocol selected | TaskID=40 | Protocol=url
+[2026-10-19 11:30:39] [INFO] Local directories ready | TaskID=40 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/SLB | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/SLB
+[2026-10-19 11:30:39] [ERROR] Failed to process task 40: 'Config' object has no attribute 'get_download_directory'
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 486, in dispatch_task
+    return self.process_url_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 342, in process_url_download
+    return scrape_bse(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/bse/scrape_bse.py", line 515, in scrape_bse
+    download_dir = config.get_download_directory()
+AttributeError: 'Config' object has no attribute 'get_download_directory'
+
+[2026-10-19 11:30:39] [INFO] Dispatching task | TaskID=43 | TaskType=DOWN | Alias=MSECUR Scrip Master
+[2026-10-19 11:30:39] [INFO] Download protocol selected | TaskID=43 | Protocol=sftp
+[2026-10-19 11:30:39] [INFO] Local directories ready | TaskID=43 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/MSECUR | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/MSECUR
+[2026-10-19 11:30:39] [ERROR] Failed to process task 43: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:30:39] [INFO] Dispatching task | TaskID=46 | TaskType=DOWN | Alias=MSEEQ Scrip Master
+[2026-10-19 11:30:39] [INFO] Download protocol selected | TaskID=46 | Protocol=sftp
+[2026-10-19 11:30:39] [INFO] Local directories ready | TaskID=46 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/MSEEQ | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/MSEEQ
+[2026-10-19 11:30:39] [ERROR] Failed to process task 46: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:30:39] [INFO] Dispatching task | TaskID=49 | TaskType=DOWN | Alias=MSEFO Scrip Master
+[2026-10-19 11:30:39] [INFO] Download protocol selected | TaskID=49 | Protocol=sftp
+[2026-10-19 11:30:39] [INFO] Local directories ready | TaskID=49 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/MSEFO | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/MSEFO
+[2026-10-19 11:30:39] [ERROR] Failed to process task 49: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:30:39] [INFO] Dispatching task | TaskID=52 | TaskType=DOWN | Alias=NSEOFS Scrip Master
+[2026-10-19 11:30:39] [INFO] Download protocol selected | TaskID=52 | Protocol=sftp
+[2026-10-19 11:30:39] [INFO] Local directories ready | TaskID=52 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/NSEOFS | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/NSEOFS
+[2026-10-19 11:30:39] [ERROR] Failed to process task 52: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:30:39] [INFO] Dispatching task | TaskID=54 | TaskType=LOAD_BROKER_FILE | Alias=NSEOFS Scrip Master
+[2026-10-19 11:30:39] [WARNING] Unsupported task type | TaskID=54 | TaskType=LOAD_BROKER_FILE
+[2026-10-19 11:30:39] [INFO] Dispatching task | TaskID=55 | TaskType=DOWN | Alias=BSEOFS Scrip Master
+[2026-10-19 11:30:39] [INFO] Download protocol selected | TaskID=55 | Protocol=sftp
+[2026-10-19 11:30:39] [INFO] Local directories ready | TaskID=55 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/BSEOFS | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/BSEOFS
+[2026-10-19 11:30:39] [ERROR] Failed to process task 55: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:30:39] [INFO] Dispatching task | TaskID=58 | TaskType=DOWN | Alias=NSEEQ Bhav Copy
+[2026-10-19 11:30:39] [INFO] Download protocol selected | TaskID=58 | Protocol=url
+[2026-10-19 11:30:39] [INFO] Local directories ready | TaskID=58 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CM | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CM
+[2026-10-19 11:30:39] [INFO] ======================================================================
+[2026-10-19 11:30:39] [INFO] STARTING NSE SCRAPING
+[2026-10-19 11:30:39] [INFO] ======================================================================
+[2026-10-19 11:30:39] [INFO] NSE download and extraction directory: /home/piyushg/automation/exchange_scraper_automation/data/NSE/CM
+[2026-10-19 11:30:39] [INFO] NSE download directory : /home/piyushg/automation/exchange_scraper_automation/data/NSE/CM
+[2026-10-19 11:30:39] [INFO] NSE output directory   : /home/piyushg/automation/exchange_scraper_automation/data/NSE/CM
+[2026-10-19 11:30:39] [INFO] Opening NSE market : capital_market
+[2026-10-19 11:30:39] [INFO] Opening NSE page   : https://www.nseindia.com/all-reports
+[2026-10-19 11:30:42] [INFO] Selecting NSE tab : cr_equities
+[2026-10-19 11:30:42] [INFO] NSE tab selected : cr_equities
+[2026-10-19 11:30:43] [INFO] Report found : CM-UDiFF Common Bhavcopy Final (zip)
+[2026-10-19 11:30:43] [INFO] Waiting for download URL : CM-UDiFF Common Bhavcopy Final (zip)
+[2026-10-19 11:30:43] [INFO] Download URL ready : https://nsearchives.nseindia.com/content/cm/BhavCopy_NSE_CM_0_0_0_20261016_F_0000.csv.zip
+[2026-10-19 11:30:43] [INFO] URL safety check passed : BhavCopy_NSE_CM_0_0_0_20261016_F_0000.csv.zip
+[2026-10-19 11:30:43] [INFO] Report Name : CM-UDiFF Common Bhavcopy Final (zip)
+[2026-10-19 11:30:43] [INFO] File Name   : BhavCopy_NSE_CM_0_0_0_20261016_F_0000.csv.zip
+[2026-10-19 11:30:43] [INFO] URL         : https://nsearchives.nseindia.com/content/cm/BhavCopy_NSE_CM_0_0_0_20261016_F_0000.csv.zip
+[2026-10-19 11:30:43] [INFO] Starting download: BhavCopy_NSE_CM_0_0_0_20261016_F_0000.csv.zip
+[2026-10-19 11:30:43] [INFO] Content-Type       : application/zip
+[2026-10-19 11:30:43] [INFO] Content-Length     : 206122
+[2026-10-19 11:30:43] [INFO] Content-Encoding   : None
+[2026-10-19 11:30:43] [INFO] Content-Disposition: None
+[2026-10-19 11:30:43] [INFO] Expected size : 206,122 bytes
+[2026-10-19 11:30:43] [INFO] Download completed : BhavCopy_NSE_CM_0_0_0_20261016_F_0000.csv.zip
+[2026-10-19 11:30:43] [INFO] Downloaded size    : 206,122 bytes
+[2026-10-19 11:30:43] [INFO] ZIP extracted to: /home/piyushg/automation/exchange_scraper_automation/data/NSE/CM | Files extracted: 1
+[2026-10-19 11:30:43] [INFO] CSV Copied : /home/piyushg/automation/exchange_scraper_automation/data/NSE/CM/tbl_TempBhavCopyNSEEQ_20261016.csv
+[2026-10-19 11:30:43] [INFO] CSV columns converted to lowercase: /home/piyushg/automation/exchange_scraper_automation/data/NSE/CM/tbl_TempBhavCopyNSEEQ_20261016.csv
+[2026-10-19 11:30:43] [INFO] NSE task completed: NSEEQ Bhav Copy
+[2026-10-19 11:30:43] [INFO] Task marked COMPLETED: TaskID=58
+[2026-10-19 11:30:43] [INFO] Dispatching task | TaskID=61 | TaskType=DOWN | Alias=BSEEQ Bhav Copy
+[2026-10-19 11:30:43] [INFO] Download protocol selected | TaskID=61 | Protocol=url
+[2026-10-19 11:30:43] [INFO] Local directories ready | TaskID=61 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/CM | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/CM
+[2026-10-19 11:30:43] [ERROR] Failed to process task 61: 'Config' object has no attribute 'get_download_directory'
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 486, in dispatch_task
+    return self.process_url_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 342, in process_url_download
+    return scrape_bse(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/bse/scrape_bse.py", line 515, in scrape_bse
+    download_dir = config.get_download_directory()
+AttributeError: 'Config' object has no attribute 'get_download_directory'
+
+[2026-10-19 11:30:43] [INFO] Dispatching task | TaskID=64 | TaskType=DOWN | Alias=NSEFO Bhav Copy
+[2026-10-19 11:30:43] [INFO] Download protocol selected | TaskID=64 | Protocol=url
+[2026-10-19 11:30:43] [INFO] Local directories ready | TaskID=64 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/NSE/FO | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/NSE/FO
+[2026-10-19 11:30:43] [INFO] ======================================================================
+[2026-10-19 11:30:43] [INFO] STARTING NSE SCRAPING
+[2026-10-19 11:30:43] [INFO] ======================================================================
+[2026-10-19 11:30:43] [INFO] NSE download and extraction directory: /home/piyushg/automation/exchange_scraper_automation/data/NSE/FO
+[2026-10-19 11:30:43] [INFO] NSE download directory : /home/piyushg/automation/exchange_scraper_automation/data/NSE/FO
+[2026-10-19 11:30:43] [INFO] NSE output directory   : /home/piyushg/automation/exchange_scraper_automation/data/NSE/FO
+[2026-10-19 11:30:44] [INFO] Opening NSE market : derivatives
+[2026-10-19 11:30:44] [INFO] Opening NSE page   : https://www.nseindia.com/all-reports-derivatives
+[2026-10-19 11:30:46] [INFO] Selecting NSE tab : cr_derv_equities
+[2026-10-19 11:30:47] [INFO] NSE tab selected : cr_derv_equities
+[2026-10-19 11:30:47] [INFO] Report found : F&O-UDiFF Common Bhavcopy Final (zip)
+[2026-10-19 11:30:47] [INFO] Waiting for download URL : F&O-UDiFF Common Bhavcopy Final (zip)
+[2026-10-19 11:30:47] [INFO] Download URL ready : https://nsearchives.nseindia.com/content/fo/BhavCopy_NSE_FO_0_0_0_20261016_F_0000.csv.zip
+[2026-10-19 11:30:47] [INFO] URL safety check passed : BhavCopy_NSE_FO_0_0_0_20261016_F_0000.csv.zip
+[2026-10-19 11:30:47] [INFO] Report Name : F&O-UDiFF Common Bhavcopy Final (zip)
+[2026-10-19 11:30:47] [INFO] File Name   : BhavCopy_NSE_FO_0_0_0_20261016_F_0000.csv.zip
+[2026-10-19 11:30:47] [INFO] URL         : https://nsearchives.nseindia.com/content/fo/BhavCopy_NSE_FO_0_0_0_20261016_F_0000.csv.zip
+[2026-10-19 11:30:47] [INFO] Starting download: BhavCopy_NSE_FO_0_0_0_20261016_F_0000.csv.zip
+[2026-10-19 11:30:47] [INFO] Content-Type       : application/zip
+[2026-10-19 11:30:47] [INFO] Content-Length     : 1210210
+[2026-10-19 11:30:47] [INFO] Content-Encoding   : None
+[2026-10-19 11:30:47] [INFO] Content-Disposition: None
+[2026-10-19 11:30:47] [INFO] Expected size : 1,210,210 bytes
+[2026-10-19 11:30:47] [INFO] Download completed : BhavCopy_NSE_FO_0_0_0_20261016_F_0000.csv.zip
+[2026-10-19 11:30:47] [INFO] Downloaded size    : 1,210,210 bytes
+[2026-10-19 11:30:47] [INFO] ZIP extracted to: /home/piyushg/automation/exchange_scraper_automation/data/NSE/FO | Files extracted: 1
+[2026-10-19 11:30:47] [INFO] CSV Copied : /home/piyushg/automation/exchange_scraper_automation/data/NSE/FO/tbl_TempBhavCopyNSEFO_20261016.csv
+[2026-10-19 11:30:48] [INFO] CSV columns converted to lowercase: /home/piyushg/automation/exchange_scraper_automation/data/NSE/FO/tbl_TempBhavCopyNSEFO_20261016.csv
+[2026-10-19 11:30:48] [INFO] NSE task completed: NSEFO Bhav Copy
+[2026-10-19 11:30:48] [INFO] Task marked COMPLETED: TaskID=64
+[2026-10-19 11:30:48] [INFO] Dispatching task | TaskID=67 | TaskType=DOWN | Alias=BSEFO Bhav Copy
+[2026-10-19 11:30:48] [INFO] Download protocol selected | TaskID=67 | Protocol=url
+[2026-10-19 11:30:48] [INFO] Local directories ready | TaskID=67 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/FO | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/FO
+[2026-10-19 11:30:48] [ERROR] Failed to process task 67: 'Config' object has no attribute 'get_download_directory'
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 486, in dispatch_task
+    return self.process_url_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 342, in process_url_download
+    return scrape_bse(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/bse/scrape_bse.py", line 515, in scrape_bse
+    download_dir = config.get_download_directory()
+AttributeError: 'Config' object has no attribute 'get_download_directory'
+
+[2026-10-19 11:30:48] [INFO] Dispatching task | TaskID=70 | TaskType=DOWN | Alias=MCX Bhav Copy
+[2026-10-19 11:30:48] [INFO] Download protocol selected | TaskID=70 | Protocol=sftp
+[2026-10-19 11:30:48] [INFO] Local directories ready | TaskID=70 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/MCX | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/MCX
+[2026-10-19 11:30:48] [ERROR] Failed to process task 70: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:30:48] [INFO] Dispatching task | TaskID=73 | TaskType=DOWN | Alias=NCDEX Bhav Copy
+[2026-10-19 11:30:48] [INFO] Download protocol selected | TaskID=73 | Protocol=sftp
+[2026-10-19 11:30:48] [INFO] Local directories ready | TaskID=73 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/NCDEX | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/NCDEX
+[2026-10-19 11:30:48] [ERROR] Failed to process task 73: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:30:48] [INFO] Dispatching task | TaskID=76 | TaskType=DOWN | Alias=NSECOM Bhav Copy
+[2026-10-19 11:30:48] [INFO] Download protocol selected | TaskID=76 | Protocol=url
+[2026-10-19 11:30:48] [INFO] Local directories ready | TaskID=76 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CO | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CO
+[2026-10-19 11:30:48] [INFO] ======================================================================
+[2026-10-19 11:30:48] [INFO] STARTING NSE SCRAPING
+[2026-10-19 11:30:48] [INFO] ======================================================================
+[2026-10-19 11:30:48] [INFO] NSE download and extraction directory: /home/piyushg/automation/exchange_scraper_automation/data/NSE/CO
+[2026-10-19 11:30:48] [INFO] NSE download directory : /home/piyushg/automation/exchange_scraper_automation/data/NSE/CO
+[2026-10-19 11:30:48] [INFO] NSE output directory   : /home/piyushg/automation/exchange_scraper_automation/data/NSE/CO
+[2026-10-19 11:30:49] [INFO] Opening NSE market : derivatives
+[2026-10-19 11:30:49] [INFO] Opening NSE page   : https://www.nseindia.com/all-reports-derivatives
+[2026-10-19 11:30:51] [INFO] Selecting NSE tab : cr_derv_commodity
+[2026-10-19 11:30:52] [INFO] NSE tab selected : cr_derv_commodity
+[2026-10-19 11:30:52] [INFO] Report found : COM-UDiFF Common Bhavcopy Final (zip)
+[2026-10-19 11:30:52] [INFO] Waiting for download URL : COM-UDiFF Common Bhavcopy Final (zip)
+[2026-10-19 11:30:52] [INFO] Download URL ready : https://nsearchives.nseindia.com/content/com/BhavCopy_NSE_CO_0_0_0_20261016_F_0000.csv.zip
+[2026-10-19 11:30:52] [INFO] URL safety check passed : BhavCopy_NSE_CO_0_0_0_20261016_F_0000.csv.zip
+[2026-10-19 11:30:52] [INFO] Report Name : COM-UDiFF Common Bhavcopy Final (zip)
+[2026-10-19 11:30:52] [INFO] File Name   : BhavCopy_NSE_CO_0_0_0_20261016_F_0000.csv.zip
+[2026-10-19 11:30:52] [INFO] URL         : https://nsearchives.nseindia.com/content/com/BhavCopy_NSE_CO_0_0_0_20261016_F_0000.csv.zip
+[2026-10-19 11:30:52] [INFO] Starting download: BhavCopy_NSE_CO_0_0_0_20261016_F_0000.csv.zip
+[2026-10-19 11:30:52] [INFO] Content-Type       : application/zip
+[2026-10-19 11:30:52] [INFO] Content-Length     : 491130
+[2026-10-19 11:30:52] [INFO] Content-Encoding   : None
+[2026-10-19 11:30:52] [INFO] Content-Disposition: None
+[2026-10-19 11:30:52] [INFO] Expected size : 491,130 bytes
+[2026-10-19 11:30:52] [INFO] Download completed : BhavCopy_NSE_CO_0_0_0_20261016_F_0000.csv.zip
+[2026-10-19 11:30:52] [INFO] Downloaded size    : 491,130 bytes
+[2026-10-19 11:30:52] [INFO] ZIP extracted to: /home/piyushg/automation/exchange_scraper_automation/data/NSE/CO | Files extracted: 1
+[2026-10-19 11:30:52] [INFO] CSV Copied : /home/piyushg/automation/exchange_scraper_automation/data/NSE/CO/tbl_TempBhavCopyNSECO_20261016.csv
+[2026-10-19 11:30:53] [INFO] CSV columns converted to lowercase: /home/piyushg/automation/exchange_scraper_automation/data/NSE/CO/tbl_TempBhavCopyNSECO_20261016.csv
+[2026-10-19 11:30:53] [INFO] NSE task completed: NSECOM Bhav Copy
+[2026-10-19 11:30:53] [INFO] Task marked COMPLETED: TaskID=76
+[2026-10-19 11:30:53] [INFO] Dispatching task | TaskID=79 | TaskType=DOWN | Alias=BSECOM Bhav Copy
+[2026-10-19 11:30:53] [INFO] Download protocol selected | TaskID=79 | Protocol=url
+[2026-10-19 11:30:53] [INFO] Local directories ready | TaskID=79 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/CO | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/CO
+[2026-10-19 11:30:53] [ERROR] Failed to process task 79: 'Config' object has no attribute 'get_download_directory'
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 486, in dispatch_task
+    return self.process_url_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 342, in process_url_download
+    return scrape_bse(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/bse/scrape_bse.py", line 515, in scrape_bse
+    download_dir = config.get_download_directory()
+AttributeError: 'Config' object has no attribute 'get_download_directory'
+
+[2026-10-19 11:30:53] [INFO] Dispatching task | TaskID=82 | TaskType=DOWN | Alias=NSEEGR Bhav Copy
+[2026-10-19 11:30:53] [INFO] Download protocol selected | TaskID=82 | Protocol=sftp
+[2026-10-19 11:30:53] [INFO] Local directories ready | TaskID=82 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/NSEEGR | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/NSEEGR
+[2026-10-19 11:30:53] [ERROR] Failed to process task 82: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:30:53] [INFO] Dispatching task | TaskID=84 | TaskType=LOAD_BROKER_FILE | Alias=NSEEGR Bhav Copy
+[2026-10-19 11:30:53] [WARNING] Unsupported task type | TaskID=84 | TaskType=LOAD_BROKER_FILE
+[2026-10-19 11:30:53] [INFO] Dispatching task | TaskID=85 | TaskType=DOWN | Alias=BSEEGR Bhav Copy
+[2026-10-19 11:30:53] [INFO] Download protocol selected | TaskID=85 | Protocol=sftp
+[2026-10-19 11:30:53] [INFO] Local directories ready | TaskID=85 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/BSEEGR | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/BSEEGR
+[2026-10-19 11:30:53] [ERROR] Failed to process task 85: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:30:53] [INFO] Dispatching task | TaskID=88 | TaskType=DOWN | Alias=NSECUR Bhav Copy
+[2026-10-19 11:30:53] [INFO] Download protocol selected | TaskID=88 | Protocol=url
+[2026-10-19 11:30:53] [INFO] Local directories ready | TaskID=88 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CD | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CD
+[2026-10-19 11:30:53] [INFO] ======================================================================
+[2026-10-19 11:30:53] [INFO] STARTING NSE SCRAPING
+[2026-10-19 11:30:53] [INFO] ======================================================================
+[2026-10-19 11:30:53] [INFO] NSE download and extraction directory: /home/piyushg/automation/exchange_scraper_automation/data/NSE/CD
+[2026-10-19 11:30:53] [INFO] NSE download directory : /home/piyushg/automation/exchange_scraper_automation/data/NSE/CD
+[2026-10-19 11:30:53] [INFO] NSE output directory   : /home/piyushg/automation/exchange_scraper_automation/data/NSE/CD
+[2026-10-19 11:30:53] [INFO] Opening NSE market : derivatives
+[2026-10-19 11:30:53] [INFO] Opening NSE page   : https://www.nseindia.com/all-reports-derivatives
+[2026-10-19 11:30:56] [INFO] Selecting NSE tab : cr_derv_currency
+[2026-10-19 11:30:57] [INFO] NSE tab selected : cr_derv_currency
+[2026-10-19 11:30:57] [INFO] Report found : CD-UDiFF Common Bhavcopy Final (zip)
+[2026-10-19 11:30:57] [INFO] Waiting for download URL : CD-UDiFF Common Bhavcopy Final (zip)
+[2026-10-19 11:30:57] [INFO] Download URL ready : https://nsearchives.nseindia.com/archives/cd/bhav/BhavCopy_NSE_CD_0_0_0_20261016_F_0000.csv.zip
+[2026-10-19 11:30:57] [INFO] URL safety check passed : BhavCopy_NSE_CD_0_0_0_20261016_F_0000.csv.zip
+[2026-10-19 11:30:57] [INFO] Report Name : CD-UDiFF Common Bhavcopy Final (zip)
+[2026-10-19 11:30:57] [INFO] File Name   : BhavCopy_NSE_CD_0_0_0_20261016_F_0000.csv.zip
+[2026-10-19 11:30:57] [INFO] URL         : https://nsearchives.nseindia.com/archives/cd/bhav/BhavCopy_NSE_CD_0_0_0_20261016_F_0000.csv.zip
+[2026-10-19 11:30:57] [INFO] Starting download: BhavCopy_NSE_CD_0_0_0_20261016_F_0000.csv.zip
+[2026-10-19 11:30:57] [INFO] Content-Type       : application/zip
+[2026-10-19 11:30:57] [INFO] Content-Length     : 204171
+[2026-10-19 11:30:57] [INFO] Content-Encoding   : None
+[2026-10-19 11:30:57] [INFO] Content-Disposition: None
+[2026-10-19 11:30:57] [INFO] Expected size : 204,171 bytes
+[2026-10-19 11:30:57] [INFO] Download completed : BhavCopy_NSE_CD_0_0_0_20261016_F_0000.csv.zip
+[2026-10-19 11:30:57] [INFO] Downloaded size    : 204,171 bytes
+[2026-10-19 11:30:57] [INFO] ZIP extracted to: /home/piyushg/automation/exchange_scraper_automation/data/NSE/CD | Files extracted: 1
+[2026-10-19 11:30:57] [INFO] CSV Copied : /home/piyushg/automation/exchange_scraper_automation/data/NSE/CD/tbl_TempBhavCopyNSECU_20261016.csv
+[2026-10-19 11:30:57] [INFO] CSV columns converted to lowercase: /home/piyushg/automation/exchange_scraper_automation/data/NSE/CD/tbl_TempBhavCopyNSECU_20261016.csv
+[2026-10-19 11:30:57] [INFO] NSE task completed: NSECUR Bhav Copy
+[2026-10-19 11:30:57] [INFO] Task marked COMPLETED: TaskID=88
+[2026-10-19 11:30:57] [INFO] Dispatching task | TaskID=91 | TaskType=DOWN | Alias=BSECUR Bhav Copy
+[2026-10-19 11:30:57] [INFO] Download protocol selected | TaskID=91 | Protocol=url
+[2026-10-19 11:30:57] [INFO] Local directories ready | TaskID=91 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/CD | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/CD
+[2026-10-19 11:30:57] [ERROR] Failed to process task 91: 'Config' object has no attribute 'get_download_directory'
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 486, in dispatch_task
+    return self.process_url_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 342, in process_url_download
+    return scrape_bse(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/bse/scrape_bse.py", line 515, in scrape_bse
+    download_dir = config.get_download_directory()
+AttributeError: 'Config' object has no attribute 'get_download_directory'
+
+[2026-10-19 11:30:57] [INFO] Dispatching task | TaskID=94 | TaskType=DOWN | Alias=NSESLBM Bhav Copy
+[2026-10-19 11:30:57] [INFO] Download protocol selected | TaskID=94 | Protocol=sftp
+[2026-10-19 11:30:57] [INFO] Local directories ready | TaskID=94 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB
+[2026-10-19 11:30:57] [INFO] Searching remote files | Protocol=SFTP | Host=20.40.232.163 | Directory=/SLB | Pattern=SLBM_BC_*.DAT
+[2026-10-19 11:31:01] [INFO] Selected remote file | Remote=/SLB/SLBM_BC_22092026.DAT | Local=/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/SLBM_BC_22092026.DAT
+[2026-10-19 11:31:05] [INFO] Download completed successfully | Local=/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/SLBM_BC_22092026.DAT | Size=32732 bytes
+[2026-10-19 11:31:05] [INFO] Download directory ready | TaskID=94 | Directory=/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB
+[2026-10-19 11:31:05] [INFO] Searching remote files | Protocol=SFTP | Host=20.40.232.163 | Directory=/SLB | Pattern=SLBM_BC_*.DAT
+[2026-10-19 11:31:08] [INFO] Selected remote file | Remote=/SLB/SLBM_BC_22092026.DAT | Local=/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/SLBM_BC_22092026.DAT
+[2026-10-19 11:31:12] [INFO] Download completed successfully | Local=/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/SLBM_BC_22092026.DAT | Size=32732 bytes
+[2026-10-19 11:31:12] [INFO] Resolved output filename | TaskID=94 | Downloaded=SLBM_BC_22092026.DAT | Output=SLBM_BC_22092026.csv
+[2026-10-19 11:31:12] [WARNING] Skipped incomplete first row | File=/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/SLBM_BC_22092026.DAT | First row columns=17 | Expected columns=17 | Row=['ACC LIMITED                   ', 'ACC       ', 'XN', '03-NOV-2026', 'N', '0000001.00', '0000001.00', '0000001.00', '0000001.00', '0000001.00', '    ', '         11755', '          11755.00', '0000001.00', '0000001.00', '22-SEP-2026', '      14']
+[2026-10-19 11:31:12] [INFO] CSV Created : /home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/SLBM_BC_22092026.csv
+[2026-10-19 11:31:12] [INFO] Columns     : 17
+[2026-10-19 11:31:12] [INFO] Rows        : 166
+[2026-10-19 11:31:12] [INFO] CSV columns converted to lowercase: /home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/SLBM_BC_22092026.csv
+[2026-10-19 11:31:12] [INFO] FTP/SFTP download and post-processing completed | TaskID=94 | Downloaded=/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/SLBM_BC_22092026.DAT | Processed=/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/SLBM_BC_22092026.csv
+[2026-10-19 11:31:12] [INFO] Task marked COMPLETED: TaskID=94
+[2026-10-19 11:31:12] [INFO] Dispatching task | TaskID=97 | TaskType=DOWN | Alias=BSESLBM Bhav Copy
+[2026-10-19 11:31:12] [INFO] Download protocol selected | TaskID=97 | Protocol=url
+[2026-10-19 11:31:12] [INFO] Local directories ready | TaskID=97 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/SLB | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/SLB
+[2026-10-19 11:31:12] [ERROR] Failed to process task 97: 'Config' object has no attribute 'get_download_directory'
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 486, in dispatch_task
+    return self.process_url_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 342, in process_url_download
+    return scrape_bse(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/bse/scrape_bse.py", line 515, in scrape_bse
+    download_dir = config.get_download_directory()
+AttributeError: 'Config' object has no attribute 'get_download_directory'
+
+[2026-10-19 11:31:12] [INFO] Dispatching task | TaskID=100 | TaskType=DOWN | Alias=MSECUR Bhav Copy
+[2026-10-19 11:31:12] [INFO] Download protocol selected | TaskID=100 | Protocol=sftp
+[2026-10-19 11:31:12] [INFO] Local directories ready | TaskID=100 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/MSECUR | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/MSECUR
+[2026-10-19 11:31:12] [ERROR] Failed to process task 100: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:31:12] [INFO] Dispatching task | TaskID=103 | TaskType=DOWN | Alias=MSEEQ Bhav Copy
+[2026-10-19 11:31:12] [INFO] Download protocol selected | TaskID=103 | Protocol=sftp
+[2026-10-19 11:31:12] [INFO] Local directories ready | TaskID=103 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/MSEEQ | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/MSEEQ
+[2026-10-19 11:31:12] [ERROR] Failed to process task 103: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:31:12] [INFO] Dispatching task | TaskID=106 | TaskType=DOWN | Alias=MSEFO Bhav Copy
+[2026-10-19 11:31:12] [INFO] Download protocol selected | TaskID=106 | Protocol=sftp
+[2026-10-19 11:31:12] [INFO] Local directories ready | TaskID=106 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/MSEFO | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/MSEFO
+[2026-10-19 11:31:12] [ERROR] Failed to process task 106: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:31:12] [INFO] Dispatching task | TaskID=109 | TaskType=DOWN | Alias=NSEOFS Bhav Copy
+[2026-10-19 11:31:12] [INFO] Download protocol selected | TaskID=109 | Protocol=sftp
+[2026-10-19 11:31:12] [INFO] Local directories ready | TaskID=109 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/NSEOFS | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/NSEOFS
+[2026-10-19 11:31:12] [ERROR] Failed to process task 109: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:31:12] [INFO] Dispatching task | TaskID=111 | TaskType=LOAD_BROKER_FILE | Alias=NSEOFS Bhav Copy
+[2026-10-19 11:31:12] [WARNING] Unsupported task type | TaskID=111 | TaskType=LOAD_BROKER_FILE
+[2026-10-19 11:31:12] [INFO] Dispatching task | TaskID=112 | TaskType=DOWN | Alias=BSEOFS Bhav Copy
+[2026-10-19 11:31:12] [INFO] Download protocol selected | TaskID=112 | Protocol=sftp
+[2026-10-19 11:31:12] [INFO] Local directories ready | TaskID=112 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/BSEOFS | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/BSEOFS
+[2026-10-19 11:31:12] [ERROR] Failed to process task 112: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:31:12] [INFO] Dispatching task | TaskID=172 | TaskType=DOWN | Alias=NSEEQ Participant
+[2026-10-19 11:31:12] [INFO] Download protocol selected | TaskID=172 | Protocol=sftp
+[2026-10-19 11:31:12] [INFO] Local directories ready | TaskID=172 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CM | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CM
+[2026-10-19 11:31:12] [INFO] Searching remote files | Protocol=SFTP | Host=20.40.232.163 | Directory=/CM | Pattern=participant.gz
+[2026-10-19 11:31:16] [INFO] Selected remote file | Remote=/CM/participant.gz | Local=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CM/participant.gz
+[2026-10-19 11:31:21] [INFO] Download completed successfully | Local=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CM/participant.gz | Size=1137474 bytes
+[2026-10-19 11:31:21] [INFO] Download directory ready | TaskID=172 | Directory=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CM
+[2026-10-19 11:31:21] [INFO] Searching remote files | Protocol=SFTP | Host=20.40.232.163 | Directory=/CM | Pattern=participant.gz
+[2026-10-19 11:31:25] [INFO] Selected remote file | Remote=/CM/participant.gz | Local=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CM/participant.gz
+[2026-10-19 11:31:30] [INFO] Download completed successfully | Local=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CM/participant.gz | Size=1137474 bytes
+[2026-10-19 11:31:30] [INFO] Resolved output filename | TaskID=172 | Downloaded=participant.gz | Output=cm_participant.csv
+[2026-10-19 11:31:30] [INFO] GZ Extracted : /home/piyushg/automation/exchange_scraper_automation/data/NSE/CM/cm_participant.txt
+[2026-10-19 11:31:30] [WARNING] Skipped incomplete first row | File=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CM/cm_participant.txt | First row columns=3 | Expected columns=5 | Row=['NEATCM', '7.90.00', '1474642357']
+[2026-10-19 11:31:31] [INFO] TXT converted to CSV: /home/piyushg/automation/exchange_scraper_automation/data/NSE/CM/cm_participant.csv | Rows: 84383 | Columns: 5
+[2026-10-19 11:31:31] [INFO] CSV columns converted to lowercase: /home/piyushg/automation/exchange_scraper_automation/data/NSE/CM/cm_participant.csv
+[2026-10-19 11:31:31] [INFO] GZ download processing completed | TXT=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CM/cm_participant.txt | CSV=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CM/cm_participant.csv
+[2026-10-19 11:31:31] [INFO] FTP/SFTP download and post-processing completed | TaskID=172 | Downloaded=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CM/participant.gz | Processed=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CM/cm_participant.csv
+[2026-10-19 11:31:31] [INFO] Task marked COMPLETED: TaskID=172
+[2026-10-19 11:31:31] [INFO] Dispatching task | TaskID=175 | TaskType=DOWN | Alias=BSEEQ Participant
+[2026-10-19 11:31:31] [INFO] Download protocol selected | TaskID=175 | Protocol=sftp
+[2026-10-19 11:31:31] [INFO] Local directories ready | TaskID=175 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/BSEEQ | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/BSEEQ
+[2026-10-19 11:31:31] [ERROR] Failed to process task 175: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:31:31] [INFO] Dispatching task | TaskID=178 | TaskType=DOWN | Alias=NSEFO Participant
+[2026-10-19 11:31:31] [INFO] Download protocol selected | TaskID=178 | Protocol=sftp
+[2026-10-19 11:31:31] [INFO] Local directories ready | TaskID=178 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/NSE/FO | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/NSE/FO
+[2026-10-19 11:31:31] [INFO] Searching remote files | Protocol=SFTP | Host=20.40.232.163 | Directory=/FO | Pattern=participant.gz
+[2026-10-19 11:31:34] [INFO] Selected remote file | Remote=/FO/participant.gz | Local=/home/piyushg/automation/exchange_scraper_automation/data/NSE/FO/participant.gz
+[2026-10-19 11:31:39] [INFO] Download completed successfully | Local=/home/piyushg/automation/exchange_scraper_automation/data/NSE/FO/participant.gz | Size=1137474 bytes
+[2026-10-19 11:31:39] [INFO] Download directory ready | TaskID=178 | Directory=/home/piyushg/automation/exchange_scraper_automation/data/NSE/FO
+[2026-10-19 11:31:39] [INFO] Searching remote files | Protocol=SFTP | Host=20.40.232.163 | Directory=/FO | Pattern=participant.gz
+[2026-10-19 11:31:43] [INFO] Selected remote file | Remote=/FO/participant.gz | Local=/home/piyushg/automation/exchange_scraper_automation/data/NSE/FO/participant.gz
+[2026-10-19 11:31:48] [INFO] Download completed successfully | Local=/home/piyushg/automation/exchange_scraper_automation/data/NSE/FO/participant.gz | Size=1137474 bytes
+[2026-10-19 11:31:48] [INFO] Resolved output filename | TaskID=178 | Downloaded=participant.gz | Output=fo_participant.csv
+[2026-10-19 11:31:48] [INFO] GZ Extracted : /home/piyushg/automation/exchange_scraper_automation/data/NSE/FO/fo_participant.txt
+[2026-10-19 11:31:48] [WARNING] Skipped incomplete first row | File=/home/piyushg/automation/exchange_scraper_automation/data/NSE/FO/fo_participant.txt | First row columns=3 | Expected columns=5 | Row=['NEATCM', '7.90.00', '1474642357']
+[2026-10-19 11:31:48] [INFO] TXT converted to CSV: /home/piyushg/automation/exchange_scraper_automation/data/NSE/FO/fo_participant.csv | Rows: 84383 | Columns: 5
+[2026-10-19 11:31:49] [INFO] CSV columns converted to lowercase: /home/piyushg/automation/exchange_scraper_automation/data/NSE/FO/fo_participant.csv
+[2026-10-19 11:31:49] [INFO] GZ download processing completed | TXT=/home/piyushg/automation/exchange_scraper_automation/data/NSE/FO/fo_participant.txt | CSV=/home/piyushg/automation/exchange_scraper_automation/data/NSE/FO/fo_participant.csv
+[2026-10-19 11:31:49] [INFO] FTP/SFTP download and post-processing completed | TaskID=178 | Downloaded=/home/piyushg/automation/exchange_scraper_automation/data/NSE/FO/participant.gz | Processed=/home/piyushg/automation/exchange_scraper_automation/data/NSE/FO/fo_participant.csv
+[2026-10-19 11:31:49] [INFO] Task marked COMPLETED: TaskID=178
+[2026-10-19 11:31:49] [INFO] Dispatching task | TaskID=181 | TaskType=DOWN | Alias=BSEFO Participant
+[2026-10-19 11:31:49] [INFO] Download protocol selected | TaskID=181 | Protocol=sftp
+[2026-10-19 11:31:49] [INFO] Local directories ready | TaskID=181 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/BSEFO | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/BSEFO
+[2026-10-19 11:31:49] [ERROR] Failed to process task 181: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:31:49] [INFO] Dispatching task | TaskID=190 | TaskType=DOWN | Alias=NSECOM Participant
+[2026-10-19 11:31:49] [INFO] Download protocol selected | TaskID=190 | Protocol=sftp
+[2026-10-19 11:31:49] [INFO] Local directories ready | TaskID=190 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CO | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CO
+[2026-10-19 11:31:49] [INFO] Searching remote files | Protocol=SFTP | Host=20.40.232.163 | Directory=/CO | Pattern=co_participant.gz
+[2026-10-19 11:31:52] [INFO] Selected remote file | Remote=/CO/co_participant.gz | Local=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CO/co_participant.gz
+[2026-10-19 11:31:56] [INFO] Download completed successfully | Local=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CO/co_participant.gz | Size=2300 bytes
+[2026-10-19 11:31:56] [INFO] Download directory ready | TaskID=190 | Directory=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CO
+[2026-10-19 11:31:56] [INFO] Searching remote files | Protocol=SFTP | Host=20.40.232.163 | Directory=/CO | Pattern=co_participant.gz
+[2026-10-19 11:32:00] [INFO] Selected remote file | Remote=/CO/co_participant.gz | Local=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CO/co_participant.gz
+[2026-10-19 11:32:04] [INFO] Download completed successfully | Local=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CO/co_participant.gz | Size=2300 bytes
+[2026-10-19 11:32:04] [INFO] Resolved output filename | TaskID=190 | Downloaded=co_participant.gz | Output=co_participant.csv
+[2026-10-19 11:32:04] [INFO] GZ Extracted : /home/piyushg/automation/exchange_scraper_automation/data/NSE/CO/co_participant.txt
+[2026-10-19 11:32:04] [WARNING] Skipped incomplete first row | File=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CO/co_participant.txt | First row columns=3 | Expected columns=5 | Row=['NEATCO', '1.5.5', '']
+[2026-10-19 11:32:04] [INFO] TXT converted to CSV: /home/piyushg/automation/exchange_scraper_automation/data/NSE/CO/co_participant.csv | Rows: 137 | Columns: 5
+[2026-10-19 11:32:04] [INFO] CSV columns converted to lowercase: /home/piyushg/automation/exchange_scraper_automation/data/NSE/CO/co_participant.csv
+[2026-10-19 11:32:04] [INFO] GZ download processing completed | TXT=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CO/co_participant.txt | CSV=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CO/co_participant.csv
+[2026-10-19 11:32:04] [INFO] FTP/SFTP download and post-processing completed | TaskID=190 | Downloaded=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CO/co_participant.gz | Processed=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CO/co_participant.csv
+[2026-10-19 11:32:04] [INFO] Task marked COMPLETED: TaskID=190
+[2026-10-19 11:32:04] [INFO] Dispatching task | TaskID=193 | TaskType=DOWN | Alias=BSECOM Participant
+[2026-10-19 11:32:04] [INFO] Download protocol selected | TaskID=193 | Protocol=sftp
+[2026-10-19 11:32:04] [INFO] Local directories ready | TaskID=193 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/BSECOM | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/BSECOM
+[2026-10-19 11:32:04] [ERROR] Failed to process task 193: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:32:04] [INFO] Dispatching task | TaskID=202 | TaskType=DOWN | Alias=NSECUR Participant
+[2026-10-19 11:32:04] [INFO] Download protocol selected | TaskID=202 | Protocol=sftp
+[2026-10-19 11:32:04] [INFO] Local directories ready | TaskID=202 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CD | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CD
+[2026-10-19 11:32:04] [INFO] Searching remote files | Protocol=SFTP | Host=20.40.232.163 | Directory=/CD | Pattern=cd_participant.gz
+[2026-10-19 11:32:07] [INFO] Selected remote file | Remote=/CD/cd_participant.gz | Local=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CD/cd_participant.gz
+[2026-10-19 11:32:11] [INFO] Download completed successfully | Local=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CD/cd_participant.gz | Size=25314 bytes
+[2026-10-19 11:32:11] [INFO] Download directory ready | TaskID=202 | Directory=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CD
+[2026-10-19 11:32:11] [INFO] Searching remote files | Protocol=SFTP | Host=20.40.232.163 | Directory=/CD | Pattern=cd_participant.gz
+[2026-10-19 11:32:14] [INFO] Selected remote file | Remote=/CD/cd_participant.gz | Local=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CD/cd_participant.gz
+[2026-10-19 11:32:18] [INFO] Download completed successfully | Local=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CD/cd_participant.gz | Size=25314 bytes
+[2026-10-19 11:32:18] [INFO] Resolved output filename | TaskID=202 | Downloaded=cd_participant.gz | Output=cd_participant.csv
+[2026-10-19 11:32:18] [INFO] GZ Extracted : /home/piyushg/automation/exchange_scraper_automation/data/NSE/CD/cd_participant.txt
+[2026-10-19 11:32:18] [INFO] TXT converted to CSV: /home/piyushg/automation/exchange_scraper_automation/data/NSE/CD/cd_participant.csv | Rows: 1753 | Columns: 5
+[2026-10-19 11:32:18] [INFO] CSV columns converted to lowercase: /home/piyushg/automation/exchange_scraper_automation/data/NSE/CD/cd_participant.csv
+[2026-10-19 11:32:18] [INFO] GZ download processing completed | TXT=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CD/cd_participant.txt | CSV=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CD/cd_participant.csv
+[2026-10-19 11:32:18] [INFO] FTP/SFTP download and post-processing completed | TaskID=202 | Downloaded=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CD/cd_participant.gz | Processed=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CD/cd_participant.csv
+[2026-10-19 11:32:18] [INFO] Task marked COMPLETED: TaskID=202
+[2026-10-19 11:32:18] [INFO] Dispatching task | TaskID=205 | TaskType=DOWN | Alias=BSECUR Participant
+[2026-10-19 11:32:18] [INFO] Download protocol selected | TaskID=205 | Protocol=sftp
+[2026-10-19 11:32:18] [INFO] Local directories ready | TaskID=205 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/BSECUR | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/BSECUR
+[2026-10-19 11:32:18] [ERROR] Failed to process task 205: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:32:18] [INFO] Dispatching task | TaskID=208 | TaskType=DOWN | Alias=NSESLBM Participant
+[2026-10-19 11:32:18] [INFO] Download protocol selected | TaskID=208 | Protocol=sftp
+[2026-10-19 11:32:18] [INFO] Local directories ready | TaskID=208 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB
+[2026-10-19 11:32:18] [INFO] Searching remote files | Protocol=SFTP | Host=20.40.232.163 | Directory=/SLB | Pattern=participant_slb.gz
+[2026-10-19 11:32:22] [INFO] Selected remote file | Remote=/SLB/participant_slb.gz | Local=/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/participant_slb.gz
+[2026-10-19 11:32:26] [INFO] Download completed successfully | Local=/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/participant_slb.gz | Size=23785 bytes
+[2026-10-19 11:32:26] [INFO] Download directory ready | TaskID=208 | Directory=/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB
+[2026-10-19 11:32:26] [INFO] Searching remote files | Protocol=SFTP | Host=20.40.232.163 | Directory=/SLB | Pattern=participant_slb.gz
+[2026-10-19 11:32:29] [INFO] Selected remote file | Remote=/SLB/participant_slb.gz | Local=/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/participant_slb.gz
+[2026-10-19 11:32:33] [INFO] Download completed successfully | Local=/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/participant_slb.gz | Size=23785 bytes
+[2026-10-19 11:32:33] [INFO] Resolved output filename | TaskID=208 | Downloaded=participant_slb.gz | Output=participant_slb.csv
+[2026-10-19 11:32:33] [INFO] GZ Extracted : /home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/participant_slb.txt
+[2026-10-19 11:32:33] [WARNING] Skipped incomplete first row | File=/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/participant_slb.txt | First row columns=3 | Expected columns=5 | Row=['NEATSLB', '5.30.00', '1474654405']
+[2026-10-19 11:32:33] [INFO] TXT converted to CSV: /home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/participant_slb.csv | Rows: 2406 | Columns: 5
+[2026-10-19 11:32:33] [INFO] CSV columns converted to lowercase: /home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/participant_slb.csv
+[2026-10-19 11:32:33] [INFO] GZ download processing completed | TXT=/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/participant_slb.txt | CSV=/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/participant_slb.csv
+[2026-10-19 11:32:33] [INFO] FTP/SFTP download and post-processing completed | TaskID=208 | Downloaded=/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/participant_slb.gz | Processed=/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/participant_slb.csv
+[2026-10-19 11:32:33] [INFO] Task marked COMPLETED: TaskID=208
+[2026-10-19 11:32:33] [INFO] Dispatching task | TaskID=211 | TaskType=DOWN | Alias=BSESLBM Participant
+[2026-10-19 11:32:33] [INFO] Download protocol selected | TaskID=211 | Protocol=sftp
+[2026-10-19 11:32:33] [INFO] Local directories ready | TaskID=211 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/BSESLBM | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/BSESLBM
+[2026-10-19 11:32:33] [ERROR] Failed to process task 211: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:32:50] [INFO] Trigger received: POST /trigger
+[2026-10-19 11:32:50] [INFO] Task worker thread started.
+[2026-10-19 11:32:50] [INFO] ======================================================================
+[2026-10-19 11:32:50] [INFO] TASK WORKER STARTED
+[2026-10-19 11:32:50] [INFO] ======================================================================
+[2026-10-19 11:32:50] [INFO] Due tasks received from database: 52
+[2026-10-19 11:32:50] [INFO] Dispatching task | TaskID=2 | TaskType=INSERTLOAD_DATA | Alias=NSEEQ Scrip Master
+[2026-10-19 11:32:50] [INFO] File pattern resolution | TaskID=2 | Original='/NSE/CM/NSE_CM_security_*.csv' | Normalized='NSE_CM_security_*.csv' | MatchedPattern='NSE_CM_security_*.csv' | Directory='/home/piyushg/automation/exchange_scraper_automation/data/NSE/CM' | Matches=['/home/piyushg/automation/exchange_scraper_automation/data/NSE/CM/NSE_CM_security_22092026 (1).csv']
+[2026-10-19 11:32:50] [INFO] Selected file | TaskID=2 | Source=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CM/NSE_CM_security_22092026 (1).csv | UploadFile=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CM/NSE_CM_security_22092026 (1).csv
+[2026-10-19 11:32:50] [INFO] Starting database upload | TaskID=2 | File=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CM/NSE_CM_security_22092026 (1).csv | Table=tbl_nseeq_exch_scripmaster_mii
+[2026-10-19 11:32:50] [INFO] ======================================================================
+[2026-10-19 11:32:50] [INFO] Processing file: NSE_CM_security_22092026 (1).csv
+[2026-10-19 11:32:50] [INFO] Target table: tbl_nseeq_exch_scripmaster_mii
+[2026-10-19 11:32:50] [INFO] ======================================================================
+[2026-10-19 11:32:50] [INFO] Upload successful: NSE_CM_security_22092026 (1).csv
+[2026-10-19 11:32:50] [INFO] Database upload completed | TaskID=2
+[2026-10-19 11:32:50] [INFO] Task marked COMPLETED: TaskID=2
+[2026-10-19 11:32:50] [INFO] Dispatching task | TaskID=4 | TaskType=DOWN | Alias=BSEEQ Scrip Master
+[2026-10-19 11:32:50] [INFO] Download protocol selected | TaskID=4 | Protocol=url
+[2026-10-19 11:32:50] [INFO] Local directories ready | TaskID=4 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/CM | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/CM
+[2026-10-19 11:32:50] [ERROR] Failed to process task 4: 'Config' object has no attribute 'get_download_directory'
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 486, in dispatch_task
+    return self.process_url_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 342, in process_url_download
+    return scrape_bse(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/bse/scrape_bse.py", line 515, in scrape_bse
+    download_dir = config.get_download_directory()
+AttributeError: 'Config' object has no attribute 'get_download_directory'
+
+[2026-10-19 11:32:50] [INFO] Dispatching task | TaskID=8 | TaskType=INSERTLOAD_DATA | Alias=NSEFO Scrip Master
+[2026-10-19 11:32:50] [INFO] File pattern resolution | TaskID=8 | Original='/NSE/FO/NSE_FO_contract_*.csv' | Normalized='NSE_FO_contract_*.csv' | MatchedPattern='NSE_FO_contract_*.csv.gz' | Directory='/home/piyushg/automation/exchange_scraper_automation/data/NSE/FO' | Matches=['/home/piyushg/automation/exchange_scraper_automation/data/NSE/FO/NSE_FO_contract_16102026.csv.gz']
+[2026-10-19 11:32:51] [INFO] Selected file | TaskID=8 | Source=/home/piyushg/automation/exchange_scraper_automation/data/NSE/FO/NSE_FO_contract_16102026.csv.gz | UploadFile=/home/piyushg/automation/exchange_scraper_automation/data/NSE/FO/upload_hohxzcyh.csv
+[2026-10-19 11:32:51] [INFO] Starting database upload | TaskID=8 | File=/home/piyushg/automation/exchange_scraper_automation/data/NSE/FO/upload_hohxzcyh.csv | Table=tbl_nsefo_exch_scripmaster_mii
+[2026-10-19 11:32:51] [INFO] ======================================================================
+[2026-10-19 11:32:51] [INFO] Processing file: upload_hohxzcyh.csv
+[2026-10-19 11:32:51] [INFO] Target table: tbl_nsefo_exch_scripmaster_mii
+[2026-10-19 11:32:51] [INFO] ======================================================================
+[2026-10-19 11:32:53] [INFO] Upload successful: upload_hohxzcyh.csv
+[2026-10-19 11:32:53] [INFO] Database upload completed | TaskID=8
+[2026-10-19 11:32:53] [INFO] Task marked COMPLETED: TaskID=8
+[2026-10-19 11:32:53] [INFO] Dispatching task | TaskID=10 | TaskType=DOWN | Alias=BSEFO Scrip Master
+[2026-10-19 11:32:53] [INFO] Download protocol selected | TaskID=10 | Protocol=url
+[2026-10-19 11:32:53] [INFO] Local directories ready | TaskID=10 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/FO | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/FO
+[2026-10-19 11:32:53] [ERROR] Failed to process task 10: 'Config' object has no attribute 'get_download_directory'
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 486, in dispatch_task
+    return self.process_url_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 342, in process_url_download
+    return scrape_bse(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/bse/scrape_bse.py", line 515, in scrape_bse
+    download_dir = config.get_download_directory()
+AttributeError: 'Config' object has no attribute 'get_download_directory'
+
+[2026-10-19 11:32:53] [INFO] Dispatching task | TaskID=13 | TaskType=DOWN | Alias=MCX Scrip Master
+[2026-10-19 11:32:53] [INFO] Download protocol selected | TaskID=13 | Protocol=sftp
+[2026-10-19 11:32:53] [INFO] Local directories ready | TaskID=13 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/MCX | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/MCX
+[2026-10-19 11:32:53] [ERROR] Failed to process task 13: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:32:53] [INFO] Dispatching task | TaskID=16 | TaskType=DOWN | Alias=NCDEX Scrip Master
+[2026-10-19 11:32:53] [INFO] Download protocol selected | TaskID=16 | Protocol=sftp
+[2026-10-19 11:32:53] [INFO] Local directories ready | TaskID=16 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/NCDEX | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/NCDEX
+[2026-10-19 11:32:53] [ERROR] Failed to process task 16: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:32:53] [INFO] Dispatching task | TaskID=20 | TaskType=INSERTLOAD_DATA | Alias=NSECOM Scrip Master
+[2026-10-19 11:32:53] [INFO] File pattern resolution | TaskID=20 | Original='/NSE/CO/NSE_COM_contract_*.csv' | Normalized='NSE_COM_contract_*.csv' | MatchedPattern='NSE_COM_contract_*.csv.gz' | Directory='/home/piyushg/automation/exchange_scraper_automation/data/NSE/CO' | Matches=['/home/piyushg/automation/exchange_scraper_automation/data/NSE/CO/NSE_COM_contract_16102026.csv.gz']
+[2026-10-19 11:32:53] [INFO] Selected file | TaskID=20 | Source=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CO/NSE_COM_contract_16102026.csv.gz | UploadFile=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CO/upload_p90dj6mq.csv
+[2026-10-19 11:32:53] [INFO] Starting database upload | TaskID=20 | File=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CO/upload_p90dj6mq.csv | Table=tbl_nsecom_exch_scripmaster_mii
+[2026-10-19 11:32:53] [INFO] ======================================================================
+[2026-10-19 11:32:53] [INFO] Processing file: upload_p90dj6mq.csv
+[2026-10-19 11:32:53] [INFO] Target table: tbl_nsecom_exch_scripmaster_mii
+[2026-10-19 11:32:53] [INFO] ======================================================================
+[2026-10-19 11:32:53] [INFO] Upload successful: upload_p90dj6mq.csv
+[2026-10-19 11:32:53] [INFO] Database upload completed | TaskID=20
+[2026-10-19 11:32:53] [INFO] Task marked COMPLETED: TaskID=20
+[2026-10-19 11:32:53] [INFO] Dispatching task | TaskID=22 | TaskType=DOWN | Alias=BSECOM Scrip Master
+[2026-10-19 11:32:53] [INFO] Download protocol selected | TaskID=22 | Protocol=url
+[2026-10-19 11:32:53] [INFO] Local directories ready | TaskID=22 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/CO | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/CO
+[2026-10-19 11:32:53] [ERROR] Failed to process task 22: 'Config' object has no attribute 'get_download_directory'
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 486, in dispatch_task
+    return self.process_url_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 342, in process_url_download
+    return scrape_bse(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/bse/scrape_bse.py", line 515, in scrape_bse
+    download_dir = config.get_download_directory()
+AttributeError: 'Config' object has no attribute 'get_download_directory'
+
+[2026-10-19 11:32:53] [INFO] Dispatching task | TaskID=25 | TaskType=DOWN | Alias=NSEEGR Scrip Master
+[2026-10-19 11:32:53] [INFO] Download protocol selected | TaskID=25 | Protocol=sftp
+[2026-10-19 11:32:53] [INFO] Local directories ready | TaskID=25 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/NSEEGR | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/NSEEGR
+[2026-10-19 11:32:53] [ERROR] Failed to process task 25: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:32:53] [INFO] Dispatching task | TaskID=27 | TaskType=LOAD_BROKER_FILE | Alias=NSEEGR Scrip Master
+[2026-10-19 11:32:53] [WARNING] Unsupported task type | TaskID=27 | TaskType=LOAD_BROKER_FILE
+[2026-10-19 11:32:53] [INFO] Dispatching task | TaskID=28 | TaskType=DOWN | Alias=BSEEGR Scrip Master
+[2026-10-19 11:32:53] [INFO] Download protocol selected | TaskID=28 | Protocol=sftp
+[2026-10-19 11:32:53] [INFO] Local directories ready | TaskID=28 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/BSEEGR | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/BSEEGR
+[2026-10-19 11:32:53] [ERROR] Failed to process task 28: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:32:53] [INFO] Dispatching task | TaskID=32 | TaskType=INSERTLOAD_DATA | Alias=NSECUR Scrip Master
+[2026-10-19 11:32:53] [INFO] File pattern resolution | TaskID=32 | Original='/NSE/CD/NSE_CD_contract_*.csv' | Normalized='NSE_CD_contract_*.csv' | MatchedPattern='NSE_CD_contract_*.csv.gz' | Directory='/home/piyushg/automation/exchange_scraper_automation/data/NSE/CD' | Matches=[]
+[2026-10-19 11:32:53] [ERROR] Failed to process task 32: No file matched pattern | TaskID=32 | Pattern='NSE_CD_contract_*.csv' | Directory='/home/piyushg/automation/exchange_scraper_automation/data/NSE/CD'
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 468, in dispatch_task
+    return self.insert_task(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 253, in insert_task
+    raise FileNotFoundError(
+FileNotFoundError: No file matched pattern | TaskID=32 | Pattern='NSE_CD_contract_*.csv' | Directory='/home/piyushg/automation/exchange_scraper_automation/data/NSE/CD'
+
+[2026-10-19 11:32:53] [INFO] Dispatching task | TaskID=34 | TaskType=DOWN | Alias=BSECUR Scrip Master
+[2026-10-19 11:32:53] [INFO] Download protocol selected | TaskID=34 | Protocol=url
+[2026-10-19 11:32:53] [INFO] Local directories ready | TaskID=34 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/CD | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/CD
+[2026-10-19 11:32:53] [ERROR] Failed to process task 34: 'Config' object has no attribute 'get_download_directory'
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 486, in dispatch_task
+    return self.process_url_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 342, in process_url_download
+    return scrape_bse(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/bse/scrape_bse.py", line 515, in scrape_bse
+    download_dir = config.get_download_directory()
+AttributeError: 'Config' object has no attribute 'get_download_directory'
+
+[2026-10-19 11:32:53] [INFO] Dispatching task | TaskID=38 | TaskType=INSERTLOAD_DATA | Alias=NSESLBM Scrip Master
+[2026-10-19 11:32:53] [INFO] File pattern resolution | TaskID=38 | Original='/NSE/SLB/security_slb.csv' | Normalized='security_slb.csv' | MatchedPattern='security_slb.csv' | Directory='/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB' | Matches=['/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/security_slb.csv']
+[2026-10-19 11:32:53] [INFO] Selected file | TaskID=38 | Source=/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/security_slb.csv | UploadFile=/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/security_slb.csv
+[2026-10-19 11:32:53] [INFO] Starting database upload | TaskID=38 | File=/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/security_slb.csv | Table=tbl_nseslbm_exch_scripmaster
+[2026-10-19 11:32:53] [INFO] ======================================================================
+[2026-10-19 11:32:53] [INFO] Processing file: security_slb.csv
+[2026-10-19 11:32:53] [INFO] Target table: tbl_nseslbm_exch_scripmaster
+[2026-10-19 11:32:53] [INFO] ======================================================================
+[2026-10-19 11:32:55] [INFO] Upload successful: security_slb.csv
+[2026-10-19 11:32:55] [INFO] Database upload completed | TaskID=38
+[2026-10-19 11:32:55] [INFO] Task marked COMPLETED: TaskID=38
+[2026-10-19 11:32:55] [INFO] Dispatching task | TaskID=40 | TaskType=DOWN | Alias=BSESLBM Scrip Master
+[2026-10-19 11:32:55] [INFO] Download protocol selected | TaskID=40 | Protocol=url
+[2026-10-19 11:32:55] [INFO] Local directories ready | TaskID=40 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/SLB | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/SLB
+[2026-10-19 11:32:55] [ERROR] Failed to process task 40: 'Config' object has no attribute 'get_download_directory'
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 486, in dispatch_task
+    return self.process_url_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 342, in process_url_download
+    return scrape_bse(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/bse/scrape_bse.py", line 515, in scrape_bse
+    download_dir = config.get_download_directory()
+AttributeError: 'Config' object has no attribute 'get_download_directory'
+
+[2026-10-19 11:32:55] [INFO] Dispatching task | TaskID=43 | TaskType=DOWN | Alias=MSECUR Scrip Master
+[2026-10-19 11:32:55] [INFO] Download protocol selected | TaskID=43 | Protocol=sftp
+[2026-10-19 11:32:55] [INFO] Local directories ready | TaskID=43 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/MSECUR | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/MSECUR
+[2026-10-19 11:32:55] [ERROR] Failed to process task 43: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:32:55] [INFO] Dispatching task | TaskID=46 | TaskType=DOWN | Alias=MSEEQ Scrip Master
+[2026-10-19 11:32:55] [INFO] Download protocol selected | TaskID=46 | Protocol=sftp
+[2026-10-19 11:32:55] [INFO] Local directories ready | TaskID=46 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/MSEEQ | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/MSEEQ
+[2026-10-19 11:32:55] [ERROR] Failed to process task 46: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:32:55] [INFO] Dispatching task | TaskID=49 | TaskType=DOWN | Alias=MSEFO Scrip Master
+[2026-10-19 11:32:55] [INFO] Download protocol selected | TaskID=49 | Protocol=sftp
+[2026-10-19 11:32:55] [INFO] Local directories ready | TaskID=49 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/MSEFO | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/MSEFO
+[2026-10-19 11:32:55] [ERROR] Failed to process task 49: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:32:55] [INFO] Dispatching task | TaskID=52 | TaskType=DOWN | Alias=NSEOFS Scrip Master
+[2026-10-19 11:32:55] [INFO] Download protocol selected | TaskID=52 | Protocol=sftp
+[2026-10-19 11:32:55] [INFO] Local directories ready | TaskID=52 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/NSEOFS | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/NSEOFS
+[2026-10-19 11:32:55] [ERROR] Failed to process task 52: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:32:55] [INFO] Dispatching task | TaskID=54 | TaskType=LOAD_BROKER_FILE | Alias=NSEOFS Scrip Master
+[2026-10-19 11:32:55] [WARNING] Unsupported task type | TaskID=54 | TaskType=LOAD_BROKER_FILE
+[2026-10-19 11:32:55] [INFO] Dispatching task | TaskID=55 | TaskType=DOWN | Alias=BSEOFS Scrip Master
+[2026-10-19 11:32:55] [INFO] Download protocol selected | TaskID=55 | Protocol=sftp
+[2026-10-19 11:32:55] [INFO] Local directories ready | TaskID=55 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/BSEOFS | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/BSEOFS
+[2026-10-19 11:32:55] [ERROR] Failed to process task 55: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:32:55] [INFO] Dispatching task | TaskID=59 | TaskType=INSERTLOAD_DATA | Alias=NSEEQ Bhav Copy
+[2026-10-19 11:32:55] [INFO] File pattern resolution | TaskID=59 | Original='/NSE/CM/BhavCopy_NSE_CM_0_0_0_*_F_0000.csv' | Normalized='BhavCopy_NSE_CM_0_0_0_*_F_0000.csv' | MatchedPattern='BhavCopy_NSE_CM_0_0_0_*_F_0000.csv' | Directory='/home/piyushg/automation/exchange_scraper_automation/data/NSE/CM' | Matches=['/home/piyushg/automation/exchange_scraper_automation/data/NSE/CM/BhavCopy_NSE_CM_0_0_0_20261016_F_0000.csv']
+[2026-10-19 11:32:55] [INFO] Selected file | TaskID=59 | Source=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CM/BhavCopy_NSE_CM_0_0_0_20261016_F_0000.csv | UploadFile=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CM/BhavCopy_NSE_CM_0_0_0_20261016_F_0000.csv
+[2026-10-19 11:32:55] [INFO] Starting database upload | TaskID=59 | File=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CM/BhavCopy_NSE_CM_0_0_0_20261016_F_0000.csv | Table=tbl_nseeq_bhavcopy_ud
+[2026-10-19 11:32:55] [INFO] ======================================================================
+[2026-10-19 11:32:55] [INFO] Processing file: BhavCopy_NSE_CM_0_0_0_20261016_F_0000.csv
+[2026-10-19 11:32:55] [INFO] Target table: tbl_nseeq_bhavcopy_ud
+[2026-10-19 11:32:55] [INFO] ======================================================================
+[2026-10-19 11:32:55] [INFO] Upload successful: BhavCopy_NSE_CM_0_0_0_20261016_F_0000.csv
+[2026-10-19 11:32:55] [INFO] Database upload completed | TaskID=59
+[2026-10-19 11:32:55] [INFO] Task marked COMPLETED: TaskID=59
+[2026-10-19 11:32:55] [INFO] Dispatching task | TaskID=61 | TaskType=DOWN | Alias=BSEEQ Bhav Copy
+[2026-10-19 11:32:55] [INFO] Download protocol selected | TaskID=61 | Protocol=url
+[2026-10-19 11:32:55] [INFO] Local directories ready | TaskID=61 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/CM | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/CM
+[2026-10-19 11:32:55] [ERROR] Failed to process task 61: 'Config' object has no attribute 'get_download_directory'
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 486, in dispatch_task
+    return self.process_url_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 342, in process_url_download
+    return scrape_bse(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/bse/scrape_bse.py", line 515, in scrape_bse
+    download_dir = config.get_download_directory()
+AttributeError: 'Config' object has no attribute 'get_download_directory'
+
+[2026-10-19 11:32:55] [INFO] Dispatching task | TaskID=65 | TaskType=INSERTLOAD_DATA | Alias=NSEFO Bhav Copy
+[2026-10-19 11:32:55] [INFO] File pattern resolution | TaskID=65 | Original='/NSE/FO/BhavCopy_NSE_FO_0_0_0_*_F_0000.csv' | Normalized='BhavCopy_NSE_FO_0_0_0_*_F_0000.csv' | MatchedPattern='BhavCopy_NSE_FO_0_0_0_*_F_0000.csv' | Directory='/home/piyushg/automation/exchange_scraper_automation/data/NSE/FO' | Matches=['/home/piyushg/automation/exchange_scraper_automation/data/NSE/FO/BhavCopy_NSE_FO_0_0_0_20261016_F_0000.csv']
+[2026-10-19 11:32:55] [INFO] Selected file | TaskID=65 | Source=/home/piyushg/automation/exchange_scraper_automation/data/NSE/FO/BhavCopy_NSE_FO_0_0_0_20261016_F_0000.csv | UploadFile=/home/piyushg/automation/exchange_scraper_automation/data/NSE/FO/BhavCopy_NSE_FO_0_0_0_20261016_F_0000.csv
+[2026-10-19 11:32:55] [INFO] Starting database upload | TaskID=65 | File=/home/piyushg/automation/exchange_scraper_automation/data/NSE/FO/BhavCopy_NSE_FO_0_0_0_20261016_F_0000.csv | Table=tbl_nsefo_bhavcopy_ud
+[2026-10-19 11:32:55] [INFO] ======================================================================
+[2026-10-19 11:32:55] [INFO] Processing file: BhavCopy_NSE_FO_0_0_0_20261016_F_0000.csv
+[2026-10-19 11:32:55] [INFO] Target table: tbl_nsefo_bhavcopy_ud
+[2026-10-19 11:32:55] [INFO] ======================================================================
+[2026-10-19 11:32:55] [INFO] Upload successful: BhavCopy_NSE_FO_0_0_0_20261016_F_0000.csv
+[2026-10-19 11:32:55] [INFO] Database upload completed | TaskID=65
+[2026-10-19 11:32:55] [INFO] Task marked COMPLETED: TaskID=65
+[2026-10-19 11:32:55] [INFO] Dispatching task | TaskID=67 | TaskType=DOWN | Alias=BSEFO Bhav Copy
+[2026-10-19 11:32:55] [INFO] Download protocol selected | TaskID=67 | Protocol=url
+[2026-10-19 11:32:55] [INFO] Local directories ready | TaskID=67 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/FO | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/FO
+[2026-10-19 11:32:55] [ERROR] Failed to process task 67: 'Config' object has no attribute 'get_download_directory'
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 486, in dispatch_task
+    return self.process_url_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 342, in process_url_download
+    return scrape_bse(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/bse/scrape_bse.py", line 515, in scrape_bse
+    download_dir = config.get_download_directory()
+AttributeError: 'Config' object has no attribute 'get_download_directory'
+
+[2026-10-19 11:32:55] [INFO] Dispatching task | TaskID=70 | TaskType=DOWN | Alias=MCX Bhav Copy
+[2026-10-19 11:32:55] [INFO] Download protocol selected | TaskID=70 | Protocol=sftp
+[2026-10-19 11:32:55] [INFO] Local directories ready | TaskID=70 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/MCX | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/MCX
+[2026-10-19 11:32:55] [ERROR] Failed to process task 70: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:32:55] [INFO] Dispatching task | TaskID=73 | TaskType=DOWN | Alias=NCDEX Bhav Copy
+[2026-10-19 11:32:55] [INFO] Download protocol selected | TaskID=73 | Protocol=sftp
+[2026-10-19 11:32:55] [INFO] Local directories ready | TaskID=73 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/NCDEX | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/NCDEX
+[2026-10-19 11:32:55] [ERROR] Failed to process task 73: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:32:55] [INFO] Dispatching task | TaskID=77 | TaskType=INSERTLOAD_DATA | Alias=NSECOM Bhav Copy
+[2026-10-19 11:32:55] [INFO] File pattern resolution | TaskID=77 | Original='/NSE/CO/BhavCopy_NSE_CO_0_0_0_*_F_0000.csv' | Normalized='BhavCopy_NSE_CO_0_0_0_*_F_0000.csv' | MatchedPattern='BhavCopy_NSE_CO_0_0_0_*_F_0000.csv' | Directory='/home/piyushg/automation/exchange_scraper_automation/data/NSE/CO' | Matches=['/home/piyushg/automation/exchange_scraper_automation/data/NSE/CO/BhavCopy_NSE_CO_0_0_0_20261016_F_0000.csv']
+[2026-10-19 11:32:55] [INFO] Selected file | TaskID=77 | Source=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CO/BhavCopy_NSE_CO_0_0_0_20261016_F_0000.csv | UploadFile=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CO/BhavCopy_NSE_CO_0_0_0_20261016_F_0000.csv
+[2026-10-19 11:32:55] [INFO] Starting database upload | TaskID=77 | File=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CO/BhavCopy_NSE_CO_0_0_0_20261016_F_0000.csv | Table=tbl_nsecom_bhavcopy_ud
+[2026-10-19 11:32:55] [INFO] ======================================================================
+[2026-10-19 11:32:55] [INFO] Processing file: BhavCopy_NSE_CO_0_0_0_20261016_F_0000.csv
+[2026-10-19 11:32:55] [INFO] Target table: tbl_nsecom_bhavcopy_ud
+[2026-10-19 11:32:55] [INFO] ======================================================================
+[2026-10-19 11:32:56] [INFO] Upload successful: BhavCopy_NSE_CO_0_0_0_20261016_F_0000.csv
+[2026-10-19 11:32:56] [INFO] Database upload completed | TaskID=77
+[2026-10-19 11:32:56] [INFO] Task marked COMPLETED: TaskID=77
+[2026-10-19 11:32:56] [INFO] Dispatching task | TaskID=79 | TaskType=DOWN | Alias=BSECOM Bhav Copy
+[2026-10-19 11:32:56] [INFO] Download protocol selected | TaskID=79 | Protocol=url
+[2026-10-19 11:32:56] [INFO] Local directories ready | TaskID=79 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/CO | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/CO
+[2026-10-19 11:32:56] [ERROR] Failed to process task 79: 'Config' object has no attribute 'get_download_directory'
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 486, in dispatch_task
+    return self.process_url_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 342, in process_url_download
+    return scrape_bse(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/bse/scrape_bse.py", line 515, in scrape_bse
+    download_dir = config.get_download_directory()
+AttributeError: 'Config' object has no attribute 'get_download_directory'
+
+[2026-10-19 11:32:56] [INFO] Dispatching task | TaskID=82 | TaskType=DOWN | Alias=NSEEGR Bhav Copy
+[2026-10-19 11:32:56] [INFO] Download protocol selected | TaskID=82 | Protocol=sftp
+[2026-10-19 11:32:56] [INFO] Local directories ready | TaskID=82 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/NSEEGR | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/NSEEGR
+[2026-10-19 11:32:56] [ERROR] Failed to process task 82: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:32:56] [INFO] Dispatching task | TaskID=84 | TaskType=LOAD_BROKER_FILE | Alias=NSEEGR Bhav Copy
+[2026-10-19 11:32:56] [WARNING] Unsupported task type | TaskID=84 | TaskType=LOAD_BROKER_FILE
+[2026-10-19 11:32:56] [INFO] Dispatching task | TaskID=85 | TaskType=DOWN | Alias=BSEEGR Bhav Copy
+[2026-10-19 11:32:56] [INFO] Download protocol selected | TaskID=85 | Protocol=sftp
+[2026-10-19 11:32:56] [INFO] Local directories ready | TaskID=85 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/BSEEGR | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/BSEEGR
+[2026-10-19 11:32:56] [ERROR] Failed to process task 85: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:32:56] [INFO] Dispatching task | TaskID=89 | TaskType=INSERTLOAD_DATA | Alias=NSECUR Bhav Copy
+[2026-10-19 11:32:56] [INFO] File pattern resolution | TaskID=89 | Original='/NSE/CD/BhavCopy_NSE_CD_0_0_0_*_F_0000.csv' | Normalized='BhavCopy_NSE_CD_0_0_0_*_F_0000.csv' | MatchedPattern='BhavCopy_NSE_CD_0_0_0_*_F_0000.csv' | Directory='/home/piyushg/automation/exchange_scraper_automation/data/NSE/CD' | Matches=['/home/piyushg/automation/exchange_scraper_automation/data/NSE/CD/BhavCopy_NSE_CD_0_0_0_20261016_F_0000.csv']
+[2026-10-19 11:32:56] [INFO] Selected file | TaskID=89 | Source=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CD/BhavCopy_NSE_CD_0_0_0_20261016_F_0000.csv | UploadFile=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CD/BhavCopy_NSE_CD_0_0_0_20261016_F_0000.csv
+[2026-10-19 11:32:56] [INFO] Starting database upload | TaskID=89 | File=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CD/BhavCopy_NSE_CD_0_0_0_20261016_F_0000.csv | Table=tbl_nsecur_bhavcopy_ud
+[2026-10-19 11:32:56] [INFO] ======================================================================
+[2026-10-19 11:32:56] [INFO] Processing file: BhavCopy_NSE_CD_0_0_0_20261016_F_0000.csv
+[2026-10-19 11:32:56] [INFO] Target table: tbl_nsecur_bhavcopy_ud
+[2026-10-19 11:32:56] [INFO] ======================================================================
+[2026-10-19 11:32:56] [INFO] Upload successful: BhavCopy_NSE_CD_0_0_0_20261016_F_0000.csv
+[2026-10-19 11:32:56] [INFO] Database upload completed | TaskID=89
+[2026-10-19 11:32:56] [INFO] Task marked COMPLETED: TaskID=89
+[2026-10-19 11:32:56] [INFO] Dispatching task | TaskID=91 | TaskType=DOWN | Alias=BSECUR Bhav Copy
+[2026-10-19 11:32:56] [INFO] Download protocol selected | TaskID=91 | Protocol=url
+[2026-10-19 11:32:56] [INFO] Local directories ready | TaskID=91 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/CD | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/CD
+[2026-10-19 11:32:56] [ERROR] Failed to process task 91: 'Config' object has no attribute 'get_download_directory'
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 486, in dispatch_task
+    return self.process_url_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 342, in process_url_download
+    return scrape_bse(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/bse/scrape_bse.py", line 515, in scrape_bse
+    download_dir = config.get_download_directory()
+AttributeError: 'Config' object has no attribute 'get_download_directory'
+
+[2026-10-19 11:32:56] [INFO] Dispatching task | TaskID=95 | TaskType=INSERTLOAD_DATA | Alias=NSESLBM Bhav Copy
+[2026-10-19 11:32:56] [INFO] File pattern resolution | TaskID=95 | Original='/NSE/SLB/SLBM_BC_*.csv' | Normalized='SLBM_BC_*.csv' | MatchedPattern='SLBM_BC_*.csv' | Directory='/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB' | Matches=['/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/SLBM_BC_22092026.csv']
+[2026-10-19 11:32:56] [INFO] Selected file | TaskID=95 | Source=/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/SLBM_BC_22092026.csv | UploadFile=/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/SLBM_BC_22092026.csv
+[2026-10-19 11:32:56] [INFO] Starting database upload | TaskID=95 | File=/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/SLBM_BC_22092026.csv | Table=tbl_nseslbm_bhavcopy_dat
+[2026-10-19 11:32:56] [INFO] ======================================================================
+[2026-10-19 11:32:56] [INFO] Processing file: SLBM_BC_22092026.csv
+[2026-10-19 11:32:56] [INFO] Target table: tbl_nseslbm_bhavcopy_dat
+[2026-10-19 11:32:56] [INFO] ======================================================================
+[2026-10-19 11:32:56] [INFO] Upload successful: SLBM_BC_22092026.csv
+[2026-10-19 11:32:56] [INFO] Database upload completed | TaskID=95
+[2026-10-19 11:32:56] [INFO] Task marked COMPLETED: TaskID=95
+[2026-10-19 11:32:56] [INFO] Dispatching task | TaskID=97 | TaskType=DOWN | Alias=BSESLBM Bhav Copy
+[2026-10-19 11:32:56] [INFO] Download protocol selected | TaskID=97 | Protocol=url
+[2026-10-19 11:32:56] [INFO] Local directories ready | TaskID=97 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/SLB | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/SLB
+[2026-10-19 11:32:56] [ERROR] Failed to process task 97: 'Config' object has no attribute 'get_download_directory'
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 486, in dispatch_task
+    return self.process_url_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 342, in process_url_download
+    return scrape_bse(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/bse/scrape_bse.py", line 515, in scrape_bse
+    download_dir = config.get_download_directory()
+AttributeError: 'Config' object has no attribute 'get_download_directory'
+
+[2026-10-19 11:32:56] [INFO] Dispatching task | TaskID=100 | TaskType=DOWN | Alias=MSECUR Bhav Copy
+[2026-10-19 11:32:56] [INFO] Download protocol selected | TaskID=100 | Protocol=sftp
+[2026-10-19 11:32:56] [INFO] Local directories ready | TaskID=100 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/MSECUR | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/MSECUR
+[2026-10-19 11:32:56] [ERROR] Failed to process task 100: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:32:56] [INFO] Dispatching task | TaskID=103 | TaskType=DOWN | Alias=MSEEQ Bhav Copy
+[2026-10-19 11:32:56] [INFO] Download protocol selected | TaskID=103 | Protocol=sftp
+[2026-10-19 11:32:56] [INFO] Local directories ready | TaskID=103 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/MSEEQ | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/MSEEQ
+[2026-10-19 11:32:56] [ERROR] Failed to process task 103: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:32:56] [INFO] Dispatching task | TaskID=106 | TaskType=DOWN | Alias=MSEFO Bhav Copy
+[2026-10-19 11:32:56] [INFO] Download protocol selected | TaskID=106 | Protocol=sftp
+[2026-10-19 11:32:56] [INFO] Local directories ready | TaskID=106 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/MSEFO | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/MSEFO
+[2026-10-19 11:32:56] [ERROR] Failed to process task 106: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:32:56] [INFO] Dispatching task | TaskID=109 | TaskType=DOWN | Alias=NSEOFS Bhav Copy
+[2026-10-19 11:32:56] [INFO] Download protocol selected | TaskID=109 | Protocol=sftp
+[2026-10-19 11:32:56] [INFO] Local directories ready | TaskID=109 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/NSEOFS | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/NSEOFS
+[2026-10-19 11:32:56] [ERROR] Failed to process task 109: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:32:56] [INFO] Dispatching task | TaskID=111 | TaskType=LOAD_BROKER_FILE | Alias=NSEOFS Bhav Copy
+[2026-10-19 11:32:56] [WARNING] Unsupported task type | TaskID=111 | TaskType=LOAD_BROKER_FILE
+[2026-10-19 11:32:56] [INFO] Dispatching task | TaskID=112 | TaskType=DOWN | Alias=BSEOFS Bhav Copy
+[2026-10-19 11:32:56] [INFO] Download protocol selected | TaskID=112 | Protocol=sftp
+[2026-10-19 11:32:56] [INFO] Local directories ready | TaskID=112 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/BSEOFS | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/BSEOFS
+[2026-10-19 11:32:56] [ERROR] Failed to process task 112: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:32:56] [INFO] Dispatching task | TaskID=173 | TaskType=INSERTLOAD_DATA | Alias=NSEEQ Participant
+[2026-10-19 11:32:56] [INFO] File pattern resolution | TaskID=173 | Original='/NSE/CM/cm_participant.csv' | Normalized='cm_participant.csv' | MatchedPattern='cm_participant.csv' | Directory='/home/piyushg/automation/exchange_scraper_automation/data/NSE/CM' | Matches=['/home/piyushg/automation/exchange_scraper_automation/data/NSE/CM/cm_participant.csv']
+[2026-10-19 11:32:56] [INFO] Selected file | TaskID=173 | Source=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CM/cm_participant.csv | UploadFile=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CM/cm_participant.csv
+[2026-10-19 11:32:56] [INFO] Starting database upload | TaskID=173 | File=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CM/cm_participant.csv | Table=tbl_nseeq_participents
+[2026-10-19 11:32:56] [INFO] ======================================================================
+[2026-10-19 11:32:56] [INFO] Processing file: cm_participant.csv
+[2026-10-19 11:32:56] [INFO] Target table: tbl_nseeq_participents
+[2026-10-19 11:32:56] [INFO] ======================================================================
+[2026-10-19 11:32:56] [INFO] Upload successful: cm_participant.csv
+[2026-10-19 11:32:56] [INFO] Database upload completed | TaskID=173
+[2026-10-19 11:32:56] [INFO] Task marked COMPLETED: TaskID=173
+[2026-10-19 11:32:56] [INFO] Dispatching task | TaskID=175 | TaskType=DOWN | Alias=BSEEQ Participant
+[2026-10-19 11:32:56] [INFO] Download protocol selected | TaskID=175 | Protocol=sftp
+[2026-10-19 11:32:56] [INFO] Local directories ready | TaskID=175 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/BSEEQ | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/BSEEQ
+[2026-10-19 11:32:56] [ERROR] Failed to process task 175: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:32:56] [INFO] Dispatching task | TaskID=179 | TaskType=INSERTLOAD_DATA | Alias=NSEFO Participant
+[2026-10-19 11:32:56] [INFO] File pattern resolution | TaskID=179 | Original='/NSE/FO/fo_participant.csv' | Normalized='fo_participant.csv' | MatchedPattern='fo_participant.csv' | Directory='/home/piyushg/automation/exchange_scraper_automation/data/NSE/FO' | Matches=['/home/piyushg/automation/exchange_scraper_automation/data/NSE/FO/fo_participant.csv']
+[2026-10-19 11:32:56] [INFO] Selected file | TaskID=179 | Source=/home/piyushg/automation/exchange_scraper_automation/data/NSE/FO/fo_participant.csv | UploadFile=/home/piyushg/automation/exchange_scraper_automation/data/NSE/FO/fo_participant.csv
+[2026-10-19 11:32:56] [INFO] Starting database upload | TaskID=179 | File=/home/piyushg/automation/exchange_scraper_automation/data/NSE/FO/fo_participant.csv | Table=tbl_nsefo_participents
+[2026-10-19 11:32:56] [INFO] ======================================================================
+[2026-10-19 11:32:56] [INFO] Processing file: fo_participant.csv
+[2026-10-19 11:32:56] [INFO] Target table: tbl_nsefo_participents
+[2026-10-19 11:32:56] [INFO] ======================================================================
+[2026-10-19 11:32:57] [INFO] Upload successful: fo_participant.csv
+[2026-10-19 11:32:57] [INFO] Database upload completed | TaskID=179
+[2026-10-19 11:32:57] [INFO] Task marked COMPLETED: TaskID=179
+[2026-10-19 11:32:57] [INFO] Dispatching task | TaskID=181 | TaskType=DOWN | Alias=BSEFO Participant
+[2026-10-19 11:32:57] [INFO] Download protocol selected | TaskID=181 | Protocol=sftp
+[2026-10-19 11:32:57] [INFO] Local directories ready | TaskID=181 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/BSEFO | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/BSEFO
+[2026-10-19 11:32:57] [ERROR] Failed to process task 181: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:32:57] [INFO] Dispatching task | TaskID=191 | TaskType=INSERTLOAD_DATA | Alias=NSECOM Participant
+[2026-10-19 11:32:57] [INFO] File pattern resolution | TaskID=191 | Original='/NSE/CO/co_participant.csv' | Normalized='co_participant.csv' | MatchedPattern='co_participant.csv' | Directory='/home/piyushg/automation/exchange_scraper_automation/data/NSE/CO' | Matches=['/home/piyushg/automation/exchange_scraper_automation/data/NSE/CO/co_participant.csv']
+[2026-10-19 11:32:57] [INFO] Selected file | TaskID=191 | Source=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CO/co_participant.csv | UploadFile=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CO/co_participant.csv
+[2026-10-19 11:32:57] [INFO] Starting database upload | TaskID=191 | File=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CO/co_participant.csv | Table=tbl_nsecom_participents
+[2026-10-19 11:32:57] [INFO] ======================================================================
+[2026-10-19 11:32:57] [INFO] Processing file: co_participant.csv
+[2026-10-19 11:32:57] [INFO] Target table: tbl_nsecom_participents
+[2026-10-19 11:32:57] [INFO] ======================================================================
+[2026-10-19 11:32:57] [INFO] Upload successful: co_participant.csv
+[2026-10-19 11:32:57] [INFO] Database upload completed | TaskID=191
+[2026-10-19 11:32:57] [INFO] Task marked COMPLETED: TaskID=191
+[2026-10-19 11:32:57] [INFO] Dispatching task | TaskID=193 | TaskType=DOWN | Alias=BSECOM Participant
+[2026-10-19 11:32:57] [INFO] Download protocol selected | TaskID=193 | Protocol=sftp
+[2026-10-19 11:32:57] [INFO] Local directories ready | TaskID=193 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/BSECOM | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/BSECOM
+[2026-10-19 11:32:57] [ERROR] Failed to process task 193: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:32:57] [INFO] Dispatching task | TaskID=203 | TaskType=INSERTLOAD_DATA | Alias=NSECUR Participant
+[2026-10-19 11:32:57] [INFO] File pattern resolution | TaskID=203 | Original='/NSE/CD/cd_participant.csv' | Normalized='cd_participant.csv' | MatchedPattern='cd_participant.csv' | Directory='/home/piyushg/automation/exchange_scraper_automation/data/NSE/CD' | Matches=['/home/piyushg/automation/exchange_scraper_automation/data/NSE/CD/cd_participant.csv']
+[2026-10-19 11:32:57] [INFO] Selected file | TaskID=203 | Source=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CD/cd_participant.csv | UploadFile=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CD/cd_participant.csv
+[2026-10-19 11:32:57] [INFO] Starting database upload | TaskID=203 | File=/home/piyushg/automation/exchange_scraper_automation/data/NSE/CD/cd_participant.csv | Table=tbl_nsecur_participents
+[2026-10-19 11:32:57] [INFO] ======================================================================
+[2026-10-19 11:32:57] [INFO] Processing file: cd_participant.csv
+[2026-10-19 11:32:57] [INFO] Target table: tbl_nsecur_participents
+[2026-10-19 11:32:57] [INFO] ======================================================================
+[2026-10-19 11:32:57] [INFO] Upload successful: cd_participant.csv
+[2026-10-19 11:32:57] [INFO] Database upload completed | TaskID=203
+[2026-10-19 11:32:57] [INFO] Task marked COMPLETED: TaskID=203
+[2026-10-19 11:32:57] [INFO] Dispatching task | TaskID=205 | TaskType=DOWN | Alias=BSECUR Participant
+[2026-10-19 11:32:57] [INFO] Download protocol selected | TaskID=205 | Protocol=sftp
+[2026-10-19 11:32:57] [INFO] Local directories ready | TaskID=205 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/BSECUR | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/BSECUR
+[2026-10-19 11:32:57] [ERROR] Failed to process task 205: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+
+[2026-10-19 11:32:57] [INFO] Dispatching task | TaskID=209 | TaskType=INSERTLOAD_DATA | Alias=NSESLBM Participant
+[2026-10-19 11:32:57] [INFO] File pattern resolution | TaskID=209 | Original='/NSE/SLB/participant_slb.csv' | Normalized='participant_slb.csv' | MatchedPattern='participant_slb.csv' | Directory='/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB' | Matches=['/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/participant_slb.csv']
+[2026-10-19 11:32:57] [INFO] Selected file | TaskID=209 | Source=/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/participant_slb.csv | UploadFile=/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/participant_slb.csv
+[2026-10-19 11:32:57] [INFO] Starting database upload | TaskID=209 | File=/home/piyushg/automation/exchange_scraper_automation/data/NSE/SLB/participant_slb.csv | Table=tbl_nseslbm_participents
+[2026-10-19 11:32:57] [INFO] ======================================================================
+[2026-10-19 11:32:57] [INFO] Processing file: participant_slb.csv
+[2026-10-19 11:32:57] [INFO] Target table: tbl_nseslbm_participents
+[2026-10-19 11:32:57] [INFO] ======================================================================
+[2026-10-19 11:32:57] [INFO] Upload successful: participant_slb.csv
+[2026-10-19 11:32:57] [INFO] Database upload completed | TaskID=209
+[2026-10-19 11:32:57] [INFO] Task marked COMPLETED: TaskID=209
+[2026-10-19 11:32:57] [INFO] Dispatching task | TaskID=211 | TaskType=DOWN | Alias=BSESLBM Participant
+[2026-10-19 11:32:57] [INFO] Download protocol selected | TaskID=211 | Protocol=sftp
+[2026-10-19 11:32:57] [INFO] Local directories ready | TaskID=211 | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/BSESLBM | FinalDir=/home/piyushg/automation/exchange_scraper_automation/data/BSE/BSESLBM
+[2026-10-19 11:32:57] [ERROR] Failed to process task 211: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 523, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 495, in dispatch_task
+    return self.process_transfer_download(task=task, task_details=task_details, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/main.py", line 369, in process_transfer_download
+    downloaded_file = download_task_file(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 359, in download_task_file
+    config = TransferConfig.from_dict(task_details)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/scraper_utilities/file_transfer.py", line 77, in from_dict
+    raise ValueError(
+ValueError: Missing required transfer configuration fields: ['hostname', 'password']. Received keys: ['final_files_dir', 'local_filename', 'local_path', 'passwprd', 'protocol', 'remote_filename', 'remote_host', 'remote_path', 'userid']
+

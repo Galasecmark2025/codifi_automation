@@ -70,232 +70,6 @@ def get_table_column_types(connection, table_name):
     return {column_name.lower(): data_type.lower() for column_name, data_type in rows}
 
 
-def normalize_date_columns(
-    connection,
-    csv_file,
-    table_name,
-    logger=None,
-):
-    """
-    Normalize only configured date columns that exist in the CSV.
-
-    INTEGER/BIGINT columns:
-        Date strings -> Unix epoch seconds.
-
-    DATE columns:
-        Supported date strings -> YYYY-MM-DD.
-
-    Blank values remain blank.
-    Existing numeric values are preserved for integer columns.
-    """
-
-    with open(csv_file, "r", encoding="utf-8-sig", newline="") as file:
-        rows = list(csv.reader(file))
-
-    if not rows:
-        return csv_file
-
-    headers = [header.strip() for header in rows[0]]
-    header_indexes = {header.lower(): index for index, header in enumerate(headers)}
-
-    column_types = get_table_column_types(
-        connection=connection,
-        table_name=table_name,
-    )
-
-    configured_columns = {column.lower() for column in COLUMN_SPECIFICATIONS}
-
-    matching_columns = {
-        column: (
-            header_indexes[column],
-            column_types[column],
-        )
-        for column in configured_columns
-        if column in header_indexes and column in column_types
-    }
-
-    if not matching_columns:
-        return csv_file
-
-    converted_count = 0
-
-    for row_number, row in enumerate(rows[1:], start=2):
-        # Ensure the row has enough fields for its CSV header.
-        if len(row) < len(headers):
-            row.extend([""] * (len(headers) - len(row)))
-
-        for column, (index, data_type) in matching_columns.items():
-            value = row[index].strip()
-
-            if not value:
-                continue
-
-            is_integer_type = data_type in {
-                "smallint",
-                "integer",
-                "bigint",
-            }
-
-            is_date_type = data_type == "date"
-
-            # Ignore configured columns whose DB type does not
-            # require date normalization.
-            if not is_integer_type and not is_date_type:
-                continue
-
-            # Existing numeric values in integer columns are preserved.
-            if is_integer_type and value.lstrip("-").isdigit():
-                continue
-
-            try:
-                date_value = None
-
-                # Support common exchange date formats.
-                for date_format in (
-                    "%d-%b-%Y",
-                    "%Y-%m-%d",
-                    "%Y%m%d",
-                ):
-                    try:
-                        date_value = datetime.strptime(value, date_format)
-                        break
-                    except ValueError:
-                        continue
-
-                if date_value is None:
-                    # For DATE columns, also accept Unix epoch seconds.
-                    if is_date_type and value.lstrip("-").isdigit():
-                        date_value = datetime.fromtimestamp(int(value), tz=timezone.utc)
-                    else:
-                        raise ValueError(f"Unsupported date format: {value}")
-
-                if is_integer_type:
-                    date_value = date_value.replace(tzinfo=timezone.utc)
-                    row[index] = str(int(date_value.timestamp()))
-
-                elif is_date_type:
-                    row[index] = date_value.strftime("%Y-%m-%d")
-
-                converted_count += 1
-
-            except (ValueError, OverflowError, OSError) as exc:
-                raise ValueError(
-                    f"Invalid date value in "
-                    f"{os.path.basename(csv_file)} "
-                    f"[Row: {row_number}, "
-                    f"Column: {column}, Value: {value}]: {exc}"
-                ) from exc
-
-    with open(csv_file, "w", encoding="utf-8", newline="") as file:
-        writer = csv.writer(file)
-        writer.writerows([headers, *rows[1:]])
-
-    if logger:
-        logger.info(
-            f"Date fields normalized: "
-            f"{os.path.basename(csv_file)} "
-            f"[Values converted: {converted_count}]"
-        )
-
-    return csv_file
-
-
-def normalize_date_columns(csv_file, date_columns=None, logger=None):
-    """
-    Convert exchange date values to the representation
-    required by the database.
-
-    For ScripMaster INTEGER date fields:
-        28-SEP-2026 -> epoch seconds
-
-    Existing integer/epoch values are preserved.
-    Blank values remain blank for PostgreSQL NULL.
-    """
-
-    with open(csv_file, "r", encoding="utf-8-sig", newline="") as file:
-        reader = csv.reader(file)
-        rows = list(reader)
-
-    if not rows:
-        return csv_file
-
-    headers = [header.strip().lower() for header in rows[0]]
-    rows[0] = headers
-
-    date_indexes = {
-        column: (headers.index(column), data_type)
-        for column, data_type in date_columns.items()
-        if column in headers
-    }
-
-    if not date_indexes:
-        return csv_file
-
-    converted_count = 0
-
-    for row in rows[1:]:
-        for column, (index, data_type) in date_indexes.items():
-
-            # normalize_csv_file() should already have fixed row length,
-            # but keep this protection here as well.
-            if index >= len(row):
-                row.extend([""] * (index + 1 - len(row)))
-
-            value = row[index].strip()
-
-            if not value:
-                row[index] = ""
-                continue
-
-            # Already an integer / epoch value.
-            if value.lstrip("-").isdigit():
-                # continue
-                if data_type in ("INT", "BIGINT"):
-                    continue
-
-                elif data_type == "DATE":
-                    date_value = datetime.fromtimestamp(int(value), tz=timezone.utc)
-                    row[index] = date_value.strftime("%Y-%m-%d")
-                    converted_count += 1
-                    continue
-
-            try:
-                try:
-                    # Format: 28-SEP-2026
-                    date_value = datetime.strptime(value, "%d-%b-%Y")
-                except ValueError:
-                    # Format: 2022-09-23
-                    date_value = datetime.strptime(value, "%Y-%m-%d")
-
-                date_value = date_value.replace(tzinfo=timezone.utc)
-
-                if data_type == "INT":
-                    row[index] = str(int(date_value.timestamp()))
-                    converted_count += 1
-
-            except ValueError:
-                if logger:
-                    logger.warning(
-                        f"Invalid date value | "
-                        f"File={os.path.basename(csv_file)} | "
-                        f"Column={column} | "
-                        f"Value={value}"
-                    )
-
-    with open(csv_file, "w", encoding="utf-8", newline="") as file:
-        writer = csv.writer(file)
-        writer.writerows(rows)
-
-    if logger and converted_count:
-        logger.info(
-            f"Date fields normalized: "
-            f"{os.path.basename(csv_file)} "
-            f"[Values converted: {converted_count}]"
-        )
-
-    return csv_file
-
-
 def get_table_columns(connection, table_name):
     query = """
         SELECT column_name
@@ -379,16 +153,22 @@ def truncate_table(connection, table_name):
 
 
 def bulk_insert_csv(connection, table_name, csv_file):
-    db_columns = get_table_columns(connection=connection, table_name=table_name)
-
-    column_sql = sql.SQL(", ").join(sql.Identifier(column) for column in db_columns)
+    """Insert CSV data into the table using the existing column order."""
 
     query = sql.SQL(
-        "COPY {} ({}) FROM STDIN WITH (FORMAT CSV, HEADER TRUE, NULL '')"
-    ).format(sql.Identifier(table_name), column_sql)
+        "COPY {} FROM STDIN WITH (FORMAT CSV, HEADER TRUE, NULL '')").format(
+        sql.Identifier("public", table_name)
+    )
+    # db_columns = get_table_columns(connection=connection, table_name=table_name)
+
+    # column_sql = sql.SQL(", ").join(sql.Identifier(column) for column in db_columns)
+
+    # query = sql.SQL(
+    #     "COPY {} ({}) FROM STDIN WITH (FORMAT CSV, HEADER TRUE, NULL '')"
+    # ).format(sql.Identifier(table_name), column_sql)
 
     with connection.cursor() as cursor:
-        with open(csv_file, "r", encoding="utf-8", errors="replace") as file:
+        with open(csv_file, "r", encoding="utf-8-sig", errors="replace", newline="") as file:
             with cursor.copy(query) as copy:
                 while True:
                     data = file.read(1024 * 1024)
@@ -396,25 +176,6 @@ def bulk_insert_csv(connection, table_name, csv_file):
                         break
 
                     copy.write(data)
-
-
-COLUMN_SPECIFICATIONS = [
-    "xprydt",
-    "exrcstartdt",
-    "exrcenddt",
-    "bookclsrstartdt",
-    "bookclsrenddt",
-    "nodlvrystartdt",
-    "nodlvryenddt",
-    "startdt",
-    "enddt",
-    "mtrtydt",
-    "pdctstartdt",
-    "admssndt",
-    "traddt",
-    "bizdt",
-    "fininstrmactlxprydt",
-]
 
 
 def normalize_csv_file(csv_file, logger=None):
@@ -480,22 +241,15 @@ def upload_csv_file(connection, csv_file, table_name):
         raise FileNotFoundError(f"CSV file not found: {csv_file}")
 
     try:
-        normalize_csv_file(
-            csv_file=csv_file,
-            logger=logger,
-        )
-
-        if 'participents' in table_name.lower():
-            logger.info(
-                f"Skipping column-name mapping for participant table: "
-                f"{table_name}. Inserting CSV data directly by column order."
-            )
-        else:
-            prepare_csv_for_table(
-                connection=connection,
-                csv_file=csv_file,
-                table_name=table_name,
-            )
+        # prepare_csv_for_table(
+        #     connection=connection,
+        #     csv_file=csv_file,
+        #     table_name=table_name,
+        # )
+        # normalize_csv_file(
+        #     csv_file=csv_file,
+        #     logger=logger,
+        # )
 
         truncate_table(
             connection=connection,

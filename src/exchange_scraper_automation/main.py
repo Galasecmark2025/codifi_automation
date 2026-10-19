@@ -464,7 +464,7 @@ class TaskProcessor:
         # Decide the operation using task type first.
         match task_type:
             case "INSERTLOAD_DATA":
-                return
+                # return
                 return self.insert_task(
                     task=task,
                     task_details=task_details,
@@ -491,7 +491,7 @@ class TaskProcessor:
                         )
 
                     case "ftp" | "sftp":
-                        return
+                        # return
                         return self.process_transfer_download(task=task, task_details=task_details, )
 
                     case _:
