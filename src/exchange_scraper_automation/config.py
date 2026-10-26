@@ -408,12 +408,12 @@ class Config:
         ).strip()
 
         self._nse_reports_url = str(
-            nse_common.get("capitalMarketUrl")
-            or exchange_api.get("nseReportsUrl", "")
+            nse_common.get("capitalMarketUrl") or exchange_api.get("nseReportsUrl", "")
         ).strip()
 
         self._nse_derivatives_url = str(
-            nse_common.get("derivativesUrl") or exchange_api.get("nseDerivativesUrl", "")
+            nse_common.get("derivativesUrl")
+            or exchange_api.get("nseDerivativesUrl", "")
         ).strip()
 
         self._bse_api_url = str(

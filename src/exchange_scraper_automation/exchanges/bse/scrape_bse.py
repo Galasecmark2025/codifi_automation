@@ -12,11 +12,12 @@ from urllib.parse import unquote, urljoin, urlparse
 
 import requests
 
-from exchange_scraper_automation.file_management.file_operations import post_process
-from exchange_scraper_automation.file_management.filename_patterns import (
-    validate_filenamepath,
-)
-from exchange_scraper_automation.models.bse_report_config import BSEReportConfig
+from exchange_scraper_automation.file_management.file_operations import \
+    post_process
+from exchange_scraper_automation.file_management.filename_patterns import \
+    validate_filenamepath
+from exchange_scraper_automation.models.bse_report_config import \
+    BSEReportConfig
 from exchange_scraper_automation.models.task import Task
 from exchange_scraper_automation.models.task_paths import TaskPaths
 from exchange_scraper_automation.observability.logger import Logger
@@ -70,7 +71,11 @@ def get_url_file_name(download_url: str) -> str:
     return file_name
 
 
-def build_download_url(download_path: str, file_name: str, base_api: str,) -> str:
+def build_download_url(
+    download_path: str,
+    file_name: str,
+    base_api: str,
+) -> str:
     """Join a configured BSE download path and file name safely."""
     if download_path.startswith(("http://", "https://")):
         if download_path.endswith("/"):
@@ -81,16 +86,19 @@ def build_download_url(download_path: str, file_name: str, base_api: str,) -> st
     return urljoin(base_url, f"{download_path.strip('/')}/{file_name}")
 
 
-def request_bse_file(download_url: str, file_path: str, logger: Any, config: Any,) -> str:
+def request_bse_file(
+    download_url: str,
+    file_path: str,
+    logger: Any,
+    config: Any,
+) -> str:
     """Download one BSE file and validate that a non-empty file was written."""
     session = requests.Session()
     session.headers.update(config.get_bse_scraper_headers())
     # session.headers.update(BSE_HEADERS)
 
     if not download_url:
-        Logger.warning(f"Download URL is missing for BSE\n"
-                       f"File path: {file_path}"
-        )
+        Logger.warning(f"Download URL is missing for BSE\n" f"File path: {file_path}")
         return False
     response = session.get(
         download_url,
@@ -107,16 +115,16 @@ def request_bse_file(download_url: str, file_path: str, logger: Any, config: Any
 
         file_size = os.path.getsize(temporary_path)
         if file_size == 0:
-            Logger.error(
-                f"BSE downloaded file is empty: {os.path.basename(file_path)}"
-            )
+            Logger.error(f"BSE downloaded file is empty: {os.path.basename(file_path)}")
         os.replace(temporary_path, file_path)
     finally:
         if os.path.exists(temporary_path):
             os.remove(temporary_path)
 
-    logger.info(f"Downloaded      : {os.path.basename(file_path)}"
-                f"Downloaded size : {os.path.getsize(file_path):,} bytes")
+    logger.info(
+        f"Downloaded      : {os.path.basename(file_path)}"
+        f"Downloaded size : {os.path.getsize(file_path):,} bytes"
+    )
     return file_path
 
 
@@ -228,9 +236,9 @@ def download_bse_file(
     else:
         # For ordinary downloads, validate the actual remote filename.
         validate_filenamepath(
-                filenamepath=filenamepath,
-                actual_filename=remote_file_name,
-            )
+            filenamepath=filenamepath,
+            actual_filename=remote_file_name,
+        )
         Logger.info(
             f"BSE filename validation passed | TaskID={task.task_id} | "
             f"Filename={file_name} | FilenamePath={filenamepath}"
@@ -328,12 +336,13 @@ def download_bse_slbm(
     download_path = str(task_details.download_path).strip()
     if not download_path:
         logger.error(f"Missing SLBM download_path | TaskID={task.task_id}")
-    download_url = build_download_url(download_path, file_name, config.get_bse_base_api(),)
-    # validate_bse_file(file_name, task, filenamepath)
-    validate_filenamepath(
-        filenamepath=filenamepath, 
-        actual_filename=file_name
+    download_url = build_download_url(
+        download_path,
+        file_name,
+        config.get_bse_base_api(),
     )
+    # validate_bse_file(file_name, task, filenamepath)
+    validate_filenamepath(filenamepath=filenamepath, actual_filename=file_name)
 
     logger.info(
         f"{'-' * 32}\n"
@@ -347,7 +356,12 @@ def download_bse_slbm(
 
     os.makedirs(download_dir, exist_ok=True)
     file_path = os.path.join(download_dir, file_name)
-    request_bse_file(download_url=download_url, file_path=file_path, logger=logger, config=config,)
+    request_bse_file(
+        download_url=download_url,
+        file_path=file_path,
+        logger=logger,
+        config=config,
+    )
     processed_result = run_post_process(
         file_path=file_path,
         logger=logger,
@@ -414,10 +428,7 @@ def download_bse_var(
         logger=logger,
     )
     file_name = get_url_file_name(api_url)
-    validate_filenamepath(
-        filenamepath=filenamepath, 
-        actual_filename=file_name
-    )
+    validate_filenamepath(filenamepath=filenamepath, actual_filename=file_name)
 
     # Keep the prior BSE margin file route when the API provides only a filename
     # or relative path; honor an absolute API URL unchanged.
@@ -443,7 +454,12 @@ def download_bse_var(
 
     os.makedirs(download_dir, exist_ok=True)
     file_path = os.path.join(download_dir, file_name)
-    request_bse_file(download_url=download_url, file_path=file_path, logger=logger, config=config,)
+    request_bse_file(
+        download_url=download_url,
+        file_path=file_path,
+        logger=logger,
+        config=config,
+    )
 
     selection_rule = str(task_details.zip_file or "same_as_zip")
     zip_base_name = os.path.splitext(file_name)[0]

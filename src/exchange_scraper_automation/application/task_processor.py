@@ -15,17 +15,17 @@ from exchange_scraper_automation.config import Config
 from exchange_scraper_automation.data_paths import resolve_alias_data_path
 from exchange_scraper_automation.database.connection import get_connection
 from exchange_scraper_automation.database.operations import (
-    update_task_status,
-    upload_csv_file,
-)
+    update_task_status, upload_csv_file)
 from exchange_scraper_automation.exchanges.bse.scrape_bse import scrape_bse
 from exchange_scraper_automation.exchanges.nse.scrape_nse import scrape_nse
-from exchange_scraper_automation.file_management.file_operations import post_process
+from exchange_scraper_automation.file_management.file_operations import \
+    post_process
 from exchange_scraper_automation.models.task import Task
 from exchange_scraper_automation.models.task_paths import TaskPaths
 from exchange_scraper_automation.observability.logger import Logger
 from exchange_scraper_automation.security.secret_manager import SecretManager
-from exchange_scraper_automation.transfers.file_transfer import download_task_file
+from exchange_scraper_automation.transfers.file_transfer import \
+    download_task_file
 
 
 class TaskProcessor:
@@ -69,9 +69,7 @@ class TaskProcessor:
         directory.mkdir(parents=True, exist_ok=True)
 
         if not directory.is_dir():
-            Logger.error(
-                f"TaskID={task.task_id}: Invalid directory: {directory}"
-            )
+            Logger.error(f"TaskID={task.task_id}: Invalid directory: {directory}")
 
         Logger.info(
             f"Local directories ready | "
@@ -326,9 +324,7 @@ class TaskProcessor:
             )
 
         if not download_dir.is_dir():
-            Logger.error(
-                f"Download path is not a directory: {download_dir}"
-            )
+            Logger.error(f"Download path is not a directory: {download_dir}")
 
         Logger.info(
             f"Download directory ready | "
@@ -439,11 +435,7 @@ class TaskProcessor:
 
     def process_tasks(self, connection: Any):
         """Process due tasks and return the active database connection."""
-        Logger.info(
-            f"{'=' * 70}\n"
-            "TASK WORKER STARTED\n"
-            f"{'=' * 70}"
-        )
+        Logger.info(f"{'=' * 70}\n" "TASK WORKER STARTED\n" f"{'=' * 70}")
 
         try:
             # tasks = self.get_due_tasks(connection)
@@ -500,11 +492,7 @@ class TaskProcessor:
         except Exception as error:
             Logger.error(f"Task worker failed: {error}\n{traceback.format_exc()}")
         finally:
-            Logger.info(
-                f"{'=' * 70}\n"
-                "TASK WORKER FINISHED\n"
-                f"{'=' * 70}"
-            )
+            Logger.info(f"{'=' * 70}\n" "TASK WORKER FINISHED\n" f"{'=' * 70}")
 
         # A reconnect may replace the original connection; return the active one
         # so TaskApplication can close the correct connection when the worker ends.

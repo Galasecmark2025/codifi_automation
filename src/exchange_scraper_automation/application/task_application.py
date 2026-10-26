@@ -8,7 +8,8 @@ import traceback
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from typing import Any
 
-from exchange_scraper_automation.application.task_processor import TaskProcessor
+from exchange_scraper_automation.application.task_processor import \
+    TaskProcessor
 from exchange_scraper_automation.config import Config
 from exchange_scraper_automation.database.connection import get_connection
 from exchange_scraper_automation.observability.logger import Logger

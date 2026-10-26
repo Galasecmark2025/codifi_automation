@@ -303,7 +303,7 @@ def upload_csv_file(connection, csv_file, table_name):
     file_name = os.path.basename(csv_file)
 
     logger.info(
-    f"{'=' * 70}\n"
+        f"{'=' * 70}\n"
         f"Processing file: {file_name}\n"
         f"Target table: {table_name}\n"
         f"{'=' * 70}"

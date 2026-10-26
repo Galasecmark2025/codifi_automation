@@ -15,9 +15,8 @@ from types import SimpleNamespace
 
 import paramiko
 
-from exchange_scraper_automation.file_management.filename_patterns import (
-    filename_template_regex,
-)
+from exchange_scraper_automation.file_management.filename_patterns import \
+    filename_template_regex
 from exchange_scraper_automation.observability.logger import Logger
 from exchange_scraper_automation.security.secret_manager import SecretManager
 

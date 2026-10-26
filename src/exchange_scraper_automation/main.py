@@ -2,7 +2,8 @@
 
 from __future__ import annotations
 
-from exchange_scraper_automation.application.task_application import TaskApplication
+from exchange_scraper_automation.application.task_application import \
+    TaskApplication
 from exchange_scraper_automation.config import Config, log_loaded_configuration
 from exchange_scraper_automation.data_paths import DATA_ROOT
 from exchange_scraper_automation.observability.logger import Logger

@@ -106,7 +106,10 @@ class Logger:
             f"{message}"
         )
 
-        if cls._destination in (LogDestination.PRINT, LogDestination.BOTH, ):
+        if cls._destination in (
+            LogDestination.PRINT,
+            LogDestination.BOTH,
+        ):
             print(log_message)
 
         if cls._store_to_file:
@@ -134,7 +137,10 @@ class Logger:
             "BOTH": LogDestination.BOTH,
         }
 
-        return destinations.get(destination.upper(), LogDestination.PRINT, )
+        return destinations.get(
+            destination.upper(),
+            LogDestination.PRINT,
+        )
 
     @staticmethod
     def get_log_level_string(log_level: LogLevel) -> str:

@@ -44,7 +44,10 @@ def detect_text_delimiter(input_file):
     try:
         return (
             csv.Sniffer()
-            .sniff(sample, delimiters=",|;\t",)
+            .sniff(
+                sample,
+                delimiters=",|;\t",
+            )
             .delimiter
         )
 

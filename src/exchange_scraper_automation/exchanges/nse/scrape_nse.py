@@ -9,11 +9,12 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
-from exchange_scraper_automation.file_management.file_operations import post_process
-from exchange_scraper_automation.file_management.filename_patterns import (
-    validate_filenamepath,
-)
-from exchange_scraper_automation.models.nse_report_config import NSEReportConfig
+from exchange_scraper_automation.file_management.file_operations import \
+    post_process
+from exchange_scraper_automation.file_management.filename_patterns import \
+    validate_filenamepath
+from exchange_scraper_automation.models.nse_report_config import \
+    NSEReportConfig
 from exchange_scraper_automation.models.task import Task
 from exchange_scraper_automation.models.task_paths import TaskPaths
 from exchange_scraper_automation.observability.logger import Logger
@@ -233,8 +234,12 @@ def download_file(session, download_url, file_path, logger):
     # FINALIZE DOWNLOAD
     os.replace(temp_path, file_path)
 
-    logger.info(f"Download completed : " f"{os.path.basename(file_path)}\n"
-                f"Downloaded size    : " f"{actual_size:,} bytes")
+    logger.info(
+        f"Download completed : "
+        f"{os.path.basename(file_path)}\n"
+        f"Downloaded size    : "
+        f"{actual_size:,} bytes"
+    )
 
     return file_path
 
@@ -322,8 +327,7 @@ def download_nse_files(task: Task, paths: TaskPaths, config, logger=None):
         )
 
         # OPEN NSE
-        logger.info(f"Opening NSE market : {market}\n"
-                    f"Opening NSE page   : {url}")
+        logger.info(f"Opening NSE market : {market}\n" f"Opening NSE page   : {url}")
         driver.get(url)
         wait_for_page(driver)
 
@@ -382,13 +386,16 @@ def download_nse_files(task: Task, paths: TaskPaths, config, logger=None):
 
         # GET FILENAME
         file_name = get_file_name(download_url)
-        logger.info(f"Report Name : {report_label}\n"
-                    f"File Name   : {file_name}\n"
-                    f"URL         : {download_url}")
+        logger.info(
+            f"Report Name : {report_label}\n"
+            f"File Name   : {file_name}\n"
+            f"URL         : {download_url}"
+        )
 
         # REQUEST SESSION
         session = requests.Session()
-        session.headers.update({
+        session.headers.update(
+            {
                 "User-Agent": user_agent,
                 "Referer": url,
                 "Accept": "*/*",
@@ -426,11 +433,7 @@ def download_nse_files(task: Task, paths: TaskPaths, config, logger=None):
 
 # NSE SCRAPER
 def scrape_nse(task, config, paths: TaskPaths, connection=None):
-    Logger.info(
-        f"{'=' * 70}\n"
-        "STARTING NSE SCRAPING\n"
-        f"{'=' * 70}"
-    )
+    Logger.info(f"{'=' * 70}\n" "STARTING NSE SCRAPING\n" f"{'=' * 70}")
 
     try:
         result = download_nse_files(
