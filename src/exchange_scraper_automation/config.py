@@ -1,20 +1,16 @@
-
 # config.py
 
 import configparser
 import json
 import logging
-from pathlib import Path
 from copy import deepcopy
+from pathlib import Path
 
 import requests
 
-
 logger = logging.getLogger(__name__)
 DEFAULT_CONFIG_PATH = (
-    Path(__file__).resolve().parents[2]
-    / "Config"
-    / "configservice.ini"
+    Path(__file__).resolve().parents[2] / "Config" / "configservice.ini"
 )
 
 
@@ -67,6 +63,9 @@ class Config:
         self._service_config = {}
 
         self._loaded = False
+
+        # Security
+        self._sftp_encryption_key = ""
 
     def load(self, file_path=DEFAULT_CONFIG_PATH, service_id=DEFAULT_SERVICE_ID):
         """
@@ -192,7 +191,9 @@ class Config:
             # ---------------------------------------------
             # 5. Populate the application's configuration
             # ---------------------------------------------
-            self._apply_service_config(service_config, service_id, common_config=common_config)
+            self._apply_service_config(
+                service_config, service_id, common_config=common_config
+            )
 
             self._loaded = True
 
@@ -217,7 +218,6 @@ class Config:
             )
             return False
 
-    
     @staticmethod
     def _extract_common_config(response_json):
         """Find the common configuration object containing logSetting."""
@@ -230,13 +230,16 @@ class Config:
                 if isinstance(current.get("logSetting"), dict):
                     return current
 
-                pending.extend(value for value in current.values() if isinstance(value, (dict, list)))
+                pending.extend(
+                    value
+                    for value in current.values()
+                    if isinstance(value, (dict, list))
+                )
 
             elif isinstance(current, list):
                 pending.extend(current)
 
         return {}
-
 
     @staticmethod
     def _extract_service_config(response_json):
@@ -252,10 +255,7 @@ class Config:
                 return current
 
             # The flattened response is the expected format.
-            if any(
-                key in current
-                for key in ("database", "server", "exchangeBaseAPI")
-            ):
+            if any(key in current for key in ("database", "server", "exchangeBaseAPI")):
                 return current
 
             nested = None
@@ -281,17 +281,26 @@ class Config:
         database = config.get("database", {})
         server = config.get("server", {})
         exchange_api = config.get("exchangeBaseAPI", {})
-        
+
+        bse_common = config.get("bseCommonConfig", {})
+        nse_common = config.get("nseCommonConfig", {})
+
+        if not isinstance(bse_common, dict):
+            raise ValueError("'bseCommonConfig' must be a JSON object")
+
+        if not isinstance(nse_common, dict):
+            raise ValueError("'nseCommonConfig' must be a JSON object")
+
         common_config = common_config or {}
 
         common_log = common_config.get("logSetting", {})
         service_logging = config.get("logging", {})
 
         if not isinstance(common_log, dict):
-            raise ValueError("'logSetting' must be a JSON object")
+            logger.error("'logSetting' must be a JSON object")
 
         if not isinstance(service_logging, dict):
-            raise ValueError("'logging' must be a JSON object")
+            logger.error("'logging' must be a JSON object")
 
         # Convert the common sink into settings understood by the application.
         sink = str(common_log.get("appLogSink", "PRINT")).strip().upper()
@@ -302,13 +311,16 @@ class Config:
             "BOTH": ("BOTH", True),
         }
 
-        destination, store_to_file = sink_defaults.get(sink, ("PRINT", False), )
+        destination, store_to_file = sink_defaults.get(
+            sink,
+            ("PRINT", False),
+        )
 
-        service_label = str(
-            config.get("serviceType")
-            or config.get("serviceName")
-            or "application"
-        ).strip().replace(" ", "_")
+        service_label = (
+            str(config.get("serviceType") or config.get("serviceName") or "application")
+            .strip()
+            .replace(" ", "_")
+        )
 
         # Common configuration supplies defaults.
         logging_config = {
@@ -325,32 +337,22 @@ class Config:
                 logging_config[key] = value
 
         # Populate the existing Config attributes.
-        self._logging_destination = str(
-            logging_config["destination"]
-        )
-        self._logging_level = str(
-            logging_config["level"]
-        )
-        self._store_to_file = (
-            logging_config["storeToFile"] is True
-        )
-        self._logging_directory = str(
-            logging_config["directory"]
-        )
-        self._logging_file_name = str(
-            logging_config["logFileName"]
-        )
+        self._logging_destination = str(logging_config["destination"])
+        self._logging_level = str(logging_config["level"])
+        self._store_to_file = logging_config["storeToFile"] is True
+        self._logging_directory = str(logging_config["directory"])
+        self._logging_file_name = str(logging_config["logFileName"])
 
         scraper_config = config.get("scraper", {})
 
         if not isinstance(database, dict):
-            raise ValueError("'database' must be a JSON object")
+            logger.error("'database' must be a JSON object")
 
         if not isinstance(server, dict):
-            raise ValueError("'server' must be a JSON object")
+            logger.error("'server' must be a JSON object")
 
         if not isinstance(exchange_api, dict):
-            raise ValueError("'exchangeBaseAPI' must be a JSON object")
+            logger.error("'exchangeBaseAPI' must be a JSON object")
 
         # Validate required database settings.
         required_database_keys = (
@@ -368,7 +370,7 @@ class Config:
         ]
 
         if missing_database_keys:
-            raise ValueError(
+            logger.error(
                 "Missing database configuration keys: "
                 + ", ".join(missing_database_keys)
             )
@@ -376,14 +378,10 @@ class Config:
         # Validate required server settings.
         for key in ("host", "port"):
             if key not in server or server[key] is None:
-                raise ValueError(
-                    f"Missing server configuration key: {key}"
-                )
+                logger.error(f"Missing server configuration key: {key}")
 
         # Service metadata.
-        self._service_id = int(
-            config.get("serviceId", requested_service_id)
-        )
+        self._service_id = int(config.get("serviceId", requested_service_id))
         self._service_name = str(config.get("serviceName", ""))
         self._service_type = str(config.get("serviceType", ""))
 
@@ -399,54 +397,52 @@ class Config:
         self._server_port = int(server["port"])
 
         if not 1 <= self._database_port <= 65535:
-            raise ValueError("Database port must be between 1 and 65535")
+            logger.error("Database port must be between 1 and 65535")
 
         if not 1 <= self._server_port <= 65535:
-            raise ValueError("Server port must be between 1 and 65535")
+            logger.error("Server port must be between 1 and 65535")
 
-        # Exchange API URLs.
+        # Exchange API URLs
         self._nse_page_url = str(
-            exchange_api.get("nsePageUrl", "")
-        )
+            nse_common.get("pageUrl") or exchange_api.get("nsePageUrl", "")
+        ).strip()
+
         self._nse_reports_url = str(
-            exchange_api.get("nseReportsUrl", "")
-        )
+            nse_common.get("capitalMarketUrl")
+            or exchange_api.get("nseReportsUrl", "")
+        ).strip()
+
         self._nse_derivatives_url = str(
-            exchange_api.get("nseDerivativesUrl", "")
-        )
+            nse_common.get("derivativesUrl") or exchange_api.get("nseDerivativesUrl", "")
+        ).strip()
+
         self._bse_api_url = str(
-            exchange_api.get("bseApiUrl", "")
-        )
+            bse_common.get("apiUrl") or exchange_api.get("bseApiUrl", "")
+        ).strip()
 
         # Optional logging configuration.
         # These remain at their defaults if the JSON doesn't include
         # a "logging" object.
-        self._logging_destination = str(
-            logging_config.get("destination", "")
-        )
-        self._logging_level = str(
-            logging_config.get("level", "")
-        )
-        self._store_to_file = (
-            logging_config.get("storeToFile", False) is True
-        )
-        self._logging_directory = str(
-            logging_config.get("directory", "")
-        )
-        self._logging_file_name = str(
-            logging_config.get("logFileName", "")
-        )
+        self._logging_destination = str(logging_config.get("destination", ""))
+        self._logging_level = str(logging_config.get("level", ""))
+        self._store_to_file = logging_config.get("storeToFile", False) is True
+        self._logging_directory = str(logging_config.get("directory", ""))
+        self._logging_file_name = str(logging_config.get("logFileName", ""))
 
         # Optional scraper configuration.
-        self._scraper_exchange = str(
-            scraper_config.get("exchange", "")
-        )
-        self._scraper_segment = str(
-            scraper_config.get("segment", "")
-        )
-        self._scraper_file_type = str(
-            scraper_config.get("fileType", "")
-        )
+        self._scraper_exchange = str(scraper_config.get("exchange", ""))
+        self._scraper_segment = str(scraper_config.get("segment", ""))
+        self._scraper_file_type = str(scraper_config.get("fileType", ""))
+
+        # Security configuration
+        security_config = config.get("security", {})
+
+        if not isinstance(security_config, dict):
+            logger.error("'security' must be a JSON object")
+
+        self._sftp_encryption_key = str(
+            security_config.get("sftpEncryptionKey", "")
+        ).strip()
 
         # Retain the complete response configuration for fields
         # that may be added in the future.
@@ -550,12 +546,105 @@ class Config:
     def get_nse_derivatives_url(self):
         return self._nse_derivatives_url
 
-    def get_bse_api_url(self):
-        return self._bse_api_url
+    def get_bse_base_api(self) -> str:
+        return str(
+            self._service_config.get("bseCommonConfig", {}).get("baseApi", "")
+        ).strip()
+
+    def get_bse_scraper_headers(self) -> dict:
+        return deepcopy(
+            self._service_config.get("bseCommonConfig", {}).get("scraperHeaders", {})
+        )
+
+    def get_bse_download_headers(self) -> dict:
+        return deepcopy(
+            self._service_config.get("bseCommonConfig", {}).get("downloadHeaders", {})
+        )
+
+    def get_nse_user_agent(self) -> str:
+        return str(
+            self._service_config.get("nseCommonConfig", {}).get("userAgent", "")
+        ).strip()
+
+    # ---------------------------------------------
+    # SFTP password encryption
+    # ---------------------------------------------
+    def get_sftp_encryption_key(self) -> str:
+        """Return the SFTP encryption key from the configuration service."""
+
+        if not self._sftp_encryption_key:
+            logger.error(
+                "SFTP encryption key is missing from the configuration service."
+            )
+
+        return self._sftp_encryption_key
 
 
+def redact_sensitive_values(value):
+    """Redact secrets in nested configuration dictionaries and lists."""
 
-def test_config_service_connection() -> bool:
+    sensitive_keys = (
+        "password",
+        "passwd",
+        "token",
+        "secret",
+        "apikey",
+        "accesskey",
+        "authorization",
+        "encryptionkey",
+        "privatekey",
+        "credential",
+    )
+
+    if isinstance(value, dict):
+        safe_config = {}
+
+        for key, item in value.items():
+            normalized_key = str(key).lower().replace("_", "").replace("-", "")
+
+            if any(secret in normalized_key for secret in sensitive_keys):
+                safe_config[key] = "[REDACTED]"
+            else:
+                safe_config[key] = redact_sensitive_values(item)
+
+        return safe_config
+
+    if isinstance(value, list):
+        return [redact_sensitive_values(item) for item in value]
+
+    return value
+
+
+def log_loaded_configuration(config: Config, Logger) -> None:
+    """Log configuration details once after successful configuration."""
+
+    safe_config = redact_sensitive_values(config.get_service_config())
+
+    effective_logging = {
+        "destination": config.get_logging_destination(),
+        "level": config.get_logging_level(),
+        "store_to_file": config.get_store_to_file(),
+        "directory": config.get_logging_directory(),
+        "file_name": config.get_logging_file_name(),
+    }
+
+    Logger.info(
+        f"{'=' * 70}\n"
+        "LOADED CONFIGURATION\n"
+        f"{'=' * 70}\n\n"
+        f"Config service IP: {config.get_config_service_ip()}\n"
+        f"Config service port: {config.get_config_service_port()}\n\n"
+        "Effective logging configuration:\n"
+        f"{json.dumps(effective_logging, indent=2)}\n\n"
+        "Service configuration (sensitive values redacted):\n"
+        f"{json.dumps(safe_config, indent=2, ensure_ascii=False)}\n\n"
+        f"{'=' * 70}\n"
+        "CONFIGURATION LOGGING COMPLETED\n"
+        f"{'=' * 70}"
+    )
+
+
+def test_config_service_connection():
     """Test config-service connectivity and effective configuration."""
 
     logging.basicConfig(
@@ -610,7 +699,10 @@ def test_config_service_connection() -> bool:
     print(f"NSE Page URL        : {config.get_nse_page_url()}")
     print(f"NSE Reports URL     : {config.get_nse_reports_url()}")
     print(f"NSE Derivatives URL : {config.get_nse_derivatives_url()}")
-    print(f"BSE API URL         : {config.get_bse_api_url()}")
+    print(f"NSE User Agents     : {config.get_nse_user_agent}")
+    print(f"BSE Base API URL    : {config.get_bse_base_api()}")
+    print(f"BSE Download Headers: {config.get_bse_download_headers}")
+    print(f"BSE Scraper Headers : {config.get_bse_scraper_headers}")
 
     print("\n---------- Service-Specific JSON ----------")
 

@@ -1,0 +1,1528 @@
+[2026-10-21 17:34:44] [INFO] Listener shutdown requested.
+[2026-10-21 17:34:44] [INFO] Task listener stopped.
+[2026-10-21 17:34:47] [INFO] Data root ready: /home/piyushg/automation/exchange_scraper_automation/ExchangeData
+[2026-10-21 17:34:47] [INFO] ======================================================================
+[2026-10-21 17:34:47] [INFO] EXCHANGE SCRAPER AUTOMATION STARTING
+[2026-10-21 17:34:47] [INFO] ======================================================================
+[2026-10-21 17:34:47] [INFO] ======================================================================
+[2026-10-21 17:34:47] [INFO] TASK LISTENER STARTED
+[2026-10-21 17:34:47] [INFO] Host: 0.0.0.0
+[2026-10-21 17:34:47] [INFO] Port: 8080
+[2026-10-21 17:34:47] [INFO] Trigger endpoint: POST /trigger
+[2026-10-21 17:34:47] [INFO] Health endpoint: GET /health
+[2026-10-21 17:34:47] [INFO] ======================================================================
+[2026-10-21 17:34:49] [INFO] Trigger received: POST /trigger
+[2026-10-21 17:34:49] [INFO] Task worker thread started.
+[2026-10-21 17:34:49] [INFO] PostgreSQL connection established | Attempt=1/3 | Host=localhost | Port=5433 | Database=upload_service_config_db
+[2026-10-21 17:34:49] [INFO] ======================================================================
+[2026-10-21 17:34:49] [INFO] TASK WORKER STARTED
+[2026-10-21 17:34:49] [INFO] ======================================================================
+[2026-10-21 17:34:49] [INFO] Due tasks received from database: 70
+[2026-10-21 17:34:49] [INFO] Dispatching task | TaskID=5 | TaskType=INSERTLOAD_DATA | Alias=BSEEQ Scrip Master
+[2026-10-21 17:34:49] [ERROR] Task processing failed | TaskID=5 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=5
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 395, in dispatch_task
+    return self.insert_task(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 156, in insert_task
+    raise ValueError(
+ValueError: Missing filenamepath column in database task | TaskID=5
+
+[2026-10-21 17:34:49] [INFO] Dispatching task | TaskID=11 | TaskType=INSERTLOAD_DATA | Alias=BSEFO Scrip Master
+[2026-10-21 17:34:49] [ERROR] Task processing failed | TaskID=11 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=11
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 395, in dispatch_task
+    return self.insert_task(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 156, in insert_task
+    raise ValueError(
+ValueError: Missing filenamepath column in database task | TaskID=11
+
+[2026-10-21 17:34:49] [INFO] Dispatching task | TaskID=13 | TaskType=DOWN | Alias=MCX Scrip Master
+[2026-10-21 17:34:49] [INFO] Download protocol selected | TaskID=13 | Protocol=sftp
+[2026-10-21 17:34:49] [INFO] Local directories ready | TaskID=13 | Alias=MCX Scrip Master | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MCX | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MCX
+[2026-10-21 17:34:49] [INFO] Download directory ready | TaskID=13 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MCX
+[2026-10-21 17:34:49] [ERROR] Task processing failed | TaskID=13 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=13
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=13
+
+[2026-10-21 17:34:49] [INFO] Dispatching task | TaskID=16 | TaskType=DOWN | Alias=NCDEX Scrip Master
+[2026-10-21 17:34:49] [INFO] Download protocol selected | TaskID=16 | Protocol=sftp
+[2026-10-21 17:34:49] [INFO] Local directories ready | TaskID=16 | Alias=NCDEX Scrip Master | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NCDEX | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NCDEX
+[2026-10-21 17:34:49] [INFO] Download directory ready | TaskID=16 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NCDEX
+[2026-10-21 17:34:49] [ERROR] Task processing failed | TaskID=16 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=16
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=16
+
+[2026-10-21 17:34:49] [INFO] Dispatching task | TaskID=23 | TaskType=INSERTLOAD_DATA | Alias=BSECOM Scrip Master
+[2026-10-21 17:34:49] [ERROR] Task processing failed | TaskID=23 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=23
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 395, in dispatch_task
+    return self.insert_task(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 156, in insert_task
+    raise ValueError(
+ValueError: Missing filenamepath column in database task | TaskID=23
+
+[2026-10-21 17:34:49] [INFO] Dispatching task | TaskID=25 | TaskType=DOWN | Alias=NSEEGR Scrip Master
+[2026-10-21 17:34:49] [INFO] Download protocol selected | TaskID=25 | Protocol=sftp
+[2026-10-21 17:34:49] [INFO] Local directories ready | TaskID=25 | Alias=NSEEGR Scrip Master | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSEEGR | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSEEGR
+[2026-10-21 17:34:49] [INFO] Download directory ready | TaskID=25 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSEEGR
+[2026-10-21 17:34:49] [ERROR] Task processing failed | TaskID=25 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=25
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=25
+
+[2026-10-21 17:34:49] [INFO] Dispatching task | TaskID=27 | TaskType=LOAD_BROKER_FILE | Alias=NSEEGR Scrip Master
+[2026-10-21 17:34:49] [WARNING] Unsupported task type | TaskID=27 | TaskType=LOAD_BROKER_FILE
+[2026-10-21 17:34:49] [INFO] Dispatching task | TaskID=28 | TaskType=DOWN | Alias=BSEEGR Scrip Master
+[2026-10-21 17:34:49] [INFO] Download protocol selected | TaskID=28 | Protocol=sftp
+[2026-10-21 17:34:49] [INFO] Local directories ready | TaskID=28 | Alias=BSEEGR Scrip Master | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEEGR | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEEGR
+[2026-10-21 17:34:49] [INFO] Download directory ready | TaskID=28 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEEGR
+[2026-10-21 17:34:49] [ERROR] Task processing failed | TaskID=28 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=28
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=28
+
+[2026-10-21 17:34:49] [INFO] Dispatching task | TaskID=31 | TaskType=DOWN | Alias=NSECUR Scrip Master
+[2026-10-21 17:34:49] [INFO] Download protocol selected | TaskID=31 | Protocol=sftp
+[2026-10-21 17:34:49] [INFO] Local directories ready | TaskID=31 | Alias=NSECUR Scrip Master | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSECUR | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSECUR
+[2026-10-21 17:34:49] [INFO] Download directory ready | TaskID=31 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSECUR
+[2026-10-21 17:34:49] [INFO] Searching remote files | Protocol=SFTP | Host=20.40.232.163 | Directory=/ | Pattern=NSE_CD_contract_<DDMMYYYY>.csv.gz
+[2026-10-21 17:34:52] [ERROR] Download failed | Protocol=SFTP | Directory=/ Error=No files matching 'NSE_CD_contract_<DDMMYYYY>.csv.gz' found in remote directory '/'
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/transfers/file_transfer.py", line 141, in download
+    remote_filename = self._find_remote_file(remote_dir, filename_template, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/transfers/file_transfer.py", line 255, in _find_remote_file
+    raise FileNotFoundError(
+FileNotFoundError: No files matching 'NSE_CD_contract_<DDMMYYYY>.csv.gz' found in remote directory '/'
+
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=31 | ErrorType=FileNotFoundError | Error=No files matching 'NSE_CD_contract_<DDMMYYYY>.csv.gz' found in remote directory '/'
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 337, in process_transfer_download
+    downloaded_file = download_task_file(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/transfers/file_transfer.py", line 336, in download_task_file
+    return downloader.download()
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/transfers/file_transfer.py", line 141, in download
+    remote_filename = self._find_remote_file(remote_dir, filename_template, )
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/transfers/file_transfer.py", line 255, in _find_remote_file
+    raise FileNotFoundError(
+FileNotFoundError: No files matching 'NSE_CD_contract_<DDMMYYYY>.csv.gz' found in remote directory '/'
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=35 | TaskType=INSERTLOAD_DATA | Alias=BSECUR Scrip Master
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=35 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=35
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 395, in dispatch_task
+    return self.insert_task(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 156, in insert_task
+    raise ValueError(
+ValueError: Missing filenamepath column in database task | TaskID=35
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=41 | TaskType=INSERTLOAD_DATA | Alias=BSESLBM Scrip Master
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=41 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=41
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 395, in dispatch_task
+    return self.insert_task(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 156, in insert_task
+    raise ValueError(
+ValueError: Missing filenamepath column in database task | TaskID=41
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=43 | TaskType=DOWN | Alias=MSECUR Scrip Master
+[2026-10-21 17:34:52] [INFO] Download protocol selected | TaskID=43 | Protocol=sftp
+[2026-10-21 17:34:52] [INFO] Local directories ready | TaskID=43 | Alias=MSECUR Scrip Master | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSECUR | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSECUR
+[2026-10-21 17:34:52] [INFO] Download directory ready | TaskID=43 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSECUR
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=43 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=43
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=43
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=46 | TaskType=DOWN | Alias=MSEEQ Scrip Master
+[2026-10-21 17:34:52] [INFO] Download protocol selected | TaskID=46 | Protocol=sftp
+[2026-10-21 17:34:52] [INFO] Local directories ready | TaskID=46 | Alias=MSEEQ Scrip Master | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEEQ | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEEQ
+[2026-10-21 17:34:52] [INFO] Download directory ready | TaskID=46 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEEQ
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=46 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=46
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=46
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=49 | TaskType=DOWN | Alias=MSEFO Scrip Master
+[2026-10-21 17:34:52] [INFO] Download protocol selected | TaskID=49 | Protocol=sftp
+[2026-10-21 17:34:52] [INFO] Local directories ready | TaskID=49 | Alias=MSEFO Scrip Master | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEFO | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEFO
+[2026-10-21 17:34:52] [INFO] Download directory ready | TaskID=49 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEFO
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=49 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=49
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=49
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=52 | TaskType=DOWN | Alias=NSEOFS Scrip Master
+[2026-10-21 17:34:52] [INFO] Download protocol selected | TaskID=52 | Protocol=sftp
+[2026-10-21 17:34:52] [INFO] Local directories ready | TaskID=52 | Alias=NSEOFS Scrip Master | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSEOFS | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSEOFS
+[2026-10-21 17:34:52] [INFO] Download directory ready | TaskID=52 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSEOFS
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=52 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=52
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=52
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=54 | TaskType=LOAD_BROKER_FILE | Alias=NSEOFS Scrip Master
+[2026-10-21 17:34:52] [WARNING] Unsupported task type | TaskID=54 | TaskType=LOAD_BROKER_FILE
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=55 | TaskType=DOWN | Alias=BSEOFS Scrip Master
+[2026-10-21 17:34:52] [INFO] Download protocol selected | TaskID=55 | Protocol=sftp
+[2026-10-21 17:34:52] [INFO] Local directories ready | TaskID=55 | Alias=BSEOFS Scrip Master | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEOFS | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEOFS
+[2026-10-21 17:34:52] [INFO] Download directory ready | TaskID=55 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEOFS
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=55 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=55
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=55
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=62 | TaskType=INSERTLOAD_DATA | Alias=BSEEQ Bhav Copy
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=62 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=62
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 395, in dispatch_task
+    return self.insert_task(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 156, in insert_task
+    raise ValueError(
+ValueError: Missing filenamepath column in database task | TaskID=62
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=68 | TaskType=INSERTLOAD_DATA | Alias=BSEFO Bhav Copy
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=68 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=68
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 395, in dispatch_task
+    return self.insert_task(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 156, in insert_task
+    raise ValueError(
+ValueError: Missing filenamepath column in database task | TaskID=68
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=70 | TaskType=DOWN | Alias=MCX Bhav Copy
+[2026-10-21 17:34:52] [INFO] Download protocol selected | TaskID=70 | Protocol=sftp
+[2026-10-21 17:34:52] [INFO] Local directories ready | TaskID=70 | Alias=MCX Bhav Copy | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MCX | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MCX
+[2026-10-21 17:34:52] [INFO] Download directory ready | TaskID=70 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MCX
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=70 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=70
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=70
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=73 | TaskType=DOWN | Alias=NCDEX Bhav Copy
+[2026-10-21 17:34:52] [INFO] Download protocol selected | TaskID=73 | Protocol=sftp
+[2026-10-21 17:34:52] [INFO] Local directories ready | TaskID=73 | Alias=NCDEX Bhav Copy | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NCDEX | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NCDEX
+[2026-10-21 17:34:52] [INFO] Download directory ready | TaskID=73 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NCDEX
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=73 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=73
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=73
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=80 | TaskType=INSERTLOAD_DATA | Alias=BSECOM Bhav Copy
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=80 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=80
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 395, in dispatch_task
+    return self.insert_task(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 156, in insert_task
+    raise ValueError(
+ValueError: Missing filenamepath column in database task | TaskID=80
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=82 | TaskType=DOWN | Alias=NSEEGR Bhav Copy
+[2026-10-21 17:34:52] [INFO] Download protocol selected | TaskID=82 | Protocol=sftp
+[2026-10-21 17:34:52] [INFO] Local directories ready | TaskID=82 | Alias=NSEEGR Bhav Copy | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSEEGR | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSEEGR
+[2026-10-21 17:34:52] [INFO] Download directory ready | TaskID=82 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSEEGR
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=82 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=82
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=82
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=84 | TaskType=LOAD_BROKER_FILE | Alias=NSEEGR Bhav Copy
+[2026-10-21 17:34:52] [WARNING] Unsupported task type | TaskID=84 | TaskType=LOAD_BROKER_FILE
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=85 | TaskType=DOWN | Alias=BSEEGR Bhav Copy
+[2026-10-21 17:34:52] [INFO] Download protocol selected | TaskID=85 | Protocol=sftp
+[2026-10-21 17:34:52] [INFO] Local directories ready | TaskID=85 | Alias=BSEEGR Bhav Copy | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEEGR | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEEGR
+[2026-10-21 17:34:52] [INFO] Download directory ready | TaskID=85 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEEGR
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=85 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=85
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=85
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=92 | TaskType=INSERTLOAD_DATA | Alias=BSECUR Bhav Copy
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=92 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=92
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 395, in dispatch_task
+    return self.insert_task(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 156, in insert_task
+    raise ValueError(
+ValueError: Missing filenamepath column in database task | TaskID=92
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=98 | TaskType=INSERTLOAD_DATA | Alias=BSESLBM Bhav Copy
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=98 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=98
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 395, in dispatch_task
+    return self.insert_task(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 156, in insert_task
+    raise ValueError(
+ValueError: Missing filenamepath column in database task | TaskID=98
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=100 | TaskType=DOWN | Alias=MSECUR Bhav Copy
+[2026-10-21 17:34:52] [INFO] Download protocol selected | TaskID=100 | Protocol=sftp
+[2026-10-21 17:34:52] [INFO] Local directories ready | TaskID=100 | Alias=MSECUR Bhav Copy | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSECUR | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSECUR
+[2026-10-21 17:34:52] [INFO] Download directory ready | TaskID=100 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSECUR
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=100 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=100
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=100
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=103 | TaskType=DOWN | Alias=MSEEQ Bhav Copy
+[2026-10-21 17:34:52] [INFO] Download protocol selected | TaskID=103 | Protocol=sftp
+[2026-10-21 17:34:52] [INFO] Local directories ready | TaskID=103 | Alias=MSEEQ Bhav Copy | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEEQ | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEEQ
+[2026-10-21 17:34:52] [INFO] Download directory ready | TaskID=103 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEEQ
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=103 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=103
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=103
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=106 | TaskType=DOWN | Alias=MSEFO Bhav Copy
+[2026-10-21 17:34:52] [INFO] Download protocol selected | TaskID=106 | Protocol=sftp
+[2026-10-21 17:34:52] [INFO] Local directories ready | TaskID=106 | Alias=MSEFO Bhav Copy | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEFO | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEFO
+[2026-10-21 17:34:52] [INFO] Download directory ready | TaskID=106 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEFO
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=106 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=106
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=106
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=109 | TaskType=DOWN | Alias=NSEOFS Bhav Copy
+[2026-10-21 17:34:52] [INFO] Download protocol selected | TaskID=109 | Protocol=sftp
+[2026-10-21 17:34:52] [INFO] Local directories ready | TaskID=109 | Alias=NSEOFS Bhav Copy | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSEOFS | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSEOFS
+[2026-10-21 17:34:52] [INFO] Download directory ready | TaskID=109 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSEOFS
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=109 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=109
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=109
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=111 | TaskType=LOAD_BROKER_FILE | Alias=NSEOFS Bhav Copy
+[2026-10-21 17:34:52] [WARNING] Unsupported task type | TaskID=111 | TaskType=LOAD_BROKER_FILE
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=112 | TaskType=DOWN | Alias=BSEOFS Bhav Copy
+[2026-10-21 17:34:52] [INFO] Download protocol selected | TaskID=112 | Protocol=sftp
+[2026-10-21 17:34:52] [INFO] Local directories ready | TaskID=112 | Alias=BSEOFS Bhav Copy | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEOFS | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEOFS
+[2026-10-21 17:34:52] [INFO] Download directory ready | TaskID=112 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEOFS
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=112 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=112
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=112
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=119 | TaskType=INSERTLOAD_DATA | Alias=BSEEQ ELMargin
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=119 | ErrorType=ValueError | Error=Missing filepath: TaskID=119
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 395, in dispatch_task
+    return self.insert_task(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 147, in insert_task
+    raise ValueError(f"Missing filepath: TaskID={task.get('taskid')}")
+ValueError: Missing filepath: TaskID=119
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=123 | TaskType=LOAD_BROKER_FILE | Alias=NSEFO ELMargin
+[2026-10-21 17:34:52] [WARNING] Unsupported task type | TaskID=123 | TaskType=LOAD_BROKER_FILE
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=125 | TaskType=INSERTLOAD_DATA | Alias=BSEFO ELMargin
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=125 | ErrorType=ValueError | Error=Missing filepath: TaskID=125
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 395, in dispatch_task
+    return self.insert_task(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 147, in insert_task
+    raise ValueError(f"Missing filepath: TaskID={task.get('taskid')}")
+ValueError: Missing filepath: TaskID=125
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=127 | TaskType=DOWN | Alias=MCX ELMargin
+[2026-10-21 17:34:52] [INFO] Download protocol selected | TaskID=127 | Protocol=sftp
+[2026-10-21 17:34:52] [INFO] Local directories ready | TaskID=127 | Alias=MCX ELMargin | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MCX | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MCX
+[2026-10-21 17:34:52] [INFO] Download directory ready | TaskID=127 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MCX
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=127 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=127
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=127
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=130 | TaskType=DOWN | Alias=NCDEX ELMargin
+[2026-10-21 17:34:52] [INFO] Download protocol selected | TaskID=130 | Protocol=sftp
+[2026-10-21 17:34:52] [INFO] Local directories ready | TaskID=130 | Alias=NCDEX ELMargin | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NCDEX | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NCDEX
+[2026-10-21 17:34:52] [INFO] Download directory ready | TaskID=130 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NCDEX
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=130 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=130
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=130
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=135 | TaskType=LOAD_BROKER_FILE | Alias=NSECOM ELMargin
+[2026-10-21 17:34:52] [WARNING] Unsupported task type | TaskID=135 | TaskType=LOAD_BROKER_FILE
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=137 | TaskType=INSERTLOAD_DATA | Alias=BSECOM ELMargin
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=137 | ErrorType=ValueError | Error=Missing filepath: TaskID=137
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 395, in dispatch_task
+    return self.insert_task(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 147, in insert_task
+    raise ValueError(f"Missing filepath: TaskID={task.get('taskid')}")
+ValueError: Missing filepath: TaskID=137
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=141 | TaskType=LOAD_BROKER_FILE | Alias=NSEEGR ELMargin
+[2026-10-21 17:34:52] [WARNING] Unsupported task type | TaskID=141 | TaskType=LOAD_BROKER_FILE
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=142 | TaskType=DOWN | Alias=BSEEGR ELMargin
+[2026-10-21 17:34:52] [INFO] Download protocol selected | TaskID=142 | Protocol=sftp
+[2026-10-21 17:34:52] [INFO] Local directories ready | TaskID=142 | Alias=BSEEGR ELMargin | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEEGR | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEEGR
+[2026-10-21 17:34:52] [INFO] Download directory ready | TaskID=142 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEEGR
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=142 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=142
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=142
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=147 | TaskType=LOAD_BROKER_FILE | Alias=NSECUR ELMargin
+[2026-10-21 17:34:52] [WARNING] Unsupported task type | TaskID=147 | TaskType=LOAD_BROKER_FILE
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=149 | TaskType=INSERTLOAD_DATA | Alias=BSECUR ELMargin
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=149 | ErrorType=ValueError | Error=Missing filepath: TaskID=149
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 395, in dispatch_task
+    return self.insert_task(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 147, in insert_task
+    raise ValueError(f"Missing filepath: TaskID={task.get('taskid')}")
+ValueError: Missing filepath: TaskID=149
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=153 | TaskType=LOAD_BROKER_FILE | Alias=NSESLBM ELMargin
+[2026-10-21 17:34:52] [WARNING] Unsupported task type | TaskID=153 | TaskType=LOAD_BROKER_FILE
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=155 | TaskType=INSERTLOAD_DATA | Alias=BSESLBM ELMargin
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=155 | ErrorType=ValueError | Error=Missing filepath: TaskID=155
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 395, in dispatch_task
+    return self.insert_task(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 147, in insert_task
+    raise ValueError(f"Missing filepath: TaskID={task.get('taskid')}")
+ValueError: Missing filepath: TaskID=155
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=157 | TaskType=DOWN | Alias=MSECUR ELMargin
+[2026-10-21 17:34:52] [INFO] Download protocol selected | TaskID=157 | Protocol=sftp
+[2026-10-21 17:34:52] [INFO] Local directories ready | TaskID=157 | Alias=MSECUR ELMargin | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSECUR | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSECUR
+[2026-10-21 17:34:52] [INFO] Download directory ready | TaskID=157 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSECUR
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=157 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=157
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=157
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=160 | TaskType=DOWN | Alias=MSEEQ ELMargin
+[2026-10-21 17:34:52] [INFO] Download protocol selected | TaskID=160 | Protocol=sftp
+[2026-10-21 17:34:52] [INFO] Local directories ready | TaskID=160 | Alias=MSEEQ ELMargin | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEEQ | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEEQ
+[2026-10-21 17:34:52] [INFO] Download directory ready | TaskID=160 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEEQ
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=160 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=160
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=160
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=163 | TaskType=DOWN | Alias=MSEFO ELMargin
+[2026-10-21 17:34:52] [INFO] Download protocol selected | TaskID=163 | Protocol=sftp
+[2026-10-21 17:34:52] [INFO] Local directories ready | TaskID=163 | Alias=MSEFO ELMargin | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEFO | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEFO
+[2026-10-21 17:34:52] [INFO] Download directory ready | TaskID=163 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEFO
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=163 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=163
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=163
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=168 | TaskType=LOAD_BROKER_FILE | Alias=NSEOFS ELMargin
+[2026-10-21 17:34:52] [WARNING] Unsupported task type | TaskID=168 | TaskType=LOAD_BROKER_FILE
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=169 | TaskType=DOWN | Alias=BSEOFS ELMargin
+[2026-10-21 17:34:52] [INFO] Download protocol selected | TaskID=169 | Protocol=sftp
+[2026-10-21 17:34:52] [INFO] Local directories ready | TaskID=169 | Alias=BSEOFS ELMargin | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEOFS | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEOFS
+[2026-10-21 17:34:52] [INFO] Download directory ready | TaskID=169 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEOFS
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=169 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=169
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=169
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=174 | TaskType=LOAD_BROKER_FILE | Alias=NSEEQ Participant
+[2026-10-21 17:34:52] [WARNING] Unsupported task type | TaskID=174 | TaskType=LOAD_BROKER_FILE
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=176 | TaskType=INSERTLOAD_DATA | Alias=BSEEQ Participant
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=176 | ErrorType=ValueError | Error=Missing filepath: TaskID=176
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 395, in dispatch_task
+    return self.insert_task(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 147, in insert_task
+    raise ValueError(f"Missing filepath: TaskID={task.get('taskid')}")
+ValueError: Missing filepath: TaskID=176
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=180 | TaskType=LOAD_BROKER_FILE | Alias=NSEFO Participant
+[2026-10-21 17:34:52] [WARNING] Unsupported task type | TaskID=180 | TaskType=LOAD_BROKER_FILE
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=182 | TaskType=INSERTLOAD_DATA | Alias=BSEFO Participant
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=182 | ErrorType=ValueError | Error=Missing filepath: TaskID=182
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 395, in dispatch_task
+    return self.insert_task(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 147, in insert_task
+    raise ValueError(f"Missing filepath: TaskID={task.get('taskid')}")
+ValueError: Missing filepath: TaskID=182
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=184 | TaskType=DOWN | Alias=MCX Participant
+[2026-10-21 17:34:52] [INFO] Download protocol selected | TaskID=184 | Protocol=sftp
+[2026-10-21 17:34:52] [INFO] Local directories ready | TaskID=184 | Alias=MCX Participant | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MCX | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MCX
+[2026-10-21 17:34:52] [INFO] Download directory ready | TaskID=184 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MCX
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=184 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=184
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=184
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=187 | TaskType=DOWN | Alias=NCDEX Participant
+[2026-10-21 17:34:52] [INFO] Download protocol selected | TaskID=187 | Protocol=sftp
+[2026-10-21 17:34:52] [INFO] Local directories ready | TaskID=187 | Alias=NCDEX Participant | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NCDEX | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NCDEX
+[2026-10-21 17:34:52] [INFO] Download directory ready | TaskID=187 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NCDEX
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=187 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=187
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=187
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=192 | TaskType=LOAD_BROKER_FILE | Alias=NSECOM Participant
+[2026-10-21 17:34:52] [WARNING] Unsupported task type | TaskID=192 | TaskType=LOAD_BROKER_FILE
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=194 | TaskType=INSERTLOAD_DATA | Alias=BSECOM Participant
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=194 | ErrorType=ValueError | Error=Missing filepath: TaskID=194
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 395, in dispatch_task
+    return self.insert_task(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 147, in insert_task
+    raise ValueError(f"Missing filepath: TaskID={task.get('taskid')}")
+ValueError: Missing filepath: TaskID=194
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=196 | TaskType=DOWN | Alias=NSEEGR Participant
+[2026-10-21 17:34:52] [INFO] Download protocol selected | TaskID=196 | Protocol=sftp
+[2026-10-21 17:34:52] [INFO] Local directories ready | TaskID=196 | Alias=NSEEGR Participant | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSEEGR | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSEEGR
+[2026-10-21 17:34:52] [INFO] Download directory ready | TaskID=196 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSEEGR
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=196 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=196
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=196
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=199 | TaskType=DOWN | Alias=BSEEGR Participant
+[2026-10-21 17:34:52] [INFO] Download protocol selected | TaskID=199 | Protocol=sftp
+[2026-10-21 17:34:52] [INFO] Local directories ready | TaskID=199 | Alias=BSEEGR Participant | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEEGR | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEEGR
+[2026-10-21 17:34:52] [INFO] Download directory ready | TaskID=199 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEEGR
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=199 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=199
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=199
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=204 | TaskType=LOAD_BROKER_FILE | Alias=NSECUR Participant
+[2026-10-21 17:34:52] [WARNING] Unsupported task type | TaskID=204 | TaskType=LOAD_BROKER_FILE
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=206 | TaskType=INSERTLOAD_DATA | Alias=BSECUR Participant
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=206 | ErrorType=ValueError | Error=Missing filepath: TaskID=206
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 395, in dispatch_task
+    return self.insert_task(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 147, in insert_task
+    raise ValueError(f"Missing filepath: TaskID={task.get('taskid')}")
+ValueError: Missing filepath: TaskID=206
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=210 | TaskType=LOAD_BROKER_FILE | Alias=NSESLBM Participant
+[2026-10-21 17:34:52] [WARNING] Unsupported task type | TaskID=210 | TaskType=LOAD_BROKER_FILE
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=212 | TaskType=INSERTLOAD_DATA | Alias=BSESLBM Participant
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=212 | ErrorType=ValueError | Error=Missing filepath: TaskID=212
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 395, in dispatch_task
+    return self.insert_task(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 147, in insert_task
+    raise ValueError(f"Missing filepath: TaskID={task.get('taskid')}")
+ValueError: Missing filepath: TaskID=212
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=214 | TaskType=DOWN | Alias=MSECUR Participant
+[2026-10-21 17:34:52] [INFO] Download protocol selected | TaskID=214 | Protocol=sftp
+[2026-10-21 17:34:52] [INFO] Local directories ready | TaskID=214 | Alias=MSECUR Participant | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSECUR | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSECUR
+[2026-10-21 17:34:52] [INFO] Download directory ready | TaskID=214 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSECUR
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=214 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=214
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=214
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=217 | TaskType=DOWN | Alias=MSEEQ Participant
+[2026-10-21 17:34:52] [INFO] Download protocol selected | TaskID=217 | Protocol=sftp
+[2026-10-21 17:34:52] [INFO] Local directories ready | TaskID=217 | Alias=MSEEQ Participant | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEEQ | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEEQ
+[2026-10-21 17:34:52] [INFO] Download directory ready | TaskID=217 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEEQ
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=217 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=217
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=217
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=220 | TaskType=DOWN | Alias=MSEFO Participant
+[2026-10-21 17:34:52] [INFO] Download protocol selected | TaskID=220 | Protocol=sftp
+[2026-10-21 17:34:52] [INFO] Local directories ready | TaskID=220 | Alias=MSEFO Participant | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEFO | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEFO
+[2026-10-21 17:34:52] [INFO] Download directory ready | TaskID=220 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEFO
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=220 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=220
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=220
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=223 | TaskType=DOWN | Alias=NSEOFS Participant
+[2026-10-21 17:34:52] [INFO] Download protocol selected | TaskID=223 | Protocol=sftp
+[2026-10-21 17:34:52] [INFO] Local directories ready | TaskID=223 | Alias=NSEOFS Participant | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSEOFS | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSEOFS
+[2026-10-21 17:34:52] [INFO] Download directory ready | TaskID=223 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSEOFS
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=223 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=223
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=223
+
+[2026-10-21 17:34:52] [INFO] Dispatching task | TaskID=226 | TaskType=DOWN | Alias=BSEOFS Participant
+[2026-10-21 17:34:52] [INFO] Download protocol selected | TaskID=226 | Protocol=sftp
+[2026-10-21 17:34:52] [INFO] Local directories ready | TaskID=226 | Alias=BSEOFS Participant | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEOFS | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEOFS
+[2026-10-21 17:34:52] [INFO] Download directory ready | TaskID=226 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEOFS
+[2026-10-21 17:34:52] [ERROR] Task processing failed | TaskID=226 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=226
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=226
+
+[2026-10-21 17:34:52] [INFO] ======================================================================
+[2026-10-21 17:34:52] [INFO] TASK WORKER FINISHED
+[2026-10-21 17:34:52] [INFO] ======================================================================
+[2026-10-21 17:34:52] [INFO] Worker database connection closed.
+[2026-10-21 17:35:20] [INFO] Trigger received: POST /trigger
+[2026-10-21 17:35:20] [INFO] Task worker thread started.
+[2026-10-21 17:35:20] [INFO] PostgreSQL connection established | Attempt=1/3 | Host=localhost | Port=5433 | Database=upload_service_config_db
+[2026-10-21 17:35:20] [INFO] ======================================================================
+[2026-10-21 17:35:20] [INFO] TASK WORKER STARTED
+[2026-10-21 17:35:20] [INFO] ======================================================================
+[2026-10-21 17:35:20] [INFO] Due tasks received from database: 70
+[2026-10-21 17:35:20] [INFO] Dispatching task | TaskID=5 | TaskType=INSERTLOAD_DATA | Alias=BSEEQ Scrip Master
+[2026-10-21 17:35:20] [ERROR] Task processing failed | TaskID=5 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=5
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 395, in dispatch_task
+    return self.insert_task(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 156, in insert_task
+    raise ValueError(
+ValueError: Missing filenamepath column in database task | TaskID=5
+
+[2026-10-21 17:35:20] [INFO] Dispatching task | TaskID=11 | TaskType=INSERTLOAD_DATA | Alias=BSEFO Scrip Master
+[2026-10-21 17:35:20] [ERROR] Task processing failed | TaskID=11 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=11
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 395, in dispatch_task
+    return self.insert_task(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 156, in insert_task
+    raise ValueError(
+ValueError: Missing filenamepath column in database task | TaskID=11
+
+[2026-10-21 17:35:20] [INFO] Dispatching task | TaskID=13 | TaskType=DOWN | Alias=MCX Scrip Master
+[2026-10-21 17:35:20] [INFO] Download protocol selected | TaskID=13 | Protocol=sftp
+[2026-10-21 17:35:20] [INFO] Local directories ready | TaskID=13 | Alias=MCX Scrip Master | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MCX | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MCX
+[2026-10-21 17:35:20] [INFO] Download directory ready | TaskID=13 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MCX
+[2026-10-21 17:35:20] [ERROR] Task processing failed | TaskID=13 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=13
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=13
+
+[2026-10-21 17:35:20] [INFO] Dispatching task | TaskID=16 | TaskType=DOWN | Alias=NCDEX Scrip Master
+[2026-10-21 17:35:20] [INFO] Download protocol selected | TaskID=16 | Protocol=sftp
+[2026-10-21 17:35:20] [INFO] Local directories ready | TaskID=16 | Alias=NCDEX Scrip Master | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NCDEX | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NCDEX
+[2026-10-21 17:35:20] [INFO] Download directory ready | TaskID=16 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NCDEX
+[2026-10-21 17:35:20] [ERROR] Task processing failed | TaskID=16 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=16
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=16
+
+[2026-10-21 17:35:20] [INFO] Dispatching task | TaskID=23 | TaskType=INSERTLOAD_DATA | Alias=BSECOM Scrip Master
+[2026-10-21 17:35:20] [ERROR] Task processing failed | TaskID=23 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=23
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 395, in dispatch_task
+    return self.insert_task(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 156, in insert_task
+    raise ValueError(
+ValueError: Missing filenamepath column in database task | TaskID=23
+
+[2026-10-21 17:35:20] [INFO] Dispatching task | TaskID=25 | TaskType=DOWN | Alias=NSEEGR Scrip Master
+[2026-10-21 17:35:20] [INFO] Download protocol selected | TaskID=25 | Protocol=sftp
+[2026-10-21 17:35:20] [INFO] Local directories ready | TaskID=25 | Alias=NSEEGR Scrip Master | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSEEGR | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSEEGR
+[2026-10-21 17:35:20] [INFO] Download directory ready | TaskID=25 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSEEGR
+[2026-10-21 17:35:20] [ERROR] Task processing failed | TaskID=25 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=25
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=25
+
+[2026-10-21 17:35:20] [INFO] Dispatching task | TaskID=27 | TaskType=LOAD_BROKER_FILE | Alias=NSEEGR Scrip Master
+[2026-10-21 17:35:20] [WARNING] Unsupported task type | TaskID=27 | TaskType=LOAD_BROKER_FILE
+[2026-10-21 17:35:20] [INFO] Dispatching task | TaskID=28 | TaskType=DOWN | Alias=BSEEGR Scrip Master
+[2026-10-21 17:35:20] [INFO] Download protocol selected | TaskID=28 | Protocol=sftp
+[2026-10-21 17:35:20] [INFO] Local directories ready | TaskID=28 | Alias=BSEEGR Scrip Master | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEEGR | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEEGR
+[2026-10-21 17:35:20] [INFO] Download directory ready | TaskID=28 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEEGR
+[2026-10-21 17:35:20] [ERROR] Task processing failed | TaskID=28 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=28
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=28
+
+[2026-10-21 17:35:20] [INFO] Dispatching task | TaskID=31 | TaskType=DOWN | Alias=NSECUR Scrip Master
+[2026-10-21 17:35:20] [INFO] Download protocol selected | TaskID=31 | Protocol=sftp
+[2026-10-21 17:35:20] [INFO] Local directories ready | TaskID=31 | Alias=NSECUR Scrip Master | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSECUR | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSECUR
+[2026-10-21 17:35:20] [INFO] Download directory ready | TaskID=31 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSECUR
+[2026-10-21 17:35:20] [INFO] Searching remote files | Protocol=SFTP | Host=20.40.232.163 | Directory=/CD | Pattern=NSE_CD_contract_<DDMMYYYY>.csv.gz
+[2026-10-21 17:35:23] [INFO] Selected remote file | Remote=/CD/NSE_CD_contract_22092026.csv.gz | Local=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSECUR/NSE_CD_contract_22092026.csv.gz
+[2026-10-21 17:35:29] [INFO] Download completed successfully | Local=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSECUR/NSE_CD_contract_22092026.csv.gz | Size=372618 bytes
+[2026-10-21 17:35:29] [INFO] GZ Extracted : /home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSECUR/.gz_extract_c9mzzaz2/NSE_CD_contract_22092026.csv
+[2026-10-21 17:35:29] [INFO] CSV Copied : /home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSECUR/NSE_CD_contract_22092026.csv
+[2026-10-21 17:35:30] [INFO] CSV columns converted to lowercase: /home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSECUR/NSE_CD_contract_22092026.csv
+[2026-10-21 17:35:30] [INFO] FTP/SFTP download and post-processing completed | TaskID=31 | Downloaded=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSECUR/NSE_CD_contract_22092026.csv.gz | Processed=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSECUR/NSE_CD_contract_22092026.csv
+[2026-10-21 17:35:30] [INFO] Task marked COMPLETED: TaskID=31
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=35 | TaskType=INSERTLOAD_DATA | Alias=BSECUR Scrip Master
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=35 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=35
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 395, in dispatch_task
+    return self.insert_task(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 156, in insert_task
+    raise ValueError(
+ValueError: Missing filenamepath column in database task | TaskID=35
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=41 | TaskType=INSERTLOAD_DATA | Alias=BSESLBM Scrip Master
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=41 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=41
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 395, in dispatch_task
+    return self.insert_task(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 156, in insert_task
+    raise ValueError(
+ValueError: Missing filenamepath column in database task | TaskID=41
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=43 | TaskType=DOWN | Alias=MSECUR Scrip Master
+[2026-10-21 17:35:30] [INFO] Download protocol selected | TaskID=43 | Protocol=sftp
+[2026-10-21 17:35:30] [INFO] Local directories ready | TaskID=43 | Alias=MSECUR Scrip Master | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSECUR | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSECUR
+[2026-10-21 17:35:30] [INFO] Download directory ready | TaskID=43 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSECUR
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=43 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=43
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=43
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=46 | TaskType=DOWN | Alias=MSEEQ Scrip Master
+[2026-10-21 17:35:30] [INFO] Download protocol selected | TaskID=46 | Protocol=sftp
+[2026-10-21 17:35:30] [INFO] Local directories ready | TaskID=46 | Alias=MSEEQ Scrip Master | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEEQ | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEEQ
+[2026-10-21 17:35:30] [INFO] Download directory ready | TaskID=46 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEEQ
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=46 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=46
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=46
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=49 | TaskType=DOWN | Alias=MSEFO Scrip Master
+[2026-10-21 17:35:30] [INFO] Download protocol selected | TaskID=49 | Protocol=sftp
+[2026-10-21 17:35:30] [INFO] Local directories ready | TaskID=49 | Alias=MSEFO Scrip Master | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEFO | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEFO
+[2026-10-21 17:35:30] [INFO] Download directory ready | TaskID=49 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEFO
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=49 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=49
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=49
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=52 | TaskType=DOWN | Alias=NSEOFS Scrip Master
+[2026-10-21 17:35:30] [INFO] Download protocol selected | TaskID=52 | Protocol=sftp
+[2026-10-21 17:35:30] [INFO] Local directories ready | TaskID=52 | Alias=NSEOFS Scrip Master | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSEOFS | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSEOFS
+[2026-10-21 17:35:30] [INFO] Download directory ready | TaskID=52 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSEOFS
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=52 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=52
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=52
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=54 | TaskType=LOAD_BROKER_FILE | Alias=NSEOFS Scrip Master
+[2026-10-21 17:35:30] [WARNING] Unsupported task type | TaskID=54 | TaskType=LOAD_BROKER_FILE
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=55 | TaskType=DOWN | Alias=BSEOFS Scrip Master
+[2026-10-21 17:35:30] [INFO] Download protocol selected | TaskID=55 | Protocol=sftp
+[2026-10-21 17:35:30] [INFO] Local directories ready | TaskID=55 | Alias=BSEOFS Scrip Master | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEOFS | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEOFS
+[2026-10-21 17:35:30] [INFO] Download directory ready | TaskID=55 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEOFS
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=55 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=55
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=55
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=62 | TaskType=INSERTLOAD_DATA | Alias=BSEEQ Bhav Copy
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=62 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=62
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 395, in dispatch_task
+    return self.insert_task(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 156, in insert_task
+    raise ValueError(
+ValueError: Missing filenamepath column in database task | TaskID=62
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=68 | TaskType=INSERTLOAD_DATA | Alias=BSEFO Bhav Copy
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=68 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=68
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 395, in dispatch_task
+    return self.insert_task(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 156, in insert_task
+    raise ValueError(
+ValueError: Missing filenamepath column in database task | TaskID=68
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=70 | TaskType=DOWN | Alias=MCX Bhav Copy
+[2026-10-21 17:35:30] [INFO] Download protocol selected | TaskID=70 | Protocol=sftp
+[2026-10-21 17:35:30] [INFO] Local directories ready | TaskID=70 | Alias=MCX Bhav Copy | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MCX | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MCX
+[2026-10-21 17:35:30] [INFO] Download directory ready | TaskID=70 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MCX
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=70 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=70
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=70
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=73 | TaskType=DOWN | Alias=NCDEX Bhav Copy
+[2026-10-21 17:35:30] [INFO] Download protocol selected | TaskID=73 | Protocol=sftp
+[2026-10-21 17:35:30] [INFO] Local directories ready | TaskID=73 | Alias=NCDEX Bhav Copy | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NCDEX | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NCDEX
+[2026-10-21 17:35:30] [INFO] Download directory ready | TaskID=73 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NCDEX
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=73 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=73
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=73
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=80 | TaskType=INSERTLOAD_DATA | Alias=BSECOM Bhav Copy
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=80 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=80
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 395, in dispatch_task
+    return self.insert_task(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 156, in insert_task
+    raise ValueError(
+ValueError: Missing filenamepath column in database task | TaskID=80
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=82 | TaskType=DOWN | Alias=NSEEGR Bhav Copy
+[2026-10-21 17:35:30] [INFO] Download protocol selected | TaskID=82 | Protocol=sftp
+[2026-10-21 17:35:30] [INFO] Local directories ready | TaskID=82 | Alias=NSEEGR Bhav Copy | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSEEGR | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSEEGR
+[2026-10-21 17:35:30] [INFO] Download directory ready | TaskID=82 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSEEGR
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=82 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=82
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=82
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=84 | TaskType=LOAD_BROKER_FILE | Alias=NSEEGR Bhav Copy
+[2026-10-21 17:35:30] [WARNING] Unsupported task type | TaskID=84 | TaskType=LOAD_BROKER_FILE
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=85 | TaskType=DOWN | Alias=BSEEGR Bhav Copy
+[2026-10-21 17:35:30] [INFO] Download protocol selected | TaskID=85 | Protocol=sftp
+[2026-10-21 17:35:30] [INFO] Local directories ready | TaskID=85 | Alias=BSEEGR Bhav Copy | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEEGR | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEEGR
+[2026-10-21 17:35:30] [INFO] Download directory ready | TaskID=85 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEEGR
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=85 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=85
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=85
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=92 | TaskType=INSERTLOAD_DATA | Alias=BSECUR Bhav Copy
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=92 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=92
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 395, in dispatch_task
+    return self.insert_task(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 156, in insert_task
+    raise ValueError(
+ValueError: Missing filenamepath column in database task | TaskID=92
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=98 | TaskType=INSERTLOAD_DATA | Alias=BSESLBM Bhav Copy
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=98 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=98
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 395, in dispatch_task
+    return self.insert_task(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 156, in insert_task
+    raise ValueError(
+ValueError: Missing filenamepath column in database task | TaskID=98
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=100 | TaskType=DOWN | Alias=MSECUR Bhav Copy
+[2026-10-21 17:35:30] [INFO] Download protocol selected | TaskID=100 | Protocol=sftp
+[2026-10-21 17:35:30] [INFO] Local directories ready | TaskID=100 | Alias=MSECUR Bhav Copy | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSECUR | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSECUR
+[2026-10-21 17:35:30] [INFO] Download directory ready | TaskID=100 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSECUR
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=100 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=100
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=100
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=103 | TaskType=DOWN | Alias=MSEEQ Bhav Copy
+[2026-10-21 17:35:30] [INFO] Download protocol selected | TaskID=103 | Protocol=sftp
+[2026-10-21 17:35:30] [INFO] Local directories ready | TaskID=103 | Alias=MSEEQ Bhav Copy | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEEQ | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEEQ
+[2026-10-21 17:35:30] [INFO] Download directory ready | TaskID=103 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEEQ
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=103 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=103
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=103
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=106 | TaskType=DOWN | Alias=MSEFO Bhav Copy
+[2026-10-21 17:35:30] [INFO] Download protocol selected | TaskID=106 | Protocol=sftp
+[2026-10-21 17:35:30] [INFO] Local directories ready | TaskID=106 | Alias=MSEFO Bhav Copy | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEFO | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEFO
+[2026-10-21 17:35:30] [INFO] Download directory ready | TaskID=106 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEFO
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=106 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=106
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=106
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=109 | TaskType=DOWN | Alias=NSEOFS Bhav Copy
+[2026-10-21 17:35:30] [INFO] Download protocol selected | TaskID=109 | Protocol=sftp
+[2026-10-21 17:35:30] [INFO] Local directories ready | TaskID=109 | Alias=NSEOFS Bhav Copy | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSEOFS | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSEOFS
+[2026-10-21 17:35:30] [INFO] Download directory ready | TaskID=109 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSEOFS
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=109 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=109
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=109
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=111 | TaskType=LOAD_BROKER_FILE | Alias=NSEOFS Bhav Copy
+[2026-10-21 17:35:30] [WARNING] Unsupported task type | TaskID=111 | TaskType=LOAD_BROKER_FILE
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=112 | TaskType=DOWN | Alias=BSEOFS Bhav Copy
+[2026-10-21 17:35:30] [INFO] Download protocol selected | TaskID=112 | Protocol=sftp
+[2026-10-21 17:35:30] [INFO] Local directories ready | TaskID=112 | Alias=BSEOFS Bhav Copy | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEOFS | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEOFS
+[2026-10-21 17:35:30] [INFO] Download directory ready | TaskID=112 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEOFS
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=112 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=112
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=112
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=119 | TaskType=INSERTLOAD_DATA | Alias=BSEEQ ELMargin
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=119 | ErrorType=ValueError | Error=Missing filepath: TaskID=119
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 395, in dispatch_task
+    return self.insert_task(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 147, in insert_task
+    raise ValueError(f"Missing filepath: TaskID={task.get('taskid')}")
+ValueError: Missing filepath: TaskID=119
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=123 | TaskType=LOAD_BROKER_FILE | Alias=NSEFO ELMargin
+[2026-10-21 17:35:30] [WARNING] Unsupported task type | TaskID=123 | TaskType=LOAD_BROKER_FILE
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=125 | TaskType=INSERTLOAD_DATA | Alias=BSEFO ELMargin
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=125 | ErrorType=ValueError | Error=Missing filepath: TaskID=125
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 395, in dispatch_task
+    return self.insert_task(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 147, in insert_task
+    raise ValueError(f"Missing filepath: TaskID={task.get('taskid')}")
+ValueError: Missing filepath: TaskID=125
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=127 | TaskType=DOWN | Alias=MCX ELMargin
+[2026-10-21 17:35:30] [INFO] Download protocol selected | TaskID=127 | Protocol=sftp
+[2026-10-21 17:35:30] [INFO] Local directories ready | TaskID=127 | Alias=MCX ELMargin | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MCX | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MCX
+[2026-10-21 17:35:30] [INFO] Download directory ready | TaskID=127 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MCX
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=127 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=127
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=127
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=130 | TaskType=DOWN | Alias=NCDEX ELMargin
+[2026-10-21 17:35:30] [INFO] Download protocol selected | TaskID=130 | Protocol=sftp
+[2026-10-21 17:35:30] [INFO] Local directories ready | TaskID=130 | Alias=NCDEX ELMargin | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NCDEX | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NCDEX
+[2026-10-21 17:35:30] [INFO] Download directory ready | TaskID=130 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NCDEX
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=130 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=130
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=130
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=135 | TaskType=LOAD_BROKER_FILE | Alias=NSECOM ELMargin
+[2026-10-21 17:35:30] [WARNING] Unsupported task type | TaskID=135 | TaskType=LOAD_BROKER_FILE
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=137 | TaskType=INSERTLOAD_DATA | Alias=BSECOM ELMargin
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=137 | ErrorType=ValueError | Error=Missing filepath: TaskID=137
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 395, in dispatch_task
+    return self.insert_task(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 147, in insert_task
+    raise ValueError(f"Missing filepath: TaskID={task.get('taskid')}")
+ValueError: Missing filepath: TaskID=137
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=141 | TaskType=LOAD_BROKER_FILE | Alias=NSEEGR ELMargin
+[2026-10-21 17:35:30] [WARNING] Unsupported task type | TaskID=141 | TaskType=LOAD_BROKER_FILE
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=142 | TaskType=DOWN | Alias=BSEEGR ELMargin
+[2026-10-21 17:35:30] [INFO] Download protocol selected | TaskID=142 | Protocol=sftp
+[2026-10-21 17:35:30] [INFO] Local directories ready | TaskID=142 | Alias=BSEEGR ELMargin | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEEGR | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEEGR
+[2026-10-21 17:35:30] [INFO] Download directory ready | TaskID=142 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEEGR
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=142 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=142
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=142
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=147 | TaskType=LOAD_BROKER_FILE | Alias=NSECUR ELMargin
+[2026-10-21 17:35:30] [WARNING] Unsupported task type | TaskID=147 | TaskType=LOAD_BROKER_FILE
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=149 | TaskType=INSERTLOAD_DATA | Alias=BSECUR ELMargin
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=149 | ErrorType=ValueError | Error=Missing filepath: TaskID=149
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 395, in dispatch_task
+    return self.insert_task(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 147, in insert_task
+    raise ValueError(f"Missing filepath: TaskID={task.get('taskid')}")
+ValueError: Missing filepath: TaskID=149
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=153 | TaskType=LOAD_BROKER_FILE | Alias=NSESLBM ELMargin
+[2026-10-21 17:35:30] [WARNING] Unsupported task type | TaskID=153 | TaskType=LOAD_BROKER_FILE
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=155 | TaskType=INSERTLOAD_DATA | Alias=BSESLBM ELMargin
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=155 | ErrorType=ValueError | Error=Missing filepath: TaskID=155
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 395, in dispatch_task
+    return self.insert_task(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 147, in insert_task
+    raise ValueError(f"Missing filepath: TaskID={task.get('taskid')}")
+ValueError: Missing filepath: TaskID=155
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=157 | TaskType=DOWN | Alias=MSECUR ELMargin
+[2026-10-21 17:35:30] [INFO] Download protocol selected | TaskID=157 | Protocol=sftp
+[2026-10-21 17:35:30] [INFO] Local directories ready | TaskID=157 | Alias=MSECUR ELMargin | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSECUR | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSECUR
+[2026-10-21 17:35:30] [INFO] Download directory ready | TaskID=157 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSECUR
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=157 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=157
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=157
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=160 | TaskType=DOWN | Alias=MSEEQ ELMargin
+[2026-10-21 17:35:30] [INFO] Download protocol selected | TaskID=160 | Protocol=sftp
+[2026-10-21 17:35:30] [INFO] Local directories ready | TaskID=160 | Alias=MSEEQ ELMargin | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEEQ | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEEQ
+[2026-10-21 17:35:30] [INFO] Download directory ready | TaskID=160 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEEQ
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=160 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=160
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=160
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=163 | TaskType=DOWN | Alias=MSEFO ELMargin
+[2026-10-21 17:35:30] [INFO] Download protocol selected | TaskID=163 | Protocol=sftp
+[2026-10-21 17:35:30] [INFO] Local directories ready | TaskID=163 | Alias=MSEFO ELMargin | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEFO | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEFO
+[2026-10-21 17:35:30] [INFO] Download directory ready | TaskID=163 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEFO
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=163 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=163
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=163
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=168 | TaskType=LOAD_BROKER_FILE | Alias=NSEOFS ELMargin
+[2026-10-21 17:35:30] [WARNING] Unsupported task type | TaskID=168 | TaskType=LOAD_BROKER_FILE
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=169 | TaskType=DOWN | Alias=BSEOFS ELMargin
+[2026-10-21 17:35:30] [INFO] Download protocol selected | TaskID=169 | Protocol=sftp
+[2026-10-21 17:35:30] [INFO] Local directories ready | TaskID=169 | Alias=BSEOFS ELMargin | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEOFS | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEOFS
+[2026-10-21 17:35:30] [INFO] Download directory ready | TaskID=169 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEOFS
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=169 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=169
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=169
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=174 | TaskType=LOAD_BROKER_FILE | Alias=NSEEQ Participant
+[2026-10-21 17:35:30] [WARNING] Unsupported task type | TaskID=174 | TaskType=LOAD_BROKER_FILE
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=176 | TaskType=INSERTLOAD_DATA | Alias=BSEEQ Participant
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=176 | ErrorType=ValueError | Error=Missing filepath: TaskID=176
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 395, in dispatch_task
+    return self.insert_task(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 147, in insert_task
+    raise ValueError(f"Missing filepath: TaskID={task.get('taskid')}")
+ValueError: Missing filepath: TaskID=176
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=180 | TaskType=LOAD_BROKER_FILE | Alias=NSEFO Participant
+[2026-10-21 17:35:30] [WARNING] Unsupported task type | TaskID=180 | TaskType=LOAD_BROKER_FILE
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=182 | TaskType=INSERTLOAD_DATA | Alias=BSEFO Participant
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=182 | ErrorType=ValueError | Error=Missing filepath: TaskID=182
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 395, in dispatch_task
+    return self.insert_task(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 147, in insert_task
+    raise ValueError(f"Missing filepath: TaskID={task.get('taskid')}")
+ValueError: Missing filepath: TaskID=182
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=184 | TaskType=DOWN | Alias=MCX Participant
+[2026-10-21 17:35:30] [INFO] Download protocol selected | TaskID=184 | Protocol=sftp
+[2026-10-21 17:35:30] [INFO] Local directories ready | TaskID=184 | Alias=MCX Participant | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MCX | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MCX
+[2026-10-21 17:35:30] [INFO] Download directory ready | TaskID=184 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MCX
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=184 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=184
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=184
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=187 | TaskType=DOWN | Alias=NCDEX Participant
+[2026-10-21 17:35:30] [INFO] Download protocol selected | TaskID=187 | Protocol=sftp
+[2026-10-21 17:35:30] [INFO] Local directories ready | TaskID=187 | Alias=NCDEX Participant | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NCDEX | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NCDEX
+[2026-10-21 17:35:30] [INFO] Download directory ready | TaskID=187 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NCDEX
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=187 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=187
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=187
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=192 | TaskType=LOAD_BROKER_FILE | Alias=NSECOM Participant
+[2026-10-21 17:35:30] [WARNING] Unsupported task type | TaskID=192 | TaskType=LOAD_BROKER_FILE
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=194 | TaskType=INSERTLOAD_DATA | Alias=BSECOM Participant
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=194 | ErrorType=ValueError | Error=Missing filepath: TaskID=194
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 395, in dispatch_task
+    return self.insert_task(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 147, in insert_task
+    raise ValueError(f"Missing filepath: TaskID={task.get('taskid')}")
+ValueError: Missing filepath: TaskID=194
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=196 | TaskType=DOWN | Alias=NSEEGR Participant
+[2026-10-21 17:35:30] [INFO] Download protocol selected | TaskID=196 | Protocol=sftp
+[2026-10-21 17:35:30] [INFO] Local directories ready | TaskID=196 | Alias=NSEEGR Participant | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSEEGR | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSEEGR
+[2026-10-21 17:35:30] [INFO] Download directory ready | TaskID=196 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSEEGR
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=196 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=196
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=196
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=199 | TaskType=DOWN | Alias=BSEEGR Participant
+[2026-10-21 17:35:30] [INFO] Download protocol selected | TaskID=199 | Protocol=sftp
+[2026-10-21 17:35:30] [INFO] Local directories ready | TaskID=199 | Alias=BSEEGR Participant | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEEGR | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEEGR
+[2026-10-21 17:35:30] [INFO] Download directory ready | TaskID=199 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEEGR
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=199 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=199
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=199
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=204 | TaskType=LOAD_BROKER_FILE | Alias=NSECUR Participant
+[2026-10-21 17:35:30] [WARNING] Unsupported task type | TaskID=204 | TaskType=LOAD_BROKER_FILE
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=206 | TaskType=INSERTLOAD_DATA | Alias=BSECUR Participant
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=206 | ErrorType=ValueError | Error=Missing filepath: TaskID=206
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 395, in dispatch_task
+    return self.insert_task(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 147, in insert_task
+    raise ValueError(f"Missing filepath: TaskID={task.get('taskid')}")
+ValueError: Missing filepath: TaskID=206
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=210 | TaskType=LOAD_BROKER_FILE | Alias=NSESLBM Participant
+[2026-10-21 17:35:30] [WARNING] Unsupported task type | TaskID=210 | TaskType=LOAD_BROKER_FILE
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=212 | TaskType=INSERTLOAD_DATA | Alias=BSESLBM Participant
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=212 | ErrorType=ValueError | Error=Missing filepath: TaskID=212
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 395, in dispatch_task
+    return self.insert_task(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 147, in insert_task
+    raise ValueError(f"Missing filepath: TaskID={task.get('taskid')}")
+ValueError: Missing filepath: TaskID=212
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=214 | TaskType=DOWN | Alias=MSECUR Participant
+[2026-10-21 17:35:30] [INFO] Download protocol selected | TaskID=214 | Protocol=sftp
+[2026-10-21 17:35:30] [INFO] Local directories ready | TaskID=214 | Alias=MSECUR Participant | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSECUR | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSECUR
+[2026-10-21 17:35:30] [INFO] Download directory ready | TaskID=214 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSECUR
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=214 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=214
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=214
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=217 | TaskType=DOWN | Alias=MSEEQ Participant
+[2026-10-21 17:35:30] [INFO] Download protocol selected | TaskID=217 | Protocol=sftp
+[2026-10-21 17:35:30] [INFO] Local directories ready | TaskID=217 | Alias=MSEEQ Participant | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEEQ | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEEQ
+[2026-10-21 17:35:30] [INFO] Download directory ready | TaskID=217 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEEQ
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=217 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=217
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=217
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=220 | TaskType=DOWN | Alias=MSEFO Participant
+[2026-10-21 17:35:30] [INFO] Download protocol selected | TaskID=220 | Protocol=sftp
+[2026-10-21 17:35:30] [INFO] Local directories ready | TaskID=220 | Alias=MSEFO Participant | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEFO | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEFO
+[2026-10-21 17:35:30] [INFO] Download directory ready | TaskID=220 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/MSEFO
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=220 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=220
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=220
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=223 | TaskType=DOWN | Alias=NSEOFS Participant
+[2026-10-21 17:35:30] [INFO] Download protocol selected | TaskID=223 | Protocol=sftp
+[2026-10-21 17:35:30] [INFO] Local directories ready | TaskID=223 | Alias=NSEOFS Participant | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSEOFS | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSEOFS
+[2026-10-21 17:35:30] [INFO] Download directory ready | TaskID=223 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/NSEOFS
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=223 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=223
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=223
+
+[2026-10-21 17:35:30] [INFO] Dispatching task | TaskID=226 | TaskType=DOWN | Alias=BSEOFS Participant
+[2026-10-21 17:35:30] [INFO] Download protocol selected | TaskID=226 | Protocol=sftp
+[2026-10-21 17:35:30] [INFO] Local directories ready | TaskID=226 | Alias=BSEOFS Participant | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEOFS | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEOFS
+[2026-10-21 17:35:30] [INFO] Download directory ready | TaskID=226 | Directory=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEOFS
+[2026-10-21 17:35:30] [ERROR] Task processing failed | TaskID=226 | ErrorType=ValueError | Error=Missing filenamepath column in database task | TaskID=226
+Traceback (most recent call last):
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 450, in process_tasks
+    result = self.dispatch_task(task, connection)
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 419, in dispatch_task
+    return self.process_transfer_download(
+  File "/home/piyushg/automation/exchange_scraper_automation/src/exchange_scraper_automation/application/task_processor.py", line 333, in process_transfer_download
+    raise ValueError(f"Missing filenamepath column in database task | TaskID={task.get('taskid')}")
+ValueError: Missing filenamepath column in database task | TaskID=226
+
+[2026-10-21 17:35:30] [INFO] ======================================================================
+[2026-10-21 17:35:30] [INFO] TASK WORKER FINISHED
+[2026-10-21 17:35:30] [INFO] ======================================================================
+[2026-10-21 17:35:30] [INFO] Worker database connection closed.

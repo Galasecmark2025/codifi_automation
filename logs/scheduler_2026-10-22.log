@@ -1,0 +1,121 @@
+[2026-10-22 16:49:00] [INFO] Data root ready: /home/piyushg/automation/exchange_scraper_automation/ExchangeData
+[2026-10-22 16:49:00] [INFO] ======================================================================
+[2026-10-22 16:49:00] [INFO] EXCHANGE SCRAPER AUTOMATION STARTING
+[2026-10-22 16:49:00] [INFO] ======================================================================
+[2026-10-22 16:49:00] [INFO] ======================================================================
+[2026-10-22 16:49:00] [INFO] TASK LISTENER STARTED
+[2026-10-22 16:49:00] [INFO] Host: 0.0.0.0
+[2026-10-22 16:49:00] [INFO] Port: 8080
+[2026-10-22 16:49:00] [INFO] Trigger endpoint: POST /trigger
+[2026-10-22 16:49:00] [INFO] Health endpoint: GET /health
+[2026-10-22 16:49:00] [INFO] ======================================================================
+[2026-10-22 16:49:03] [INFO] Trigger received: POST /trigger
+[2026-10-22 16:49:03] [INFO] Task worker thread started.
+[2026-10-22 16:49:03] [INFO] PostgreSQL connection established | Attempt=1/3 | Host=localhost | Port=5433 | Database=upload_service_config_db
+[2026-10-22 16:49:03] [INFO] ======================================================================
+[2026-10-22 16:49:03] [INFO] TASK WORKER STARTED
+[2026-10-22 16:49:03] [INFO] ======================================================================
+[2026-10-22 16:49:03] [INFO] Due tasks received from database: 3
+[2026-10-22 16:49:03] [INFO] Dispatching task | TaskID=4 | TaskType=DOWN | Alias=BSEEQ Scrip Master
+[2026-10-22 16:49:03] [INFO] Download protocol selected | TaskID=4 | Protocol=https
+[2026-10-22 16:49:03] [INFO] Local directories ready | TaskID=4 | Alias=BSEEQ Scrip Master | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEEQ | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEEQ
+[2026-10-22 16:49:03] [INFO] ======================================================================
+[2026-10-22 16:49:03] [INFO] STARTING BSE SCRAPING
+[2026-10-22 16:49:03] [INFO] BSE TASK | TaskID=4 | Alias=BSEEQ Scrip Master | FileType=EQ_SCRIPMASTER | Segment=EQ | DataType=ScripMaster | Protocol=https | FilenamePath=BSE_EQ_SCRIP_<DDMMYYYY>.csv
+[2026-10-22 16:49:03] [INFO] protocol = https
+[2026-10-22 16:49:03] [INFO] file_type = EQ_SCRIPMASTER
+[2026-10-22 16:49:03] [INFO] segment = EQ
+[2026-10-22 16:49:03] [INFO] data_type = ScripMaster
+[2026-10-22 16:49:03] [INFO] url = https://beta.bseindia.com/downloads/Help/file/scrip.zip
+[2026-10-22 16:49:03] [INFO] file_name = scrip.zip
+[2026-10-22 16:49:03] [INFO] download_path = None
+[2026-10-22 16:49:03] [INFO] api_url = None
+[2026-10-22 16:49:03] [INFO] api_key = None
+[2026-10-22 16:49:03] [INFO] api_filename_key = None
+[2026-10-22 16:49:03] [INFO] file_name_key = None
+[2026-10-22 16:49:03] [INFO] file_path_key = None
+[2026-10-22 16:49:03] [INFO] zip_file = BSE_EQ_SCRIP*.csv
+[2026-10-22 16:49:03] [INFO] skip_rows = 0
+[2026-10-22 16:49:03] [INFO] BSE archive filename configured | TaskID=4 | Archive=scrip.zip | ZIP member pattern=BSE_EQ_SCRIP_*.csv
+[2026-10-22 16:49:03] [INFO] --------------------------------
+[2026-10-22 16:49:03] [INFO] BSE File Type : EQ_SCRIPMASTER
+[2026-10-22 16:49:03] [INFO] Segment       : EQ
+[2026-10-22 16:49:03] [INFO] Data Type     : ScripMaster
+[2026-10-22 16:49:03] [INFO] File Name     : scrip.zip
+[2026-10-22 16:49:03] [INFO] URL           : https://beta.bseindia.com/downloads/Help/file/scrip.zip
+[2026-10-22 16:49:03] [INFO] --------------------------------
+[2026-10-22 16:49:03] [INFO] Downloaded      : scrip.zip
+[2026-10-22 16:49:03] [INFO] Downloaded size : 2,198,502 bytes
+[2026-10-22 16:49:03] [INFO] ZIP extracted to: /home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEEQ | Files extracted: 16
+[2026-10-22 16:49:03] [INFO] CSV Copied : /home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEEQ/BSE_EQ_SCRIP_21102026.csv
+[2026-10-22 16:49:04] [INFO] CSV columns converted to lowercase: /home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEEQ/BSE_EQ_SCRIP_21102026.csv
+[2026-10-22 16:49:04] [INFO] Task marked COMPLETED: TaskID=4
+[2026-10-22 16:49:04] [INFO] Dispatching task | TaskID=61 | TaskType=DOWN | Alias=BSEEQ Bhav Copy
+[2026-10-22 16:49:04] [INFO] Download protocol selected | TaskID=61 | Protocol=https
+[2026-10-22 16:49:04] [INFO] Local directories ready | TaskID=61 | Alias=BSEEQ Bhav Copy | DownloadDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEEQ | FinalDir=/home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEEQ
+[2026-10-22 16:49:04] [INFO] ======================================================================
+[2026-10-22 16:49:04] [INFO] STARTING BSE SCRAPING
+[2026-10-22 16:49:04] [INFO] BSE TASK | TaskID=61 | Alias=BSEEQ Bhav Copy | FileType=EQ | Segment=EQ | DataType=Bhavcopy | Protocol=https | FilenamePath=BhavCopy_BSE_CM_0_0_0_<YYYYMMDD>_F_0000.CSV
+[2026-10-22 16:49:04] [INFO] protocol = https
+[2026-10-22 16:49:04] [INFO] file_type = EQ
+[2026-10-22 16:49:04] [INFO] segment = EQ
+[2026-10-22 16:49:04] [INFO] data_type = Bhavcopy
+[2026-10-22 16:49:04] [INFO] url = None
+[2026-10-22 16:49:04] [INFO] file_name = None
+[2026-10-22 16:49:04] [INFO] download_path = https://www.bseindia.com/download/BhavCopy/Equity/
+[2026-10-22 16:49:04] [INFO] api_url = None
+[2026-10-22 16:49:04] [INFO] api_key = None
+[2026-10-22 16:49:04] [INFO] api_filename_key = None
+[2026-10-22 16:49:04] [INFO] file_name_key = None
+[2026-10-22 16:49:04] [INFO] file_path_key = None
+[2026-10-22 16:49:04] [INFO] zip_file = None
+[2026-10-22 16:49:04] [INFO] skip_rows = 0
+[2026-10-22 16:49:04] [INFO] Fetching BSE UDiFF API | TaskID=61 | FileType=EQ
+[2026-10-22 16:49:04] [INFO] BSE API records found: 5
+[2026-10-22 16:49:04] [INFO] API Record 1 | FileType=COM | Filename=BhavCopy_BSE_CO_0_0_0_20261021_F_0000.CSV
+[2026-10-22 16:49:04] [INFO] API Record 2 | FileType=CUR | Filename=BhavCopy_BSE_CD_0_0_0_20261021_F_0000.CSV
+[2026-10-22 16:49:04] [INFO] API Record 3 | FileType=EQ | Filename=BhavCopy_BSE_CM_0_0_0_20261022_F_0000.CSV
+[2026-10-22 16:49:04] [INFO] API Record 4 | FileType=EQD | Filename=BhavCopy_BSE_FO_0_0_0_20261021_F_0000.CSV
+[2026-10-22 16:49:04] [INFO] API Record 5 | FileType=EGR | Filename=BhavCopy_BSE_EG_0_0_0_20261021_F_0000.CSV
+[2026-10-22 16:49:04] [INFO] BSE filename validation passed | TaskID=61 | Filename=BhavCopy_BSE_CM_0_0_0_20261022_F_0000.CSV | FilenamePath=BhavCopy_BSE_CM_0_0_0_<YYYYMMDD>_F_0000.CSV
+[2026-10-22 16:49:04] [INFO] --------------------------------
+[2026-10-22 16:49:04] [INFO] BSE File Type : EQ
+[2026-10-22 16:49:04] [INFO] Segment       : EQ
+[2026-10-22 16:49:04] [INFO] Data Type     : Bhavcopy
+[2026-10-22 16:49:04] [INFO] File Name     : BhavCopy_BSE_CM_0_0_0_20261022_F_0000.CSV
+[2026-10-22 16:49:04] [INFO] URL           : https://www.bseindia.com/download/BhavCopy/Equity/BhavCopy_BSE_CM_0_0_0_20261022_F_0000.CSV
+[2026-10-22 16:49:04] [INFO] --------------------------------
+[2026-10-22 16:49:24] [INFO] Downloaded      : BhavCopy_BSE_CM_0_0_0_20261022_F_0000.CSV
+[2026-10-22 16:49:24] [INFO] Downloaded size : 862,609 bytes
+[2026-10-22 16:49:24] [INFO] CSV columns converted to lowercase: /home/piyushg/automation/exchange_scraper_automation/ExchangeData/BSEEQ/BhavCopy_BSE_CM_0_0_0_20261022_F_0000.CSV
+[2026-10-22 16:49:24] [INFO] BSE DOWNLOAD SUCCESS | TaskID=61
+[2026-10-22 16:49:24] [INFO] Task marked COMPLETED: TaskID=61
+[2026-10-22 16:49:24] [INFO] Dispatching task | TaskID=175 | TaskType=DOWN | Alias=BSEEQ Participant
+[2026-10-22 16:49:24] [INFO] Download protocol selected | TaskID=175 | Protocol=none
+[2026-10-22 16:49:24] [WARNING] Unsupported download protocol | TaskID=175 | Protocol=none
+[2026-10-22 16:49:24] [INFO] ======================================================================
+[2026-10-22 16:49:25] [INFO] TASK WORKER FINISHED
+[2026-10-22 16:49:25] [INFO] ======================================================================
+[2026-10-22 16:49:25] [INFO] Worker database connection closed.
+[2026-10-22 16:50:05] [INFO] Trigger received: POST /trigger
+[2026-10-22 16:50:05] [INFO] Task worker thread started.
+[2026-10-22 16:50:05] [INFO] PostgreSQL connection established | Attempt=1/3 | Host=localhost | Port=5433 | Database=upload_service_config_db
+[2026-10-22 16:50:05] [INFO] ======================================================================
+[2026-10-22 16:50:05] [INFO] TASK WORKER STARTED
+[2026-10-22 16:50:05] [INFO] ======================================================================
+[2026-10-22 16:50:05] [INFO] Due tasks received from database: 3
+[2026-10-22 16:50:05] [INFO] Dispatching task | TaskID=5 | TaskType=INSERTLOAD_DATA | Alias=BSEEQ Scrip Master
+[2026-10-22 16:50:05] [ERROR] Task processing failed | TaskID=5 | ErrorType=RaiseException | Error=No function mapping found for ExchId=2, MasterType=SCRIP_MASTER
+CONTEXT:  PL/pgSQL function fn_get_masterdata_function_info(integer,character varying) line 9 at RAISE
+[2026-10-22 16:50:05] [INFO] Dispatching task | TaskID=62 | TaskType=INSERTLOAD_DATA | Alias=BSEEQ Bhav Copy
+[2026-10-22 16:50:05] [ERROR] Task processing failed | TaskID=62 | ErrorType=RaiseException | Error=No function mapping found for ExchId=2, MasterType=BHAVCOPY
+CONTEXT:  PL/pgSQL function fn_get_masterdata_function_info(integer,character varying) line 9 at RAISE
+[2026-10-22 16:50:05] [INFO] Dispatching task | TaskID=175 | TaskType=DOWN | Alias=BSEEQ Participant
+[2026-10-22 16:50:05] [INFO] Download protocol selected | TaskID=175 | Protocol=none
+[2026-10-22 16:50:05] [WARNING] Unsupported download protocol | TaskID=175 | Protocol=none
+[2026-10-22 16:50:05] [INFO] ======================================================================
+[2026-10-22 16:50:05] [INFO] TASK WORKER FINISHED
+[2026-10-22 16:50:05] [INFO] ======================================================================
+[2026-10-22 16:50:05] [INFO] Worker database connection closed.
+[2026-10-22 17:01:38] [INFO] Listener shutdown requested.
+[2026-10-22 17:01:38] [INFO] Task listener stopped.
